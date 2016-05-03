@@ -1,0 +1,23 @@
+{
+  "name": "gis-ministerio",
+  "description": "-",
+  "main": "gulpfile.js",
+  "authors": [
+    "OIXXIO TECHNOLOGIES"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "angular-resource": "^1.5.5"
+  }
+}
