@@ -1,12 +1,7 @@
-# www
+# GIS Ministerio de Produccion de la Republica Argentina
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+##Documentacion 
 
-## Build & development
-
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+-3/5/20160-
+Se implemento el gulpfile.js con un proxy a la carpeta var/www/gis-mProduccion-project/gis-mProduccion-app, asegurarse de que esta sea la
+carpeta cuando se setee el entorno de desarrollo con el server apache
