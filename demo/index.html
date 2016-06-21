@@ -1,0 +1,164 @@
+<!doctype html>
+<!--[if lt IE 8]>         <html class="no-js lt-ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GPS de las economias regionales</title>
+        <meta name="description" content="Industria Dashboard Web App">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+        <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,600,300,700' rel='stylesheet' type='text/css'> -->
+        <!-- Needs images, font... therefore can not be part of main.css -->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="fonts/themify-icons/themify-icons.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+        <link rel="stylesheet" href="bower_components/bootstrap-table/src/bootstrap-table.css">
+
+        <!-- end Needs images -->
+        <!-- build:css({.tmp,client}) styles/main.css -->
+        <link rel="stylesheet" href="styles/bootstrap.css">
+        <link rel="stylesheet" href="styles/ui.css">
+        <link rel="stylesheet" href="styles/main.css">
+       
+         
+            <!-- endbuild -->
+		<style>
+		body{
+			font-family: "Roboto","Helvetica Neue","Helvetica","Arial",sans-serif
+		}
+			.texto{
+				color:#767676;
+				
+			}
+		</style>
+
+    </head>
+    <body data-ng-app="app" id="app" class="app" data-custom-page data-off-canvas-nav data-ng-controller="AppCtrl" data-ng-class=" {'layout-boxed': admin.layout === 'boxed'} ">
+        <!--[if lt IE 9]>
+            <div class="lt-ie9-bg">
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser.</p>
+                <p>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            </div>
+        <![endif]-->
+
+        <section data-ng-include=" 'app/layout/header.html' " id="header" class="header-container" data-ng-class="{ 'header-fixed': admin.fixedHeader,
+      'bg-white': ['11','12','13','14','15','16','21'].indexOf(admin.skin) >= 0,
+      'bg-dark': admin.skin === '31',
+      'bg-primary': ['22','32'].indexOf(admin.skin) >= 0,
+      'bg-success': ['23','33'].indexOf(admin.skin) >= 0,
+      'bg-info-alt': ['24','34'].indexOf(admin.skin) >= 0,
+      'bg-warning': ['25','35'].indexOf(admin.skin) >= 0,
+      'bg-danger': ['26','36'].indexOf(admin.skin) >= 0 }"
+      style="height:60px;background-color: white;" ng-hide="location()" ng-controller="mainController"></section>
+
+        <div class="main-container" style="padding: 0px">
+            <div id="content" class="content-container">
+                <section data-ng-view class="view-container {{admin.pageTransition.class}}" ng-controller="welcomeController">
+                </section>
+            </div>
+        </div>
+        <!--<div class="container" style="width:100%;height:50vh;background-color:lightgrey;">
+            
+        </div>-->
+
+
+        <!-- build:js scripts/vendor.js -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>    
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>    
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/ui.js -->
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/toastr/toastr.min.js"></script>
+        <script src="bower_components/jquery.slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+        <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
+
+        <script src="bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
+
+        <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+        <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+
+        <script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
+        <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.min.js"></script>
+        <script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+        <script src="bower_components/jquery-steps/build/jquery.steps.min.js"></script>
+        <script src="bower_components/bootstrap-file-input/bootstrap.file-input.js"></script>
+        <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
+        <script src="bower_components/echarts/build/source/echarts-all.js"></script>  
+        <script src="scripts/ngecharts.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtF26NxyY5QermiNiB-PMHrkMSpnbqCwM"></script>
+        <script src="https://rawgit.com/HPNeo/gmaps/master/gmaps.js"></script>   
+         
+        <script src="scripts/pathsMapas/BuenosAires.js"></script>   
+        <script src="scripts/pathsMapas/CABA.js"></script>   
+        <script src="scripts/pathsMapas/RioNegro.js"></script>   
+        <script src="scripts/pathsMapas/Neuquen.js"></script>   
+        <script src="scripts/pathsMapas/SantiagoDelEstero.js"></script>   
+        <script src="scripts/pathsMapas/SantaFe.js"></script>   
+        <script src="scripts/pathsMapas/Cordoba.js"></script>   
+        <script src="scripts/pathsMapas/EntreRios.js"></script> 
+        <script src="scripts/pathsMapas/SanLuis.js"></script>   
+        <script src="scripts/pathsMapas/Jujuy.js"></script>   
+        <script src="scripts/pathsMapas/SantaCruz.js"></script>   
+        <script src="scripts/pathsMapas/Chaco.js"></script>   
+        <script src="scripts/pathsMapas/Salta.js"></script>   
+        <script src="scripts/pathsMapas/Mendoza.js"></script>   
+        <script src="scripts/pathsMapas/Catamarca.js"></script>   
+        <script src="scripts/pathsMapas/Formosa.js"></script>   
+        <script src="scripts/pathsMapas/LaRioja.js"></script>   
+        <script src="scripts/pathsMapas/Corrientes.js"></script>   
+        <script src="scripts/pathsMapas/LaPampa.js"></script>   
+        <script src="scripts/pathsMapas/Tucuman.js"></script>   
+        <script src="scripts/pathsMapas/Chubut.js"></script>   
+        <script src="scripts/pathsMapas/TierraDelFuego.js"></script>   
+        <script src="scripts/pathsMapas/Misiones.js"></script>   
+        <script src="scripts/pathsMapas/SanJuan.js"></script>   
+        <!-- endbuild -->
+        
+        <!-- build:js({.tmp,client}) scripts/app.js -->
+        <!-- injector:js -->
+        <script src="app/app.module.js"></script>
+        <script src="app/chart/chart.module.js"></script>
+        <script src="app/layout/nav.module.js"></script>
+        <script src="app/page/page.module.js"></script>
+        <script src="app/chart/echarts.controller.js"></script>
+        <script src="app/core/app.controller.js"></script>
+        <script src="app/core/config.route.js"></script>
+        <script src="app/core/i18n.js"></script>
+        <script src="app/layout/nav.directive.js"></script>
+        <script src="app/page/page.controller.js"></script>
+        <script src="app/page/page.directive.js"></script>
+        <script src="app/app/controllers/controller.js"></script>
+        <script src="app/app/controllers/dashboardController.js"></script>
+        <script src="app/app/controllers/loginController.js"></script>
+        <script src="app/app/controllers/mainController.js"></script>
+        <script src="app/app/controllers/mapController.js"></script>
+        <script src="app/app/controllers/welcomeController.js"></script>
+        <script src="app/app/controllers/sectorController.js"></script>
+        <script src="app/app/controllers/dashSectorController.js"></script>
+        <script src="app/app/controllers/adminController.js"></script>
+        <script src="app/app/services/service.js"></script>
+        <script src="app/app/services/dashboardFactory.js"></script>
+        <script src="app/app/services/loginFactory.js"></script>
+        <script src="app/app/services/searchFactory.js"></script>
+        <script src="app/app/services/welcomeFactory.js"></script>
+        <script src="app/app/services/sectorFactory.js"></script>
+        <script src="app/app/services/adminFactory.js"></script>
+        <!-- endinjector -->
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+        <script src="bower_components/bootstrap-table/src/bootstrap-table.js"></script>
+        <script src="scripts/Snap.svg-0.4.1/dist/snap.svg.js"></script> 
+
+        <!-- endbuild -->
+    </body>
+</html>

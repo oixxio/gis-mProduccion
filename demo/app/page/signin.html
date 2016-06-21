@@ -1,0 +1,61 @@
+<div class="page-signin" ng-controller="loginController">
+    <div class="signin-header">
+        <section class="logo text-center">
+            <h1><a href="#/">MAPA PRODUCTIVO FEDERAL</a></h1>
+        </section>
+    </div>
+    <div class="signin-body">
+        <div class="container">
+            <div class="form-container">
+
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="input-group input-group-first">
+                                <span class="input-group-addon">
+                                    <span class="ti-email"></span>
+                                </span>
+                                <input type="text"
+                                       class="form-control input-lg"
+                                       placeholder="Usuario"
+                                       ng-model="data.usuario" 
+                                       >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="ti-lock"></span>
+                                </span>
+                                <input type="password"
+                                       class="form-control input-lg"
+                                       placeholder="Password"
+                                       ng-model="data.contrasenia" 
+                                       >
+                            </div>
+                        </div>
+
+                        <div class="divider divider-xl"></div>
+
+                        <div class="form-group" ng-click="startSession(data)">
+                            <button class="btn btn-primary btn-lg btn-block text-center">Ingresar</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="divider"></div>
+                <!-- use clase HIDDEN para reutilizar esta parte luego-->
+                <section class="additional-info hidden">
+                    <p class="text-right">
+                        <a href="#/page/forgot-password">Olvidó su contraseña?</a>
+                        <span> | </span>
+                        <a href="#/page/signup">Regístrese</a>
+                    </p>
+                </section>
+                <!-- use clase HIDDEN para reutilizar esta parte luego-->
+                <img src="images\Ministerio-de-Industria.png " alt="Presidencia de la Nación - Ministerio de Industria" class="img-responsive center-block">
+
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,177 @@
+<div class="page page-dashboard" style=" margin-top: 35px;" ng-controller="dashSectorController" ng-init="pest ='app/page/datosGenerales2.html';heatMap(datosSector);active(1)">
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 403px;">
+                            <div class="row">
+                            <header id="dashboard-header2">
+                                <label class="text-center" style="font-size: medium;word-wrap: break-word;line-height: 1;">{{sector}}</label>
+                            </header>
+                            </div>
+                            <img src="images/argHeatMapScale.png" height="183" width="42" style="position:absolute;z-index: 1;top: 166px;left: 43px;">
+                            <div id="map" style="border: 3px solid gray;border-radius: 20px;height:324px;">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-4 -->
+                <div class="col-md-9">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <input id="styled-search" type="text" class="form-control" placeholder="Buscar..." style="display: inline;" ng-model="searchText">
+                            <!--Todavia no lo quieren -->
+                             <a class="btn btn-sm btn-default pull-right" 
+                             ng-href="tablas/{{sector}}.xlsx" download>
+                                <span class="glyphicon glyphicon-download-alt"></span> 
+                                Descargar tabla
+                            </a>
+                            <!---->
+                            <table id="styled-table" class="table table-fixedheader">
+                                <thead>
+                                    <tr>
+                                        <th id="col1b" ng-click="changeSort('provincia_id')">Provincia</th>
+                                        <th id="col3b" ng-click="changeSort('empleo_sector')">Empleo Sector 2014</th>
+                                        <th id="col4b" ng-click="changeSort('part_empleo_prov')"
+                                        >Particip. en Empleo Prov. 2014</th>
+                                        <th id="col4-1b" ng-click="changeSort('part_empleo_prov_nacion')"
+                                        >Particip. en Empleo Nac. 2014</th>
+                                        <th id="col5b" ng-click="changeSort('dinamica_empleo')"
+                                        >Var. % Empleo 2007-2014</th>
+                                        <th id="col6b" ng-click="changeSort('exportaciones')"
+                                        >Export. 2014 (MilesUS$)</th>
+                                        <th id="col7b"ng-click="changeSort('part_exportaciones_pvciales')"
+                                        >Particip. en Export. Prov. 2014</th>
+                                        <th id="col7-1b" ng-click="changeSort('part_exp_prov_nacion')"
+                                        >Particip. en Export. Nac. 2014</th>
+                                        <th id="col8b" ng-click="changeSort('dinamica_exportaciones_pvciales')"
+                                        >Var. % Export. Prov. 2007-2014</th>
+                                        <th id="col10b" ng-click="changeSort('dif_salario_sector')"
+                                        >Dif. % Salario Prov. Nación</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="height:290px;">
+                                    <tr ng-repeat="data in datosSector | filter:searchText | orderBy: sort:reverse">
+                                        <td id="col1b">{{data.nombreProvincia}}</td>
+                                        <td id="col3b">{{data.empleo_sector_view}}</td>
+                                        <td id="col4b">{{data.part_empleo_prov_view}}%</td>
+                                        <td id="col4-1b">{{data.part_empleo_prov_nacion_view}}%</td>
+                                        <td id="col5b" ng-style="setColor(data.dinamica_empleo)">{{data.var_empleo_2007_2014_view}}%</td>
+                                        <td id="col6b">{{data.exportaciones_view}}</td>
+                                        <td id="col7b">{{data.part_exportaciones_pvciales_view}}%</td>
+                                        <td id="col7-1b">{{data.part_exp_prov_nacion_view}}%</td>
+                                        <td id="col8b" 
+                                            ng-style="setColor(data.dinamica_exportaciones_pvciales)">
+                                            {{data.dinamica_exportaciones_pvciales_view}}%</td>
+                                        <td id="col10b" 
+                                            ng-style="setColor(data.dif_salario_sector)">{{data.dif_salario_sector_view}}%</td> 
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
+                </div><!-- /.col-md-8 -->
+            </div><!-- /.row -->
+        </div><!-- /.col-md-12 -->
+    </div><!-- /.row --> 
+    <div class="row">
+        <div class="col-md-12" ng-controller="EChartsCtrl" style="z-index: 10">      
+            <div class="tabs__container panel panel-default" ng-model="pest" style="height:390px;">
+                 <div class="tabs__element" id="DG" ng-click="pest ='app/page/datosGenerales2.html';active(1)">
+                     <span id="DG">Datos Generales</span>
+                 </div>
+                 <div class="tabs__element" id="EM" ng-click="pest ='app/page/empleoSector.html';active(2)">
+                     <span id="EM">Empleo</span>
+                 </div>
+                 <div class="tabs__element" id="EX" ng-click="pest ='app/page/exportacionSector.html';active(3)">
+                     <span id="EX">Exportaciones</span>
+                 </div>
+                 <div ng-include src="pest"></div> 
+            </div>
+        </div> 
+    </div>
+</div>
+
+
+<style>
+
+/*tabla*/
+#col1b{ width: 10%}
+
+#col3b{ width: 10%}
+#col4b{ width: 10%}
+#col4-1b{ width: 10%}
+#col5b{ width: 10%}
+#col6b{ width: 10%}
+#col7b{ width: 10%}
+#col7-1b{ width: 10%}
+#col8b{ width: 10%}
+
+#col10b{ width: 10%}
+
+
+/*mapa*/
+#malvinas{
+    position: absolute;
+    top: 430px;
+    left: 58%;
+    height: 30px;
+}
+
+/* media queries mapa*/
+@media (min-width: 600px) {
+  #mapaImpacto {
+    margin-left: 41%;
+  }
+}
+
+@media (min-width: 992px) {
+  #mapaImpacto {
+    margin-left: 19%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #mapaImpacto {
+    margin-left: 33%;
+  }
+}
+
+
+@font-face {
+    font-family: "Gotham";
+    src: url(fonts/Gotham-Medium.otf) format('truetype');
+}
+@font-face {
+    font-family: "Gotham-bold";
+    src: url(fonts/Gotham-Bold.otf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto";
+    src: url(fonts/Roboto-Medium.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto-thin";
+    src: url(fonts/Roboto-thin.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto-bold";
+    src: url(fonts/Roboto-Bold.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto-Light";
+    src: url(fonts/Roboto-Light.ttf) format('truetype');
+}
+
+body,h1,h2,h3,h4,h5,h6,p,b,span {
+    font-family: "Gotham";
+}
+
+table {
+    font-family: "Roboto-Light" !important;
+}
+
+
+</style>

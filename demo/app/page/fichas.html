@@ -1,0 +1,186 @@
+<div id="contenedor-gral" ng-controller="mainController" ng-init="setTitulo()">
+        <div  ng-model="idProv"
+            style="position: absolute;
+    width: 800px;
+    left: 29vw;
+    margin-left: 0;
+    top: 42%;
+    text-align: center;
+    font-size: 40px;
+    color: #EEE;">
+            <h1 style="font-size: 20px; letter-spacing: 2px;">FICHA PROVINCIAL</h1>
+            <h1 style="font-size: 56px;height:50px;">{{idProv | uppercase}}</h1>
+            <span style="border-bottom: white solid 1px;padding-left: 406px;"> </span> 
+        </div>
+         <div id="contenedor-primario" style="left:42%">    
+            <div id="contenedor-mapa">
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Jujuy'" id="div-btn1">
+                    <div id="botonJujuy" class="boton button9"  title="Jujuy" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Formosa'" 
+                     id="div-btn2">
+                    <div id="botonFormosa" class="boton button8"  title="Formosa" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Entre Ríos'" 
+                     id="div-btn3">
+                    <div id="botonEntrerios" class="boton button7"  title="Entre Ríos" ><span class="map-img"></span></div>
+                </a>
+
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Misiones'" 
+                    id="div-btn4'">
+                    <div id="botonMisiones" class="boton button13"  title="Misiones" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Corrientes'" 
+                     id="div-btn5">
+                    <div id="botonCorrientes" class="boton button6"  title="Corrientes" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Chaco'" 
+                     id="div-btn6">
+                    <div id="botonChaco" class="boton button3"  title="Chaco" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Salta'" 
+                     id="div-btn7">
+                    <div id="botonSalta" class="boton button16"  title="Salta" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Santiago del Estero'" 
+                     id="div-btn8">
+                    <div id="botonStgo" class="boton button21"  title="Stgo. Estero" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Tierra Del Fuego'" 
+                     id="div-btn9">
+                    <div id="botonTierra" class="boton button22"  title="Tierra Del Fuego" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Catamarca'" 
+                    id="div-btn10">
+                    <div id="botonCatamarca" class="boton button2"  title="Catamarca" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Tucumán'" 
+                    id="div-btn11">
+                    <div id="botonTucuman" class="boton button23"  title="Tucumán" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='La Rioja'" 
+                    id="div-btn12">
+                    <div id="botonLarioja" class="boton button11"  title="La Rioja" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='San Juan'" 
+                    id="div-btn13">
+                    <div id="botonSanjuan" class="boton button17"  title="San Juan" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Córdoba'" 
+                    id="div-btn14">
+                    <div id="botonCordoba" class="boton button5"  title="Córdoba" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Santa Fe'" 
+                    id="div-btn15">
+                    <div id="botonStafe" class="boton button20"  title="Santa Fe" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='San Luis'" 
+                    id="div-btn16">
+                    <div id="botonSanluis" class="boton button18"  title="San Luis" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Mendoza'" 
+                    id="div-btn17">
+                    <div id="botonMendoza" class="boton button12"  title="Mendoza" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Buenos Aires'" 
+                    id="div-btn18">
+                    <div id="botonBsas" class="boton button"  title="Buenos Aires" ><span class="map-img"></span></div>        
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='CABA'" id="div-btn19'">
+                    <div id="botonCaba" class="boton button1"  title="CABA" ><span class="map-img"></span>
+                    </div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='La Pampa'" 
+                    id="div-btn20">
+                    <div id="botonLapampa" class="boton button10"  title="La Pampa" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Río Negro'" 
+                    id="div-btn21">
+                    <div id="botonRionegro" class="boton button15"  title="Río Negro" ><span class="map-img"></span></div>
+                </a>
+                <a href="fichas/informe_ficha_neuque__n.pdf" ng-mouseover="idProv ='Neuquén'" 
+                    id="div-btn22">
+                    <div id="botonNeuquen" class="boton button14"  title="Neuquén" ><span class="map-img"></span></div>
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Chubut'" 
+                    id="div-btn23">
+                    <div id="botonChubut" class="boton button4"  title="Chubut" ><span class="map-img"></span></div>        
+                </a>
+                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Santa Cruz'" 
+                id="div-btn24">
+                    <div id="botonStacruz" class="boton button19"  title="Santa Cruz" ><span class="map-img"></span></div>
+                </a>
+                <div 
+                    id="botonMalvinas" class="boton"  title="Malvinas" ><span></span></div>
+            </div>
+        
+           <!-- <div id="provincia-dropdown" class="btn-group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Seleccione Provincia <span class="caret"></span>
+              </button>
+              <ul id="scrollable-menu" class="dropdown-menu">
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Buenos Aires'" ><a href="">Buenos Aires</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Catamarca'" ><a href="">Catamarca</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Chaco'" ><a href="">Chaco</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Chubut'" ><a href="">Chubut</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='CABA'" ><a href="">CABA</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Córdoba'" ><a href="">Córdoba</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Corrientes'" ><a href="">Corrientes</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Entre Ríos'" ><a href="">Entre Ríos</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Formosa'" ><a href="">Formosa</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Jujuy'" ><a href="">Jujuy</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='La Pampa'" ><a href="">La Pampa</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='La Rioja'" ><a href="">La Rioja</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Mendoza'" ><a href="">Mendoza</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Misiones'" ><a href="">Misiones</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Neuquén'" ><a href="">Neuquén</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Río Negro'" ><a href="">Río Negro</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Salta'" ><a href="">Salta</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='San Juan'" ><a href="">San Juan</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='San Luis'" ><a href="">San Luis</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Santa Cruz'" ><a href="">Santa Cruz</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Santa Fe'" ><a href="">Santa Fe</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Santiago del Estero'" ><a href="">Santiago del Estero</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Tierra del Fuego'" ><a href="">Tierra del Fuego</a></li>
+                <li ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Tucumán'" ><a href="">Tucumán</a></li>
+              </ul>
+           </div>-->
+
+</div>
+
+
+<style>
+
+@font-face {
+    font-family: "Gotham";
+    src: url(fonts/Gotham-Medium.otf) format('truetype');
+}
+@font-face {
+    font-family: "Gotham-bold";
+    src: url(fonts/Gotham-Bold.otf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto";
+    src: url(fonts/Roboto-Medium.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto-thin";
+    src: url(fonts/Roboto-thin.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto-bold";
+    src: url(fonts/Roboto-Bold.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto-Light";
+    src: url(fonts/Roboto-Light.ttf) format('truetype');
+}
+body,h1,h2,h3,h4,h5,h6,p,b,span {
+    font-family: "Gotham";
+}
+#contenedor-gral {
+    background-image: none !important;
+    background-color: #0973B9 !important;    
+}    
+
+</style>

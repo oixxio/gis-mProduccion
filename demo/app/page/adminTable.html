@@ -1,0 +1,221 @@
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+            <div class="panel-body" style="padding-top:2px;">
+				<input id="styled-search" type="search" class="form-control" placeholder="Buscar...">              
+                <table id="styled-table" class="table table-condensed table-hover table-fixedheader" 
+                        ng-controller="ModalDemoCtrl">
+                    <thead>
+                        <tr >
+                            <th id="col1c">Sector</th>
+                            <th id="col2c">Prov.</th>
+                            <th id="col3c">Empleo<br>Sector</th>
+                            <th id="col4c">Particip.<br>en Empleo<br>Prov.</th>
+                            <th id="col4_1c">Particip.<br>en Empleo<br>Prov. Nac.</th>
+                            <th id="col5c">Var. %<br>Empleo<br>2007-2014</th>
+                            <th id="col6c">Export. 2014<br>(MilesUS$)</th>
+                            <th id="col7c">Particip.<br>en Export.<br>Prov.</th>
+                            <th id="col7_1c">Particip.<br>en Export.<br>Prov. Nac.</th>
+                            <th id="col8c">Var. %<br>Export.<br>Prov.<br>2007-2014</th>
+                            <th id="col9c">Empleo<br>Sector<br>Nacion</th>
+                            <th id="col10c">Empleo<br>Total<br>Nacion</th>
+                            <th id="col11c">Var. %<br>Empleo<br>Sector<br>Nacion</th>
+                            <th id="col12c">Particip.<br>Sector<br>Nacion</th>
+                            <th id="col13c">CoefEsp</th>
+                            <th id="col14c">Remuner<br>-ación</th>
+                        	<th id="col15c">Remuner<br>-ación<br>Prom.<br>Nacional</th>
+                        	<th id="col16c">Dif.<br>Salarial<br>Sector</th>
+                        </tr>
+                    </thead>
+                    <tbody style="height:450px">
+                        <tr ng-click="open();setModalData(data)" 
+                            ng-repeat="data in adminData">
+                            <td id="col1c">{{data.nombreSector}}</td>
+                            <td id="col2c">{{data.nombreProvincia}}</td>
+                            <td id="col3c">{{data.empleo_sector}}</td>
+                            <td id="col4c">{{data.part_empleo_prov}}%</td>
+                            <td id="col4c">{{data.part_empleo_prov_nacion}}%</td>
+                            <td id="col5c"
+                                ng-style="setColor(data.dinamica_empleo)">
+                                {{data.dinamica_empleo}}%</td>
+                            <td id="col6c">{{data.exportaciones}}</td>
+                            <td id="col7c">{{data.part_exportaciones_pvciales}}</td>
+                            <td id="col15c">{{data.part_exp_prov_nacion}}</td>
+                            <td id="col8c" 
+                                ng-style="setColor(data.dinamica_exportaciones_pvciales)">
+                                {{data.dinamica_exportaciones_pvciales}}%</td>
+                            <td id="col9c">{{data.empleo_sector_nacion}}</td>
+                            <td id="col10c">{{data.empleo_total_nacion}}</td>
+                            <td id="col11c">{{data.dinamica_empleo_nacion}}%</td>
+                            <td id="col12c"
+                                ng-style="setColor(data.dinamica_empleo_nacion)">
+                                {{data.participacion_sector_nacion}}</td>
+                            <td id="col13c">{{data.coefesp}}</td>
+                            <td id="col14c">{{data.remuneracion}}</td>
+                            <td id="col15c">{{data.remuneracion_promedio_nacion}}</td>
+                            <td id="col16c">{{data.dif_salario_sector}}</td>        
+                        </tr>                 
+                    </tbody>
+                </table>
+            </div>
+		</div>
+	</div>
+</div>
+
+<style>
+table.table-fixedheader>thead>tr>th,
+table.table-fixedheader>tbody>tr>td {
+        height: 58px;
+}
+</style>
+
+
+<script type="text/ng-template" id="myModalContent.html">
+<div ng-init="getModalData()"></div>
+<div class="modal-header">
+    <h4>{{modalData.nombreProvincia}}</h4>
+    <h6><i>{{modalData.nombreSector}}</i></h6>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" role="form">
+
+        <div class="row">
+            <div class="form-group">
+                <label for="inputEmpleo" class="col-sm-6 control-label">Empleo</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.empleo_sector" 
+                                        ng-model="modalData.empleo_sector" class="form-control" id="inputEmpleo">
+                </div>
+        	</div>
+            <div class="form-group">
+                <label for="inputEmpleoPartProv" class="col-sm-6 control-label">Participación en Empleo Provincial</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.part_empleo_prov"
+                            ng-model="modalData.part_empleo_prov" class="form-control" id="inputEmpleoPartProv">
+                </div>
+        	</div>
+            <div class="form-group">
+                <label for="inputEmpleoPartProvNac" class="col-sm-6 control-label">Particip. en Empleo Prov. Nacion</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.part_empleo_prov_nacion"
+                            ng-model="modalData.part_empleo_prov_nacion" class="form-control" id="inputEmpleoPartProvNac">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmpleoDinamica" class="col-sm-6 control-label">Variación % de Empleo 2007-2014 (%)</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.dinamica_empleo" class="form-control" id="inputEmpleoDinamica">
+                </div>
+        	</div>
+
+            <div class="form-group">
+                <label for="inputExport" class="col-sm-6 control-label">Exportación 2014 (Miles US$)</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.exportaciones" class="form-control" id="inputExport">
+                </div>
+        	</div>
+            <div class="form-group">
+                <label for="inputExportPartProv" class="col-sm-6 control-label">Participación en Exportación Prov.</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.part_exportaciones_pvciales" class="form-control" id="inputExportPartProv">
+                </div>
+        	</div>
+            <div class="form-group">
+                <label for="inputExportPartProvNac" class="col-sm-6 control-label">Particip. en Exportación Prov. Nacion</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.part_exp_prov_nacion" class="form-control" id="inputExportPartProvNac">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputExportDinamica" class="col-sm-6 control-label">Variación % de Exportación 2007-2014 (%)</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.dinamica_exportaciones_pvciales" class="form-control" id="inputExportDinamica">
+                </div>
+        	</div>
+
+            <div class="form-group">
+                <label for="inputEmpleoSectorNacion" class="col-sm-6 control-label">Empleo Sector Nacion</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.empleo_sector_nacion" class="form-control" id="inputEmpleoSectorNacion">
+                </div>
+        	</div>
+            <div class="form-group">
+                <label for="inputEmpleoTotalNacion" class="col-sm-6 control-label">Empleo Total Nacion</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.empleo_sector_nacion" class="form-control" id="inputEmpleoTotalNacion">
+                </div>
+        	</div>
+            <div class="form-group">
+                <label for="inputDinamicaEmpleoNacion" class="col-sm-6 control-label">Dinámica Empleo Nacion (%)</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.dinamica_empleo_nacion" class="form-control" id="inputDinamicaEmpleoNacion">
+                </div>
+        	</div>
+
+            <div class="form-group">
+                <label for="inputPartSectorNacion" class="col-sm-6 control-label">Participacion Sector Nacion</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.participacion_sector_nacion" class="form-control" id="inputPartSectorNacion">
+                </div>
+        	</div>
+            <div class="form-group">
+                <label for="inputCoefEsp" class="col-sm-6 control-label">CoefEsp</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.coefesp" class="form-control" id="inputCoefEsp">
+                </div>
+        	</div>
+
+            <div class="form-group">
+                <label for="inputRemuneracion" class="col-sm-6 control-label">Remuneracion</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.remuneracion" class="form-control" id="inputRemuneracion">
+                </div>
+        	</div>
+            <div class="form-group">
+                <label for="inputRemuneracionPromNac" class="col-sm-6 control-label">Remuneracion Prom. Nacion</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.remuneracion_promedio_nacion" class="form-control" id="inputRemuneracionPromNac">
+                </div>
+        	</div>
+            <div class="form-group">
+                <label for="inputDifSalarialSector" class="col-sm-6 control-label">Diferencia Salarial Sector (%)</label>
+                <div class="col-sm-4">
+                    <input type="number" ng-value="modalData.dif_salario_sector" class="form-control" id="inputDifSalarialSector">
+                </div>
+        	</div>    	
+        </div>      	
+	</form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="guardar(modalData)">Guardar</button>
+</div>
+
+</script>
+
+
+<style>
+#col1c{ width: 10% !important}
+#col2c{ width: 5% !important}
+#col3c{ width: 5% !important}
+#col4c{ width: 5% !important} //
+#col4_1c{ width: 5% !important} //
+#col5c{ width: 5% !important}
+#col6c{ width: 5% !important} //
+#col7c{ width: 5% !important} //
+#col7_1c{ width: 5% !important} //
+#col8c{ width: 5% !important} //
+#col9c{ width: 5% !important} //
+#col10c{ width: 5% !important} //
+#col11c{ width: 5% !important} //
+#col12c{ width: 5% !important} //
+#col13c{ width: 5% !important}
+#col14c{ width: 4% !important}
+#col15c{ width: 4% !important} //
+#col16c{ width: 4% !important} //
+
+</style>
+
+
+
+

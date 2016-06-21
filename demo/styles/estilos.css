@@ -1,0 +1,1171 @@
+
+#botonJujuy{
+	position:absolute;
+	width:40px;
+	height:40px;
+	
+	left: 83px;
+	top: 0px;
+	z-index: 1;
+
+
+
+
+		background:url(../images/assets/mapa/jujuy-sprite.png) top  no-repeat;
+	
+}
+
+
+#botonJujuy.presionado{ 		background:url(../images/assets/mapa/jujuy-sprite.png) bottom  no-repeat;
+
+}
+#botonCatamarca{
+	position:absolute;
+	width:55px;
+	height:74px;
+	left: 58px;
+	top: 47px;	
+	
+}
+
+	
+
+#botonCatamarca.presionado{ 
+background:url(../images/assets/mapa/catamarca-sprite.png) bottom  no-repeat;
+}
+
+#botonSalta{
+	position:absolute;
+	width:81px;
+	height:62px;
+	background:url(../images/assets/mapa/salta-sprite.png) top no-repeat;
+	left: 65px;
+	top: 4px;
+	
+}
+
+
+#botonSalta.presionado{ 
+	background:url(../images/assets/mapa/salta-sprite.png) bottom  no-repeat;
+}
+
+#botonTucuman{
+	position:absolute;
+	width:22px;
+	height:28px;
+	background:url(../images/assets/mapa/tucuman-sprite.png) top  no-repeat;
+	left: 96px;
+	top: 60px;
+	z-index:1;
+	
+}
+
+
+#botonTucuman.presionado{ 
+background:url(../images/assets/mapa/tucuman-sprite.png) bottom  no-repeat;
+}
+#botonFormosa{
+	position:absolute;
+	width:62px;
+	height:63px;
+	left: 146px;
+	top: 10px;
+}
+
+
+#botonFormosa.presionado{ 
+	background:url(../images/assets/mapa/formosa-sprite.png) bottom  no-repeat;
+}
+
+
+
+#botonChaco{
+	position:absolute;
+	width:65px;
+	height:56px;
+	
+	left: 131px;
+	top: 33px;
+	
+}
+
+
+#botonChaco.presionado{ 
+	background:url(../images/assets/mapa/chaco-sprite.png) bottom  no-repeat;
+}
+
+#botonStgo{
+	position:absolute;
+	width:45px;
+	height:71px;
+	background:url(../images/assets/mapa/stgo-sprite.png) top  no-repeat;
+	left: 108px;
+	top: 55px;
+	
+}
+
+
+#botonStgo.presionado{ 
+	background:url(../images/assets/mapa/stgo-sprite.png) bottom  no-repeat;
+}
+
+#botonLarioja{
+	position:absolute;
+	width:54px;
+	height:64px;
+background:url(../images/assets/mapa/larioja-sprite.png) top  no-repeat;
+	left: 53px;
+	top: 85px;
+	
+}
+
+
+#botonLarioja.presionado{ 
+background:url(../images/assets/mapa/larioja-sprite.png) bottom  no-repeat;
+}
+
+#botonStafe{
+	position:absolute;
+	width:53px;
+	height:97px;
+	background:url(../images/assets/mapa/stafe-sprite.png) top  no-repeat;
+	left: 138px;
+	top: 88px;
+	
+}
+
+
+#botonStafe.presionado{ 
+background:url(../images/assets/mapa/stafe-sprite.png) bottom  no-repeat;
+}
+
+#botonCordoba{
+	position:absolute;
+	width:52px;
+	height:84px;
+
+	left: 101px;
+	top: 111px;
+	
+}
+
+
+#botonCordoba.presionado{ 
+	background:url(../images/assets/mapa/cordoba-sprite.png) bottom  no-repeat;
+}
+
+
+#botonSanjuan{
+	position:absolute;
+	width:50px;
+	height:65px;
+	background:url(../images/assets/mapa/sanjuan-sprite.png) top  no-repeat;
+	left: 39px;
+	top: 94px;
+	
+}
+
+#botonSanjuan.presionado{ 
+background:url(../images/assets/mapa/sanjuan-sprite.png) bottom  no-repeat;
+}
+
+
+
+#botonMisiones{
+	position:absolute;
+	width:32px;
+	height:38px;
+	background:url(../images/assets/mapa/misiones-sprite.png) top  no-repeat;
+	left: 226px;
+	top: 53px;
+	
+}
+
+
+#botonMisiones.presionado{ 
+background:url(../images/assets/mapa/misiones-sprite.png) bottom  no-repeat;
+}
+
+
+#botonCorrientes{
+	position:absolute;
+	width:53px;
+	height:52px;
+	
+	left: 180px;
+	top: 78px;
+	
+}
+
+
+#botonCorrientes.presionado{ 
+background:url(../images/assets/mapa/corrientes-sprite.png) bottom  no-repeat;
+}
+
+
+
+#botonEntrerios{
+	position:absolute;
+	left: 165px;
+	top: 120px;	
+
+}
+
+
+#botonEntrerios.presionado{ 
+	background:url(../images/assets/mapa/entrerios-sprite.png) bottom  no-repeat;
+}
+
+#botonBsas{
+	position:absolute;
+	width:87px;
+	height:126px;
+	left: 132px;
+	top: 168px;
+	height:126px;
+}
+
+.button{
+	
+	
+	background:url(../images/assets/mapa/bsas-sprite.png);
+height:126px;
+width:87px;
+}
+
+
+.button span{
+	
+	width:87px;
+	height:126px;
+	background:url(../images/assets/mapa/bsas-sprite.png) bottom  no-repeat;
+	margin: 0;
+padding: 0;
+
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+}
+
+.button span:hover{
+	opacity: 1;
+	z-index: 9999;
+}
+
+
+.button1{
+	
+	
+	background:url(../images/assets/mapa/caba-sprite.png) no-repeat;
+height:20px;
+width:20px;
+}
+
+
+.button1 span{
+	
+	width:20px;
+	height:20px;
+	background:url(../images/assets/mapa/caba-sprite.png) bottom  no-repeat;
+	margin: 0;
+padding: 0;
+
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+}
+
+.button1 span:hover{
+	opacity: 1;
+}
+
+.button2{
+	
+	
+	background:url(../images/assets/mapa/catamarca-sprite.png) no-repeat;
+width:55px;
+	height:73px;
+}
+
+
+.button2 span{
+	position:absolute;
+	width:55px;
+	height:73px;
+	background:url(../images/assets/mapa/catamarca-sprite.png) bottom  no-repeat;
+	margin: 0;
+padding: 0;
+
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+}
+
+.button2 span:hover{
+	opacity: 1;
+}
+
+
+.button3{
+	
+	
+	background:url(../images/assets/mapa/chaco-sprite.png);
+width:65px;
+	height:56px;
+}
+
+
+.button3 span{
+	
+width:65px;
+	height:56px;
+	background:url(../images/assets/mapa/chaco-sprite.png) bottom  no-repeat;
+	margin: 0;
+padding: 0;
+
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+}
+
+.button3 span:hover{
+	opacity: 1;
+}
+
+.button4{
+	
+	
+	background:url(../images/assets/mapa/chubut-sprite.png);
+width:111px;
+	height:73px;
+}
+
+
+.button4 span{
+	
+width:111px;
+	height:73px;
+	background:url(../images/assets/mapa/chubut-sprite.png) bottom  no-repeat;
+	margin: 0;
+padding: 0;
+
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+}
+
+.button4 span:hover{
+	opacity: 1;
+}
+
+
+.button5{
+	
+	
+	background:url(../images/assets/mapa/cordoba-sprite.png);
+	width:52px;
+	height:84px;
+}
+
+
+.button5 span{
+	width:52px;
+	height:84px;
+	background:url(../images/assets/mapa/cordoba-sprite.png) bottom  no-repeat;
+	margin: 0;
+padding: 0;
+
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+}
+
+.button5 span:hover{
+	opacity: 1;
+}
+
+.button6{
+	
+	
+	background:url(../images/assets/mapa/corrientes-sprite.png);
+	width:52px;
+	height:84px;
+}
+
+
+.button6 span{
+	width:53px;
+	height:52px;
+	background:url(../images/assets/mapa/corrientes-sprite.png) bottom  no-repeat;
+	margin: 0;
+padding: 0;
+
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+}
+
+.button6 span:hover{
+	opacity: 1;
+}
+
+
+.button7{
+	background:url(../images/assets/mapa/entrerios-sprite.png) no-repeat;
+	width:39px;
+	height:59px;
+}
+
+
+.button7 span{
+	position:absolute;
+	width:39px;
+	height:59px;
+	background:url(../images/assets/mapa/entrerios-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button7 span:hover{
+	opacity: 1;
+}
+
+
+.button8{
+	
+	
+	background:url(../images/assets/mapa/formosa-sprite.png);
+	width:62px;
+	height:63px;
+
+}
+
+
+.button8 span{
+	position:absolute;
+	width:73px;
+	height:59px;
+	background:url(../images/assets/mapa/formosa-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: -6px;
+	top: 3px;
+}
+
+.button8 span:hover{
+	opacity: 1;
+}
+
+
+.button9{
+	
+	
+	background:url(../images/assets/mapa/jujuy-sprite.png) bottom  no-repeat;
+width:40px;
+	height:40px;
+
+}
+
+
+.button9 span{
+	position:absolute;
+	width:40px;
+	height:40px;
+	background:url(../images/assets/mapa/jujuy-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 1px;
+}
+
+.button9 span:hover{
+	opacity: 1;
+}
+
+
+
+.button10{
+	
+	
+	background:url(../images/assets/mapa/lapampa-sprite.png) bottom  no-repeat;
+width:40px;
+	height:40px;
+
+}
+
+
+.button10 span{
+	position:absolute;
+	width:73px;
+	height:71px;
+	background:url(../images/assets/mapa/lapampa-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: -5px;
+	top: 0px;
+}
+
+.button10 span:hover{
+	opacity: 1;
+}
+
+.button11{
+	
+	
+	background:url(../images/assets/mapa/larioja-sprite.png) bottom  no-repeat;
+width:54px;
+	height:64px;
+
+}
+
+
+.button11 span{
+	
+	width:54px;
+	height:64px;
+	background:url(../images/assets/mapa/larioja-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: -5px;
+	top: 0px;
+}
+
+.button11 span:hover{
+	opacity: 1;
+}
+
+
+.button12{	
+background:url(../images/assets/mapa/mendoza-sprite.png) bottom  no-repeat;
+width:52px;
+	height:89px;
+
+}
+.button12 span{
+	width:52px;
+	height:89px;
+	background:url(../images/assets/mapa/mendoza-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: -5px;
+	top: 0px;
+}
+.button12 span:hover{
+	opacity: 1;
+}
+
+
+
+.button13{
+	background:url(../images/assets/mapa/misiones-sprite.png) no-repeat;
+	width:32px;
+	height:38px;
+}
+
+
+.button13 span{
+	position:absolute;
+	width:32px;
+	height:38px;
+	background:url(../images/assets/mapa/misiones-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button13 span:hover{
+	opacity: 1;
+}
+
+
+.button14{
+	background:url(../images/assets/mapa/neuquen-sprite.png) no-repeat;
+		width:51px;
+	height:83px;
+}
+
+
+.button14 span{
+	position:absolute;
+		width:51px;
+	height:83px;
+	background:url(../images/assets/mapa/neuquen-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button14 span:hover{
+	opacity: 1;
+}
+
+
+.button15{
+	background:url(../images/assets/mapa/rionegro-sprite.png) no-repeat;
+	width:118px;
+	height:74px;
+}
+
+
+.button15 span{
+	position:absolute;
+		width:118px;
+	height:74px;
+	background:url(../images/assets/mapa/rionegro-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button15 span:hover{
+	opacity: 1;
+}
+
+
+.button16{
+	background:url(../images/assets/mapa/salta-sprite.png) no-repeat;
+width:81px;
+	height:62px;
+}
+
+
+.button16 span{
+	position:absolute;
+		width:81px;
+	height:62px;
+	background:url(../images/assets/mapa/salta-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button16 span:hover{
+	opacity: 1;
+}
+
+
+.button17{
+	background:url(../images/assets/mapa/sanjuan-sprite.png) no-repeat;
+	width:50px;
+	height:65px;
+}
+
+
+.button17 span{
+	position:absolute;
+			width:50px;
+	height:65px;
+	background:url(../images/assets/mapa/sanjuan-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button17 span:hover{
+	opacity: 1;
+}
+
+
+.button18{
+	background:url(../images/assets/mapa/sanluis-sprite.png) no-repeat;
+	width:32px;
+	height:64px;
+}
+
+
+.button18 span{
+	position:absolute;
+			width:32px;
+	height:64px;
+	background:url(../images/assets/mapa/sanluis-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button18 span:hover{
+	opacity: 1;
+}
+
+
+.button19{
+	background:url(../images/assets/mapa/sta-sprite.png) no-repeat;
+	width:102px;
+	height:127px;
+}
+
+
+.button19 span{
+	position:absolute;
+			width:102px;
+	height:127px;
+	background:url(../images/assets/mapa/sta-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button19 span:hover{
+	opacity: 1;
+}
+
+
+
+.button20{
+	background:url(../images/assets/mapa/stafe-sprite.png) no-repeat;
+	width:53px;
+	height:97px;
+}
+
+
+.button20 span{
+	position:absolute;
+			width:53px;
+	height:97px;
+	background:url(../images/assets/mapa/stafe-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button20 span:hover{
+	opacity: 1;
+}
+
+
+.button21{
+	background:url(../images/assets/mapa/stgo-sprite.png) no-repeat;
+	width:45px;
+	height:71px;
+}
+
+
+.button21 span{
+	position:absolute;
+			width:45px;
+	height:71px;
+	background:url(../images/assets/mapa/stgo-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button21 span:hover{
+	opacity: 1;
+}
+
+.button22{
+	background:url(../images/assets/mapa/tierra-sprite.png) no-repeat;
+		width:61px;
+	height:53px;
+}
+
+
+.button22 span{
+	position:absolute;
+				width:61px;
+	height:53px;
+	background:url(../images/assets/mapa/tierra-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button22 span:hover{
+	opacity: 1;
+}
+
+
+.button23{
+	background:url(../images/assets/mapa/tucuman-sprite.png) no-repeat;
+		width:22px;
+	height:28px;
+}
+
+
+.button23 span{
+	position:absolute;
+				width:22px;
+	height:28px;
+	background:url(../images/assets/mapa/tucuman-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button23 span:hover{
+	opacity: 1;
+}
+
+
+.button24{
+	background:url(../images/assets/mapa/malvinas-sprite.png) no-repeat;
+	width:43px;
+	height:21px;
+}
+
+
+.button24 span{
+	position:absolute;
+				width:43px;
+	height:21px;
+	background:url(../images/assets/mapa/malvinas-sprite.png) bottom  no-repeat;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition:    opacity 0.5s;
+	-o-transition:      opacity 0.5s;
+	left: 0px;
+	top: 0px;
+}
+
+.button24 span:hover{
+	opacity: 1;
+}
+
+
+
+
+#botonBsas.presionado{
+
+		background:url(../images/assets/mapa/bsas-sprite.png) bottom  no-repeat;
+
+}
+
+
+
+
+#botonSanluis{
+	position:absolute;
+	width:32px;
+	height:64px;
+	background:url(../images/assets/mapa/sanluis-sprite.png) top  no-repeat;
+	left: 80px;
+	top: 147px;
+	
+}
+
+
+#botonSanluis.presionado{ 
+background:url(../images/assets/mapa/sanluis-sprite.png) bottom  no-repeat;
+
+}
+
+#botonMendoza{
+	position:absolute;
+	width:52px;
+	height:89px;
+	background:url(../images/assets/mapa/mendoza-sprite.png) top  no-repeat;
+	left: 39px;
+	top: 148px;
+	
+}
+
+
+#botonMendoza.presionado{ 
+background:url(../images/assets/mapa/mendoza-sprite.png) bottom  no-repeat;
+}
+
+#botonLapampa{
+	position:absolute;
+	width:64px;
+	height:71px;
+	background:url(../images/assets/mapa/lapampa-sprite.png) top  no-repeat;
+	left: 69px;
+	top: 194px;
+	
+}
+
+#botonLapampa.presionado{ 
+background:url(../images/assets/mapa/lapampa-sprite.png) bottom  no-repeat;
+}
+
+#botonRionegro{
+	position:absolute;
+	width:118px;
+	height:74px;
+		background:url(../images/assets/mapa/rionegro-sprite.png) top  no-repeat;
+	left: 22px;
+	top: 236px;
+	
+}
+
+#botonRionegro.presionado{ 
+		background:url(../images/assets/mapa/rionegro-sprite.png) bottom  no-repeat;
+}
+
+
+#botonNeuquen{
+	position:absolute;
+	width:51px;
+	height:83px;
+		background:url(../images/assets/mapa/neuquen-sprite.png) top  no-repeat;
+	left: 21px;
+	top: 212px;
+	z-index: 1;
+	
+}
+
+
+#botonNeuquen.presionado{ 
+	background:url(../images/assets/mapa/neuquen-sprite.png) bottom  no-repeat;
+	
+}
+
+
+#botonChubut{
+	position:absolute;
+	width:111px;
+	height:73px;
+		
+	left: 18px;
+	top: 309px;
+	z-index: 1;
+	
+}
+
+
+#botonChubut.presionado{ 
+		background-image:url(../images/assets/mapa/chubut-b.png);
+}
+
+#botonStacruz{
+	position:absolute;
+	width:102px;
+	height:127px;
+	background:url(../images/assets/mapa/sta-sprite.png) top  no-repeat;
+	left: 0px;
+	top: 382px;
+	z-index: 1;
+	
+}
+
+
+#botonStacruz.presionado{ 
+background:url(../images/assets/mapa/sta-sprite.png) bottom  no-repeat;
+}
+
+#botonTierra{
+	position:absolute;
+	width:61px;
+	height:53px;
+			background:url(../images/assets/mapa/tierra-sprite.png) top  no-repeat;
+	left: 64px;
+	top: 513px;
+	z-index: 1;
+	
+}
+
+#botonTierra.presionado{ 
+		background:url(../images/assets/mapa/tierra-sprite.png) bottom  no-repeat;
+}
+#botonMalvinas{
+	position:absolute;
+	width:43px;
+	height:21px;
+	background:url(../images/assets/mapa/malvinas-sprite.png) top  no-repeat;
+	left: 160px;
+	top: 486px;
+	z-index: 1;
+	
+}
+
+
+#botonMalvinas.presionado{ 
+background:url(../images/assets/mapa/malvinas-sprite.png) bottom  no-repeat;
+}
+
+#botonCaba{
+	position:absolute;
+	width:20px;
+	height:20px;
+	left: 188px;
+	top: 181px;
+	z-index: 9999;
+}
+
+
+#botonCaba.presionado{
+
+		background:url(../images/assets/mapa/caba-sprite.png) bottom  no-repeat;
+
+}
+#receptor{
+	position:absolute;
+	left: 368px;
+	top: 170px;
+	border:solid #039 2px;
+}
+
+#contenedor-mapa{
+	position:absolute;
+	/*width:300px;
+	left: 130px;
+	right: auto;
+	height: 2px;*/
+	margin: 15px auto 0 auto;
+}
+
+#contenedor-gral{
+	    width: 950px;
+    
+    margin: 0 auto;
+    position:relative;
+    top: 110px;
+    
+}
+
+#map{
+	position:absolute;
+	left: 30px;
+	top: 172px;
+	z-index:-1;
+}
+.h3{
+	color:#000;
+	font-size:14px;
+}
+
+.tipr_content
+{
+     font: 11px/1.3 'Helvetica Neue', Helvetica, Arial, sans-serif;
+     color: #333; 
+     background-color: #333;
+     color: #fff;
+     padding: 4px 7px;
+	 margin-left:-40px;
+}
+.tipr_container_bottom
+{
+     display: none;
+     position: absolute;
+     margin-top: 13px;
+     z-index: 1000;
+}
+
+      #down{
+	position: absolute;
+	left: 340px;
+	top: 106px;
+}
+
+.foo{
+	margin-top:80%;
+	font-size:12px;
+	color:#333;
+	text-align:center;}
+	
+	#div-results{
+		
+		position: absolute; width: 592px; left: 461px; top: 177px; height: 332px;}
+		
+		
+		#how{
+	position:absolute;
+	width:60%;
+	top: 767px;
+	left: 20px;
+			}
+.boton{
+	cursor:pointer;}
+	
+	pre{ margin:20px;
+	background-color:#FF9;
+	padding:8px;}
+
+.map-img{ display:block;
+padding:10px;
+margin-top:15px;
+font-size:25px;
+background-color:#666;
+color:#FFF;
+font-weight:bold;}

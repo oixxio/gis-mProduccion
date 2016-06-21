@@ -1,0 +1,100 @@
+<div class="container-fluid">
+<br><br>
+    <div class="row">
+        <div class="col-md-6 col-xs-6">
+            <div class="panel mini-box">
+                <div class="box-info">
+                    <div class="pull-left">
+                        <span class="size-h1">{{datosGenerales[0].poblacion}} hab.</span>
+                        <p class="text-muted">Población<br>(2016)</p>
+                    </div>
+                    <div class="pull-right" style="margin-left: 50px;">
+                        <span class="size-h1" style="color:grey;">({{datosGenerales[0].prop_pobl_total_nac}}%)</span>
+                        <p class="text-muted">% del total nacional</p>
+                    </div>
+                </div>
+            </div>                    
+        </div><!-- /.col-md-6 col-xs-6 -->
+        <div class="col-md-6 col-xs-6">
+            <div class="panel mini-box">
+                <div class="box-info">
+                    <div class="pull-left">
+                        <span class="size-h1">{{datosGenerales[0].exp_mill_usd}} </span>
+                        <p class="text-muted">Exportaciones en millones de dolares corrientes (2015)</p>
+                    </div>
+                    <div class="pull-right" style="margin-left: 50px;">
+                        <span class="size-h1" style="color:grey;">({{datosGenerales[0].prop_exp_mill_usd_total_nac}}%)</span>
+                        <p class="text-muted">% del total nacional</p>
+                    </div>
+                </div>
+            </div>                                   
+        </div><!-- /.col-md-6 col-xs-6 -->        
+        <div class="col-md-6 col-xs-6">
+            <div class="panel mini-box">
+                <div class="box-info">
+                    <div class="pull-left">
+                        <span class="size-h1">{{datosGenerales[0].pbg}} </span>
+                        <p class="text-muted">PBG (en millones de pesos corrientes) ({{datosGenerales[0].ano_dato_pbg}})</p>
+                    </div>
+                    <div class="pull-right" style="margin-left: 50px;">
+                        <span class="size-h1" style="color:grey;">({{datosGenerales[0].part_pbg_pbi}}%)</span>
+                        <p class="text-muted">% del total nacional</p>
+                    </div>
+                </div>
+            </div>                    
+        </div><!-- /.col-md-6 col-xs-6 -->        
+        <div class="col-md-6 col-xs-6">
+            <div class="panel mini-box">
+                <div class="box-info">
+                    <span class="size-h1">{{datosGenerales[0].dest_exp}}</span>
+                    <p class="text-muted" style="margin-left: auto;margin-right: auto;">Principales destinos de Exportacion<br>(2015)</p>
+                </div>
+            </div>                    
+        </div><!-- /.col-md-6 col-xs-6 -->
+        <div class="col-md-6 col-xs-6">
+            <div class="panel mini-box">
+                <div class="box-info">
+                    <div class="pull-left">
+                        <span class="size-h1">{{datosGenerales[0].emp_publ_prov}} </span>
+                        <p class="text-muted">Empleo publico Provincial (2013)</p>
+                    </div>
+                    <div class="pull-right" style="margin-left: 50px;">
+                        <span class="size-h1" style="color:grey;">({{datosGenerales[0].prop_emp_publ_total_nac}}%)</span>
+                        <p class="text-muted">% del empleo provincial</p>
+                    </div>
+                </div>                
+            </div>                    
+        </div><!-- /.col-md-6 col-xs-6 -->
+        <div class="col-md-6 col-xs-6">
+            <div class="panel mini-box">
+                <div class="box-info">
+                    <span class="size-h1">{{datosGenerales[0].prod_exp}}</span>
+                    <p class="text-muted" style="margin-left: auto;margin-right: auto;">Principales productos Exportados<br>(2015)</p>
+                </div>
+            </div>                    
+        </div><!-- /.col-md-6 col-xs-6 -->
+    </div><!-- /.row -->
+</div>
+<div class="row">
+    <div class="col-md-12" style="text-align: center;color:#BBBBBB">
+        Fuente: Observatorio de Empleo y Dinámica Empresarial, Subsecretaría de Programación Técnica y Estudios Laborales del Ministerio de Trabajo, Empleo y Seguridad Social, Instituto Nacional de Estadísticas y Censos (INDEC)
+    </div>
+</div>
+
+<style>
+.mini-box {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 5px;
+}
+
+.box-info span {
+    font-size: 18px;
+}
+.box-info p {
+    font-size: 9px;
+    max-width: 175px;
+    word-wrap: break-word;
+}
+</style>

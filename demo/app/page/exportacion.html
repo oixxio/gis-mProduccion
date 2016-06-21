@@ -1,0 +1,49 @@
+<div class="row panel-chart">
+	<div class="col-md-6">
+        <span>Participación sectorial en exportaciones provinciales (2015)</span>
+           
+        <i class="fa fa-arrows-alt fa-2x btn-full-screen" aria-hidden="true" 
+            ng-click="goTo('page/exportProvGrande')"></i>                       
+        <div data-echarts data-options="funnel1.options" style="height: 360px;"></div> 				    
+	</div>
+	<div class="col-md-6">
+        <i class="fa fa-arrows-alt fa-2x btn-full-screen" 
+            ng-click="goTo('page/scatterExpProvGrande')"></i>
+        <p id="ejeX">Var% Particip. Export. 2007-2014</p>
+        <p id="ejeY">Var% Export Prov 2007-2014</p>
+        <div data-echarts data-options="line4.options" style="height: 360px;"></div>				
+	</div>
+</div>
+<div class="row">
+    <div class="col-md-6" style="text-align: center;color:#BBBBBB">Fuente: Elaboración propia en base a datos de INDEC</div>
+    <div class="col-md-6" style="text-align: center;color:#BBBBBB">Fuente: Elaboración propia en base a datos de INDEC</div>
+</div>
+<style>
+.btn-full-screen{
+    z-index: 1000;
+    position: absolute;
+    bottom: 25px;
+    right: 22px;
+}
+
+.panel-chart {
+    padding: 0;
+}
+
+.panel-chart span{
+    position: absolute;
+    top: 1px;
+    left: 20px;
+    font-size: 18px;
+    color: #35A8DE;
+}
+
+.panel-chart label{
+    position: absolute;
+    top: 22px;
+    left: 21px;
+    font-size: 12px;
+    color: rgba(128, 128, 128, 0.52);
+    text-decoration: none;
+}
+</style>

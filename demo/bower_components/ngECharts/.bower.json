@@ -1,0 +1,38 @@
+{
+  "name": "ngECharts",
+  "homepage": "https://github.com/gudh/ngECharts",
+  "main": "./dist/ngecharts.js",
+  "authors": [
+    "gudh"
+  ],
+  "description": "using ECharts with Angular.js",
+  "moduleType": [],
+  "keywords": [
+    "angular",
+    "angularjs",
+    "echarts",
+    "charts"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "echarts": "~2.x",
+    "angular": "~1.x"
+  },
+  "version": "0.1.1",
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.1",
+    "commit": "4e283fb1e38d11a5e58132ccd1f71165ab3888e0"
+  },
+  "_source": "git://github.com/gudh/ngecharts.git",
+  "_target": "~0.1.1",
+  "_originalSource": "ngecharts"
+}

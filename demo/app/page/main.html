@@ -1,0 +1,72 @@
+<div id="contenedor-gral" 
+	class="vertical-align"
+	ng-init="setTitulo()" 
+	style="background-color:#F1F2F2;background-image:none;"
+	ng-controller="mainController">	
+
+	<div class="container">	
+		<br><br><br>
+		<div class="row">
+		  <div class="col-md-6 col-md-offset-3">
+		    <button ng-click="to('mapa')" class="btn btn-default btn-block botonera">
+		    INFORMACIÓN PROVINCIAL	
+		    </button>
+		  </div>
+		</div>    
+		<br>
+		<div class="row">
+		  <div class="col-md-6 col-md-offset-3">
+		    <button ng-click="to('sector')" class="btn btn-default btn-block botonera">
+		    INFORMACIÓN SECTORIAL
+		    </button>
+		  </div>
+		</div>
+
+	</div>
+
+</div>
+
+<style>
+	
+@font-face {
+    font-family: "Gotham-bold";
+    src: url(fonts/Gotham-Bold.otf) format('truetype');
+}
+
+h1 {
+    font-family: "Gotham-bold" !important;
+}
+
+.thumbnail {
+	opacity:0.9;
+	border-width:5px;
+	background-color:#105aca;
+	border: white solid 5px;
+	border-radius: 10px;
+}
+
+.thumbnail h1 {
+	font-size:52px;
+	text-align:center;
+	color:white;
+	margin-left: 7%;
+}
+
+.botonera {
+    font-size: 17px;
+    letter-spacing: 2px;
+    border-radius: 17px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    color: white;
+    background-color: #58595B;
+    border: none;
+    font-family: "Gotham-bold" !important;
+}
+
+.botonera:hover {
+	background-color: #0973B9;
+	color: white;
+}
+
+</style>

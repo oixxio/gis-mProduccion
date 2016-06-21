@@ -1,0 +1,79 @@
+<div id="contenedor-gral" style="background-color:#F1F2F2;background-image:none;" ng-controller="sectorController" ng-init="getRubroData();getSectorData();filterText = ''">
+ 	<div class="container" id="contenedor-primario2">
+ 		<div class="row">
+ 			<div class="col-md-12">
+ 				<h3>Sector</h3>
+				<div ng-model="idSector">
+					<h4>
+						{{idSector}}
+					</h4>		
+				</div>
+		        <div class="section-header">
+		            <h4>Seleccione Sector y sub-sector</h4>
+		        </div>
+	        </div>	       
+	        <div class="col-md-4" ng-repeat="dataRubro in rubro" ng-click="setFilter(dataRubro.codigo)">
+	        	<a class="btn btn-default btn-lg btn-block boton-sector">
+	        		<div class="ellipsis">{{dataRubro.descripcion}}</div>
+	        		<span class="ti-angle-right pull-right" style="margin-top: -20px;"></span>
+        		</a>
+	        </div>
+	         
+ 		</div>	
+ 	</div>	
+</div>
+<style>
+
+.ellipsis{
+	width: 270px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    font-family: "Roboto-thin";	 
+} 
+
+.boton-sector{
+    background-color: #d6d6d6;
+    border: none;
+    padding: 20px 18px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.boton-sector:hover{
+	background-color: #0973B9 !important;
+	color: white !important;
+}	
+	        
+
+@font-face {
+	font-family: "Gotham";
+	src: url(fonts/Gotham-Medium.otf) format('truetype');
+}
+@font-face {
+	font-family: "Gotham-bold";
+	src: url(fonts/Gotham-Bold.otf) format('truetype');
+}
+@font-face {
+	font-family: "Roboto";
+	src: url(fonts/Roboto-Medium.ttf) format('truetype');
+}
+@font-face {
+	font-family: "Roboto-thin";
+	src: url(fonts/Roboto-Thin.ttf) format('truetype');
+}
+@font-face {
+	font-family: "Roboto-bold";
+	src: url(fonts/Roboto-Bold.ttf) format('truetype');
+}
+
+h1,h2,h3,h4,h5,h6,p,b {
+	font-family: "Gotham";
+}
+span{
+	font-family: "Roboto-thin";
+}
+
+
+</style>

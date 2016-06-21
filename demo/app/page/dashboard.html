@@ -1,0 +1,182 @@
+<div class="page page-dashboard" style=" margin-top: 35px;" ng-controller="dashboardController" ng-init="sort='sector_id';pest ='app/page/datosGenerales.html';active(1)">
+    <br>
+ <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 384px;">
+                            <div class="row">
+                                <header class="text-center"
+                                        id="dashboard-header"
+                                        style="margin-top:0;">{{provincia}}</header>
+                                <div id="map" style="border: 3px solid gray;border-radius: 20px;height:324px;margin: 0 13px;">
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-4 -->
+                <div class="col-md-9">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <input id="styled-search" type="text" class="form-control" placeholder="Buscar..." style="display: inline;" ng-model="searchText">
+                            <!--Todavia no lo quieren -->
+                             <a class="btn btn-sm btn-default pull-right" ng-href="tablas/{{provincia}}.xlsx" download>
+                                <i class="glyphicon glyphicon-download-alt"></i> 
+                                DESCARGAR TABLA
+                            </a>
+                            <!---->
+                            <table id="styled-table" class="table table-fixedheader">
+                                <thead>
+                                    <tr>
+                                        <th id="col1" ng-click="changeSort('sector_id')">CIIU</th>
+                                        <th id="col2" ng-click="changeSort('nombreSector')">Sector</th>
+                                        <th id="col3" ng-click="changeSort('empleo_sector')">Empleo Sector 2014</th>
+                                        <th id="col4" ng-click="changeSort('part_empleo_prov')">Particip. en Empleo Prov. 2014</th>
+                                        <th id="col5" ng-click="changeSort('var_empleo_2007_2014')">Var. % Empleo 2007-2014</th>
+                                        <th id="col6" ng-click="changeSort('exportaciones')">Export. 2014 (MilesUS$)</th>
+                                        <th id="col7" 
+                                            ng-click="changeSort('part_exportaciones_pvciales')">Particip. en Export. Prov.</th>
+                                        <th id="col8" 
+                                            ng-click="changeSort('dinamica_exportaciones_pvciales')">Var. % Export. Prov. 2007-2014</th>
+                                        <th id="col9" ng-click="changeSort('remuneracion')">Salario 2014</th>
+                                        <th id="col10" ng-click="changeSort('dif_salario_sector')">Dif. % Salario Prov. Nación</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="height:271px;">
+                                    <tr ng-repeat="data in datosProv| filter:searchText | orderBy:sort:reverse">
+                                        <td id="col1">{{data.sector_id}}</td>
+                                        <td id="col2">{{data.nombreSector}}</td>
+                                        <td id="col3">{{data.empleo_sector_view}}</td>
+                                        <td id="col4">{{data.part_empleo_prov_view}}%</td>
+                                        <td id="col5" ng-style="setColor(data.var_empleo_2007_2014)">
+                                            {{data.var_empleo_2007_2014_view}}%</td>
+                                        <td id="col6">{{data.exportaciones_view}}</td>
+                                        <td id="col7">{{data.part_exportaciones_pvciales_view}}%</td>
+                                        <td id="col8" 
+                                            ng-style="setColor(data.dinamica_exportaciones_pvciales)">
+                                            {{data.dinamica_exportaciones_pvciales_view}}%</td>
+                                        <td id="col9">{{data.remuneracion_view}}</td>
+                                        <td id="col10" 
+                                            ng-style="setColor(data.dif_salario_sector)">{{data.dif_salario_sector_view}}%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
+                </div><!-- /.col-md-8 -->
+            </div><!-- /.row -->
+        </div><!-- /.col-md-12 -->
+    </div><!-- /.row --> 
+    <div class="row">        
+        <div class="col-md-12" ng-controller="EChartsCtrl" id="DG-container">      
+            <div class="tabs__container panel panel-default" ng-model="pest" style="height:390px;">
+                 <div class="tabs__element active" id="DG" ng-click="pest ='app/page/datosGenerales.html';active(1)">
+                     <span id="DG">Datos Generales</span>
+                 </div>
+                 <div class="tabs__element" id="EM" ng-click="pest ='app/page/empleo.html';active(2)">
+                     <span id="EM">Empleo</span>
+                 </div>
+                 <div class="tabs__element" id="EX" ng-click="pest ='app/page/exportacion.html';active(3)">
+                     <span id="EX">Exportaciones</span>
+                 </div>
+                 <div ng-include="pest"></div> 
+            </div>
+        </div>
+    </div>
+</div>
+  
+<style>
+#col3{ width: 8%}
+#col4{ width: 10%}
+#col6{ width: 8%}
+
+.mini-box {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 5px;
+}
+
+.box-info span {
+    font-size: 18px;
+}
+.box-info p {
+    font-size: 9px;
+    max-width: 175px;
+    word-wrap: break-word;
+}
+
+.btn-full-screen{
+    z-index: 1000;
+    position: absolute;
+    bottom: 25px;
+    right: 22px;
+}
+
+.panel-chart {
+    padding: 0;
+}
+
+.panel-chart span{
+    position: absolute;
+    top: 1px;
+    left: 20px;
+    font-size: 18px;
+    color: #35A8DE;
+}
+
+.panel-chart label{
+    position: absolute;
+    top: 22px;
+    left: 21px;
+    font-size: 12px;
+    color: rgba(128, 128, 128, 0.52);
+    text-decoration: none;
+}
+
+#ejeX {
+    position: absolute;
+    bottom: 1%;
+    left: 38%;
+}
+#ejeY {
+    transform: rotate(270deg);
+    position: absolute;
+    top: 43%;
+    left: -11%;
+}
+@font-face {
+    font-family: "Gotham";
+    src: url(fonts/Gotham-Medium.otf) format('truetype');
+}
+@font-face {
+    font-family: "Gotham-bold";
+    src: url(fonts/Gotham-Bold.otf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto";
+    src: url(fonts/Roboto-Medium.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto-thin";
+    src: url(fonts/Roboto-thin.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto-bold";
+    src: url(fonts/Roboto-Bold.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Roboto-Light";
+    src: url(fonts/Roboto-Light.ttf) format('truetype');
+}
+
+body,h1,h2,h3,h4,h5,h6,p,b,span {
+    font-family: "Gotham";
+}
+table {
+    font-family: "Roboto-Light" !important;
+}
+
+</style>
