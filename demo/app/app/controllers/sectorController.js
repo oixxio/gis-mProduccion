@@ -96,7 +96,8 @@
 				provData = [],
 				scatterEmpleo = [],
 				scatterExport = [];
-			sectorFactory.setSectorId(data);
+			localStorage.setItem('sectorId',data)
+			//sectorFactory.setSectorId(data);
 			sectorFactory.getAllProv().success(function(response){
 				provincia = response
 				sectorFactory.getData(data).success(function(response){
@@ -184,13 +185,18 @@
 					if (exportacion.length === 0) {
 						exportacion = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}}}];
 					}
-					sectorFactory.setDashSectorData(response);
+					/*sectorFactory.setDashSectorData(response);
 					sectorFactory.setEmpleo(empleo);
 					sectorFactory.setExportacion(exportacion);
 					
 					sectorFactory.setScatterEmpleo(scatterEmpleo);
 					
-					sectorFactory.setScatterExport(scatterExport);
+					sectorFactory.setScatterExport(scatterExport);*/
+					localStorage.setItem('dashSectorData',JSON.stringify(response))
+					localStorage.setItem('empleoDataSect',JSON.stringify(empleo))
+					localStorage.setItem('empleoScatterSect',JSON.stringify(scatterEmpleo))
+					localStorage.setItem('exportDataSect',JSON.stringify(exportacion))
+					localStorage.setItem('exportScatterSect',JSON.stringify(scatterExport))
 					$location.path('/page/dashSector');
 				});
 			})			

@@ -21,7 +21,7 @@
 				$scope.datosGenerales = response[0];
 			});
 		});
-		$scope.datosSector = sectorFactory.getDashSectorData();
+		$scope.datosSector = JSON.parse(localStorage.getItem('dashSectorData'))
 		$scope.setColor = function(data){
 			return data<0? {color: "red"} : {color: "green"};
 		}

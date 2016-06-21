@@ -13,8 +13,10 @@
 		/*****************************************************/
 		$scope.setData = function(data){
 			img = data + '.png';
-			dashboardFactory.setImg(img);
-			dashboardFactory.setProv(data);
+			//dashboardFactory.setImg(img);
+			$scope.cache.put('provImg',img)
+			//dashboardFactory.setProv(data);
+			localStorage.setItem('provName',data)
 			var sector = [],
 				rubro = [],
 				rubroData = [],
@@ -26,7 +28,7 @@
 				empleo = [],
 				exportacionData = {},
 				exportacion = [],
-				empleoLegend = [],
+				//empleoLegend = [],
 				empleoValue = 0,
 				provData = [],
 				scatterEmpleo = [],
@@ -133,7 +135,8 @@
 							exportacion = [{name: 'sin valores',value: 1}];
 						}
 						//$window.alert(JSON.stringify(empleo));
-						dashboardFactory.setEmpleoLegend(empleoLegend);
+						//dashboardFactory.setEmpleoLegend(empleoLegend);
+						/*[Start Factory para pasar datos al dash]
 						dashboardFactory.setProvData(response);
 						dashboardFactory.setEmpleo(empleo);
 						//$window.alert(JSON.stringify(exportacion))
@@ -141,6 +144,12 @@
 						dashboardFactory.setScatterEmpleo(scatterEmpleo);
 						scatterExport.shift()
 						dashboardFactory.setScatterExport(scatterExport);
+						/*[End Factory para pasar datos al dash]*/
+						localStorage.setItem('provData',JSON.stringify(response))
+						localStorage.setItem('empleoData',JSON.stringify(empleo))
+						localStorage.setItem('empleoScatter',JSON.stringify(scatterEmpleo))
+						localStorage.setItem('exportData',JSON.stringify(exportacion))
+						localStorage.setItem('exportScatter',JSON.stringify(scatterExport))
 						$location.path('page/dashboard');
 					});
 				});
