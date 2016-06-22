@@ -38,1026 +38,1033 @@
         $scope.funnel1 = {};
         $scope.treemap = {};
 
-      var scatterEmpleoData = dashboardFactory.getScatterEmpleo(); 
-      var scatterExportData = dashboardFactory.getScatterExport();  
-      var empleoData = dashboardFactory.getEmpleo();
-      var exportacionData = dashboardFactory.getExportacion();
-      var scatterEmpleoSectorData = sectorFactory.getScatterEmpleo(); 
-      var scatterExportSectorData = sectorFactory.getScatterExport();  
-      var empleoSectorData = sectorFactory.getEmpleo();
-      var exportacionSectorData = sectorFactory.getExportacion();
-      var empleoLegend = dashboardFactory.getEmpleoLegend();     
-      var colorVar;
-      for (var i = 0; i < empleoSectorData.length; i++) {
-        
-        switch (empleoSectorData[i].name) {
-            case "Buenos Aires":
-                empleoSectorData[i].itemStyle.normal.color = '#34e3e5'
-                 break;
-            case 'CABA':
-                 empleoSectorData[i].itemStyle.normal.color = '#b6a2de';
-                 break;
-            case 'Catamarca':
-                 empleoSectorData[i].itemStyle.normal.color = '#5ab1ef';
-                 break;
-            case 'Chaco':
-                 empleoSectorData[i].itemStyle.normal.color = '#ffb980';
-                 break;
-            case 'Chubut':
-                empleoSectorData[i].itemStyle.normal.color = '#f28c93';
-                         break;
-            case 'Córdoba':
-                 empleoSectorData[i].itemStyle.normal.color = '#b6c2e1';
-                 break;
-            case 'Corrientes':
-                 empleoSectorData[i].itemStyle.normal.color = '#e5cf0d';
-                 break;
-            case 'Entre Ríos':
-                 empleoSectorData[i].itemStyle.normal.color = '#b2d563';
-                 break;
-            case 'Formosa':
-                 empleoSectorData[i].itemStyle.normal.color = '#2ec7c9';
-                 break;
-            case 'Jujuy':
-                 empleoSectorData[i].itemStyle.normal.color = '#51a0d8';
-                 break;
-            case 'La Pampa':
-                 empleoSectorData[i].itemStyle.normal.color = '#dda06f';
-                 break;
-            case 'La Rioja':
-                 empleoSectorData[i].itemStyle.normal.color = '#d87a80';
-                 break;
-            case 'Mendoza':
-                 empleoSectorData[i].itemStyle.normal.color = '#8d98b3';
-                 break;
-            case 'Misiones':
-                 empleoSectorData[i].itemStyle.normal.color = '#ccb80c';
-                 break;
-            case 'Neuquen':
-                empleoSectorData[i].itemStyle.normal.color = '#97b552'
-                break;
-            case 'Río Negro':
-                 empleoSectorData[i].itemStyle.normal.color = '#29afb1';
-                 break;
-            case 'Salta':
-                 empleoSectorData[i].itemStyle.normal.color = '#83759f';
-                 break;
-            case 'San Juan':
-                 empleoSectorData[i].itemStyle.normal.color = '#417fac';
-                 break;
-            case 'San Luis':
-                 empleoSectorData[i].itemStyle.normal.color = '#b5845c';
-                 break;
-            case 'Santa Cruz':
-                 empleoSectorData[i].itemStyle.normal.color = '#b5676c';
-                 break;
-            case 'Santa Fe':
-                 empleoSectorData[i].itemStyle.normal.color = '#767f95';
-                 break;
-            case 'Santiago del Estero':
-                 empleoSectorData[i].itemStyle.normal.color = '#ae9d0b';
-                 break;
-            case 'Tierra del Fuego':
-                 empleoSectorData[i].itemStyle.normal.color = '#7f9846';
-                 break;
-            case 'Tucumán':
-                 empleoSectorData[i].itemStyle.normal.color = '#208a8b';
-                 break;
-            case 'Agricultura y ganaderia  caza y servicios conexos':
-                empleoSectorData[i].itemStyle.normal.color = '#34e3e5';
-            break;
-            case 'Silvicultura  extracción de madera y servicios conexos':
-                empleoSectorData[i].itemStyle.normal.color = '#b6a2de';
-            break;
-            case 'Pesca y actividades relacionadas con la pesca':
-                empleoSectorData[i].itemStyle.normal.color = '#5ab1ef';
-            break;
-            case 'Extracción de carbon y de lignito   extracción de turba':
-                empleoSectorData[i].itemStyle.normal.color = '#ffb980';
-            break;
-            case 'Extracción de petroleo crudo y gas natural':
-                empleoSectorData[i].itemStyle.normal.color = '#f28c93';
-            break;
-            case 'Extracción de minerales metaliferos':
-                empleoSectorData[i].itemStyle.normal.color = '#b6c2e1';
-            break;
-            case 'Explotación de otras minas y canteras n.c.p.':
-                empleoSectorData[i].itemStyle.normal.color = '#e5cf0d';
-            break;
-            case 'Elaboración de productos alimenticios y bebidas':
-                empleoSectorData[i].itemStyle.normal.color = '#b2d563';
-            break;
-            case 'Elaboración de productos de tabaco':
-                empleoSectorData[i].itemStyle.normal.color = '#2ec7c9';
-            break;
-            case 'Fabricación de productos textiles':
-                empleoSectorData[i].itemStyle.normal.color = '#9888b9';
-            break;
-            case 'Confección de prendas de vestir   terminación y teñido de pieles':
-                empleoSectorData[i].itemStyle.normal.color = '#51a0d8';
-            break;
-            case 'Curtido y terminación de cueros   fabricación calzado y de sus partes':
-                empleoSectorData[i].itemStyle.normal.color = '#dda06f';
-            break;
-            case 'Producción de madera y fabricación de productos de madera y corcho  excepto muebles':
-                empleoSectorData[i].itemStyle.normal.color = '#d87a80';
-            break;
-            case 'Fabricación de papel y de productos de papel':
-                empleoSectorData[i].itemStyle.normal.color = '#8d98b3';
-            break;
-            case 'Edición e impresión   reproducción de grabaciones':
-                empleoSectorData[i].itemStyle.normal.color = '#ccb80c';
-            break;
-            case 'Fabricación de coque  productos de la refinacion del petroleo y combustible nuclear':
-                empleoSectorData[i].itemStyle.normal.color = '#97b552';
-            break;
-            case 'Fabricación de sustancias y productos quimicos':
-                empleoSectorData[i].itemStyle.normal.color = '#29afb1';
-            break;
-            case 'Fabricación de productos de caucho y plastico':
-                empleoSectorData[i].itemStyle.normal.color = '#83759f';
-            break;
-            case 'Fabricación de productos minerales no metalicos':
-                empleoSectorData[i].itemStyle.normal.color = '#417fac';
-            break;
-            case 'Fabricación de metales comunes':
-                empleoSectorData[i].itemStyle.normal.color = '#b5845c';
-            break;
-            case 'Fabricación de productos elaborados de metal  excepto maquinaria y equipo':
-                empleoSectorData[i].itemStyle.normal.color = '#b5676c';
-            break;
-            case 'Fabricación de maquinaria y equipo n.c.p.':
-                empleoSectorData[i].itemStyle.normal.color = '#767f95';
-            break;
-            case 'Fabricación de maquinaria de oficina  contabilidad e informatica':
-                empleoSectorData[i].itemStyle.normal.color = '#ae9d0b';
-            break;
-            case 'Fabricación de maquinaria y aparatos electricos  n.c.p.':
-                empleoSectorData[i].itemStyle.normal.color = '#7f9846';
-            break;
-            case 'Fabricación de equipos y aparatos de radio  television y comunicaciones':
-                empleoSectorData[i].itemStyle.normal.color = '#208a8b';
-            break;
-            case 'Fabricación de instrumentos medicos  opticos y de precision   fabricación de relojes':
-                empleoSectorData[i].itemStyle.normal.color = '#615775';
-            break;
-            case 'Fabricación de vehiculos automotores  remolques y semirremolques':
-                empleoSectorData[i].itemStyle.normal.color = '#316082';
-            break;
-            case 'Fabricación de equipo de transporte n.c.p.':
-                empleoSectorData[i].itemStyle.normal.color = '#876243';
-            break;
-            case 'Fabricación de muebles y colchones   industrias manufactureras  n.c.p.':
-                empleoSectorData[i].itemStyle.normal.color = '#925357';
-            break;
-            case 'Reciclamiento':
-                empleoSectorData[i].itemStyle.normal.color = '#596071';
-            break;
-            case 'Electricidad  gas  vapor y agua caliente':
-                empleoSectorData[i].itemStyle.normal.color = '#867909';
-            break;
-            case 'Captacion  depuracion y distribucion de agua':
-                empleoSectorData[i].itemStyle.normal.color = '#627536';
-            break;
-            case 'Construcción':
-                empleoSectorData[i].itemStyle.normal.color = '#34e3e5';
-            break;
-            case 'Venta y reparacion de vehiculos. venta por menor de combustible':
-                empleoSectorData[i].itemStyle.normal.color = '#34e3e5';
-            break;
-            case 'Comercio al por mayor':
-                empleoSectorData[i].itemStyle.normal.color = '#b6a2de';
-            break;
-            case 'Comercio al por menor':
-                empleoSectorData[i].itemStyle.normal.color = '#5ab1ef';
-            break;
-            case 'Servicios de hoteleria y restaurantes':
-                empleoSectorData[i].itemStyle.normal.color = '#ffb980';
-            break;
-            case 'Transporte ferroviario y automotor y por tuberias':
-                empleoSectorData[i].itemStyle.normal.color = '#f28c93';
-            break;
-            case 'Transporte maritimo y fluvial':
-                empleoSectorData[i].itemStyle.normal.color = '#b6c2e1';
-            break;
-            case 'Transporte aereo de cargas y de pasajeros':
-                empleoSectorData[i].itemStyle.normal.color = '#e5cf0d';
-            break;
-            case 'Manipulación de carga  almacenamiento y deposito. Servicios de agencias de viaje':
-                empleoSectorData[i].itemStyle.normal.color = '#b2d563';
-            break;
-            case 'Telecomunicaciones y correos':
-                empleoSectorData[i].itemStyle.normal.color = '#2ec7c9';
-            break;
-            case 'Intermediacion financiera y otros servicios financieros':
-                empleoSectorData[i].itemStyle.normal.color = '#9888b9';
-            break;
-            case 'Seguros':
-                empleoSectorData[i].itemStyle.normal.color = '#51a0d8';
-            break;
-            case 'Servicios auxiliares a la actividad financiera':
-                empleoSectorData[i].itemStyle.normal.color = '#dda06f';
-            break;
-            case 'Servicios inmobiliarios':
-                empleoSectorData[i].itemStyle.normal.color = '#d87a80';
-            break;
-            case 'Alquiler de equipo de transporte y de maquinaria':
-                empleoSectorData[i].itemStyle.normal.color = '#8d98b3';
-            break;
-            case 'Actividades de informatica':
-                empleoSectorData[i].itemStyle.normal.color = '#ccb80c';
-            break;
-            case 'Investigacion y desarrollo':
-                empleoSectorData[i].itemStyle.normal.color = '#97b552';
-            break;
-            case 'Servicios juridicos  contables y otros servicios a empresas':
-                empleoSectorData[i].itemStyle.normal.color = '#29afb1';
-            break;
-            case 'Agencias de empleo temporario':
-                empleoSectorData[i].itemStyle.normal.color = '#83759f';
-            break;
-            case 'Enseñanza':
-                empleoSectorData[i].itemStyle.normal.color = '#417fac';
-            break;
-            case 'Servicios sociales y de salud':
-                empleoSectorData[i].itemStyle.normal.color = '#b5845c';
-            break;
-            case 'Eliminación de desperdicios':
-                empleoSectorData[i].itemStyle.normal.color = '#767f95';
-            break;
-            case 'Servicios de organizaciones empresariales':
-                empleoSectorData[i].itemStyle.normal.color = '#ae9d0b';
-            break;
-            case 'Servicios culturales  deportivos y de esparcimiento':
-                empleoSectorData[i].itemStyle.normal.color = '#7f9846';
-            break;
-            case 'Servicios n.c.p.':
-                empleoSectorData[i].itemStyle.normal.color = '#208a8b';
-            break;
-            default:
-                empleoSectorData[i].itemStyle.normal.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-                 break;
-        };
-
-      }
-      for (var i = 0; i < exportacionSectorData.length; i++) {
-        
-        switch (exportacionSectorData[i].name) {
-            case "Buenos Aires":
-                exportacionSectorData[i].itemStyle.normal.color = '#34e3e5'
-                 break;
-            case 'CABA':
-                 exportacionSectorData[i].itemStyle.normal.color = '#b6a2de';
-                 break;
-            case 'Catamarca':
-                 exportacionSectorData[i].itemStyle.normal.color = '#5ab1ef';
-                 break;
-            case 'Chaco':
-                 exportacionSectorData[i].itemStyle.normal.color = '#ffb980';
-                 break;
-            case 'Chubut':
-                exportacionSectorData[i].itemStyle.normal.color = '#f28c93';
-                         break;
-            case 'Córdoba':
-                 exportacionSectorData[i].itemStyle.normal.color = '#b6c2e1';
-                 break;
-            case 'Corrientes':
-                 exportacionSectorData[i].itemStyle.normal.color = '#e5cf0d';
-                 break;
-            case 'Entre Ríos':
-                 exportacionSectorData[i].itemStyle.normal.color = '#b2d563';
-                 break;
-            case 'Formosa':
-                 exportacionSectorData[i].itemStyle.normal.color = '#2ec7c9';
-                 break;
-            case 'Jujuy':
-                 exportacionSectorData[i].itemStyle.normal.color = '#51a0d8';
-                 break;
-            case 'La Pampa':
-                 exportacionSectorData[i].itemStyle.normal.color = '#dda06f';
-                 break;
-            case 'La Rioja':
-                 exportacionSectorData[i].itemStyle.normal.color = '#d87a80';
-                 break;
-            case 'Mendoza':
-                 exportacionSectorData[i].itemStyle.normal.color = '#8d98b3';
-                 break;
-            case 'Misiones':
-                 exportacionSectorData[i].itemStyle.normal.color = '#ccb80c';
-                 break;
-            case 'Neuquen':
-                exportacionSectorData[i].itemStyle.normal.color = '#97b552'
-                break;
-            case 'Río Negro':
-                 exportacionSectorData[i].itemStyle.normal.color = '#29afb1';
-                 break;
-            case 'Salta':
-                 exportacionSectorData[i].itemStyle.normal.color = '#83759f';
-                 break;
-            case 'San Juan':
-                 exportacionSectorData[i].itemStyle.normal.color = '#417fac';
-                 break;
-            case 'San Luis':
-                 exportacionSectorData[i].itemStyle.normal.color = '#b5845c';
-                 break;
-            case 'Santa Cruz':
-                 exportacionSectorData[i].itemStyle.normal.color = '#b5676c';
-                 break;
-            case 'Santa Fe':
-                 exportacionSectorData[i].itemStyle.normal.color = '#767f95';
-                 break;
-            case 'Santiago del Estero':
-                 exportacionSectorData[i].itemStyle.normal.color = '#ae9d0b';
-                 break;
-            case 'Tierra del Fuego':
-                 exportacionSectorData[i].itemStyle.normal.color = '#7f9846';
-                 break;
-            case 'Tucumán':
-                 exportacionSectorData[i].itemStyle.normal.color = '#208a8b';
-                 break;
-            case 'Agricultura y ganaderia  caza y servicios conexos':
-                exportacionSectorData[i].itemStyle.normal.color = '#34e3e5';
-            break;
-            case 'Silvicultura  extracción de madera y servicios conexos':
-                exportacionSectorData[i].itemStyle.normal.color = '#b6a2de';
-            break;
-            case 'Pesca y actividades relacionadas con la pesca':
-                exportacionSectorData[i].itemStyle.normal.color = '#5ab1ef';
-            break;
-            case 'Extracción de carbon y de lignito   extracción de turba':
-                exportacionSectorData[i].itemStyle.normal.color = '#ffb980';
-            break;
-            case 'Extracción de petroleo crudo y gas natural':
-                exportacionSectorData[i].itemStyle.normal.color = '#f28c93';
-            break;
-            case 'Extracción de minerales metaliferos':
-                exportacionSectorData[i].itemStyle.normal.color = '#b6c2e1';
-            break;
-            case 'Explotación de otras minas y canteras n.c.p.':
-                exportacionSectorData[i].itemStyle.normal.color = '#e5cf0d';
-            break;
-            case 'Elaboración de productos alimenticios y bebidas':
-                exportacionSectorData[i].itemStyle.normal.color = '#b2d563';
-            break;
-            case 'Elaboración de productos de tabaco':
-                exportacionSectorData[i].itemStyle.normal.color = '#2ec7c9';
-            break;
-            case 'Fabricación de productos textiles':
-                exportacionSectorData[i].itemStyle.normal.color = '#9888b9';
-            break;
-            case 'Confección de prendas de vestir   terminación y teñido de pieles':
-                exportacionSectorData[i].itemStyle.normal.color = '#51a0d8';
-            break;
-            case 'Curtido y terminación de cueros   fabricación calzado y de sus partes':
-                exportacionSectorData[i].itemStyle.normal.color = '#dda06f';
-            break;
-            case 'Producción de madera y fabricación de productos de madera y corcho  excepto muebles':
-                exportacionSectorData[i].itemStyle.normal.color = '#d87a80';
-            break;
-            case 'Fabricación de papel y de productos de papel':
-                exportacionSectorData[i].itemStyle.normal.color = '#8d98b3';
-            break;
-            case 'Edición e impresión   reproducción de grabaciones':
-                exportacionSectorData[i].itemStyle.normal.color = '#ccb80c';
-            break;
-            case 'Fabricación de coque  productos de la refinacion del petroleo y combustible nuclear':
-                exportacionSectorData[i].itemStyle.normal.color = '#97b552';
-            break;
-            case 'Fabricación de sustancias y productos quimicos':
-                exportacionSectorData[i].itemStyle.normal.color = '#29afb1';
-            break;
-            case 'Fabricación de productos de caucho y plastico':
-                exportacionSectorData[i].itemStyle.normal.color = '#83759f';
-            break;
-            case 'Fabricación de productos minerales no metalicos':
-                exportacionSectorData[i].itemStyle.normal.color = '#417fac';
-            break;
-            case 'Fabricación de metales comunes':
-                exportacionSectorData[i].itemStyle.normal.color = '#b5845c';
-            break;
-            case 'Fabricación de productos elaborados de metal  excepto maquinaria y equipo':
-                exportacionSectorData[i].itemStyle.normal.color = '#b5676c';
-            break;
-            case 'Fabricación de maquinaria y equipo n.c.p.':
-                exportacionSectorData[i].itemStyle.normal.color = '#767f95';
-            break;
-            case 'Fabricación de maquinaria de oficina  contabilidad e informatica':
-                exportacionSectorData[i].itemStyle.normal.color = '#ae9d0b';
-            break;
-            case 'Fabricación de maquinaria y aparatos electricos  n.c.p.':
-                exportacionSectorData[i].itemStyle.normal.color = '#7f9846';
-            break;
-            case 'Fabricación de equipos y aparatos de radio  television y comunicaciones':
-                exportacionSectorData[i].itemStyle.normal.color = '#208a8b';
-            break;
-            case 'Fabricación de instrumentos medicos  opticos y de precision   fabricación de relojes':
-                exportacionSectorData[i].itemStyle.normal.color = '#615775';
-            break;
-            case 'Fabricación de vehiculos automotores  remolques y semirremolques':
-                exportacionSectorData[i].itemStyle.normal.color = '#316082';
-            break;
-            case 'Fabricación de equipo de transporte n.c.p.':
-                exportacionSectorData[i].itemStyle.normal.color = '#876243';
-            break;
-            case 'Fabricación de muebles y colchones   industrias manufactureras  n.c.p.':
-                exportacionSectorData[i].itemStyle.normal.color = '#925357';
-            break;
-            case 'Reciclamiento':
-                exportacionSectorData[i].itemStyle.normal.color = '#596071';
-            break;
-            case 'Electricidad  gas  vapor y agua caliente':
-                exportacionSectorData[i].itemStyle.normal.color = '#867909';
-            break;
-            case 'Captacion  depuracion y distribucion de agua':
-                exportacionSectorData[i].itemStyle.normal.color = '#627536';
-            break;
-            case 'Construcción':
-                exportacionSectorData[i].itemStyle.normal.color = '#34e3e5';
-            break;
-            case 'Venta y reparacion de vehiculos. venta por menor de combustible':
-                exportacionSectorData[i].itemStyle.normal.color = '#34e3e5';
-            break;
-            case 'Comercio al por mayor':
-                exportacionSectorData[i].itemStyle.normal.color = '#b6a2de';
-            break;
-            case 'Comercio al por menor':
-                exportacionSectorData[i].itemStyle.normal.color = '#5ab1ef';
-            break;
-            case 'Servicios de hoteleria y restaurantes':
-                exportacionSectorData[i].itemStyle.normal.color = '#ffb980';
-            break;
-            case 'Transporte ferroviario y automotor y por tuberias':
-                exportacionSectorData[i].itemStyle.normal.color = '#f28c93';
-            break;
-            case 'Transporte maritimo y fluvial':
-                exportacionSectorData[i].itemStyle.normal.color = '#b6c2e1';
-            break;
-            case 'Transporte aereo de cargas y de pasajeros':
-                exportacionSectorData[i].itemStyle.normal.color = '#e5cf0d';
-            break;
-            case 'Manipulación de carga  almacenamiento y deposito. Servicios de agencias de viaje':
-                exportacionSectorData[i].itemStyle.normal.color = '#b2d563';
-            break;
-            case 'Telecomunicaciones y correos':
-                exportacionSectorData[i].itemStyle.normal.color = '#2ec7c9';
-            break;
-            case 'Intermediacion financiera y otros servicios financieros':
-                exportacionSectorData[i].itemStyle.normal.color = '#9888b9';
-            break;
-            case 'Seguros':
-                exportacionSectorData[i].itemStyle.normal.color = '#51a0d8';
-            break;
-            case 'Servicios auxiliares a la actividad financiera':
-                exportacionSectorData[i].itemStyle.normal.color = '#dda06f';
-            break;
-            case 'Servicios inmobiliarios':
-                exportacionSectorData[i].itemStyle.normal.color = '#d87a80';
-            break;
-            case 'Alquiler de equipo de transporte y de maquinaria':
-                exportacionSectorData[i].itemStyle.normal.color = '#8d98b3';
-            break;
-            case 'Actividades de informatica':
-                exportacionSectorData[i].itemStyle.normal.color = '#ccb80c';
-            break;
-            case 'Investigacion y desarrollo':
-                exportacionSectorData[i].itemStyle.normal.color = '#97b552';
-            break;
-            case 'Servicios juridicos  contables y otros servicios a empresas':
-                exportacionSectorData[i].itemStyle.normal.color = '#29afb1';
-            break;
-            case 'Agencias de empleo temporario':
-                exportacionSectorData[i].itemStyle.normal.color = '#83759f';
-            break;
-            case 'Enseñanza':
-                exportacionSectorData[i].itemStyle.normal.color = '#417fac';
-            break;
-            case 'Servicios sociales y de salud':
-                exportacionSectorData[i].itemStyle.normal.color = '#b5845c';
-            break;
-            case 'Eliminación de desperdicios':
-                exportacionSectorData[i].itemStyle.normal.color = '#767f95';
-            break;
-            case 'Servicios de organizaciones empresariales':
-                exportacionSectorData[i].itemStyle.normal.color = '#ae9d0b';
-            break;
-            case 'Servicios culturales  deportivos y de esparcimiento':
-                exportacionSectorData[i].itemStyle.normal.color = '#7f9846';
-            break;
-            case 'Servicios n.c.p.':
-                exportacionSectorData[i].itemStyle.normal.color = '#208a8b';
-            break;
-            default:
-                 exportacionSectorData[i].itemStyle.normal.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-             break;
-        };
-
-      }
-
-    for (var i = 0; i < empleoData.length; i++) {
-        for (var j = 0; j < empleoData[i].children.length; j++) {
-            switch (empleoData[i].children[j].name) {
+        var scatterEmpleoData = JSON.parse(localStorage.getItem('empleoScatter'))
+        var scatterExportData = JSON.parse(localStorage.getItem('exportScatter'))
+        var empleoData = JSON.parse(localStorage.getItem('empleoData'))
+        var exportacionData = JSON.parse(localStorage.getItem('exportData'))
+        var  scatterEmpleoSectorData = JSON.parse(localStorage.getItem('empleoScatterSect'))
+        var scatterExportSectorData = JSON.parse(localStorage.getItem('exportScatterSect')) 
+        var  empleoSectorData = JSON.parse(localStorage.getItem('empleoDataSect'))
+        var exportacionSectorData = JSON.parse(localStorage.getItem('exportDataSect'))
+        var empleoLegend = dashboardFactory.getEmpleoLegend();     
+        var colorVar;
+      if (empleoSectorData) {
+        for (var i = 0; i < empleoSectorData.length; i++) {      
+            switch (empleoSectorData[i].name) {
                 case "Buenos Aires":
-                    empleoData[i].children[j].itemStyle.normal.color = '#34e3e5'
+                    empleoSectorData[i].itemStyle.normal.color = '#34e3e5'
                      break;
                 case 'CABA':
-                     empleoData[i].children[j].itemStyle.normal.color = '#b6a2de';
+                     empleoSectorData[i].itemStyle.normal.color = '#b6a2de';
                      break;
                 case 'Catamarca':
-                     empleoData[i].children[j].itemStyle.normal.color = '#5ab1ef';
+                     empleoSectorData[i].itemStyle.normal.color = '#5ab1ef';
                      break;
                 case 'Chaco':
-                     empleoData[i].children[j].itemStyle.normal.color = '#ffb980';
+                     empleoSectorData[i].itemStyle.normal.color = '#ffb980';
                      break;
                 case 'Chubut':
-                    empleoData[i].children[j].itemStyle.normal.color = '#f28c93';
+                    empleoSectorData[i].itemStyle.normal.color = '#f28c93';
                              break;
                 case 'Córdoba':
-                     empleoData[i].children[j].itemStyle.normal.color = '#b6c2e1';
+                     empleoSectorData[i].itemStyle.normal.color = '#b6c2e1';
                      break;
                 case 'Corrientes':
-                     empleoData[i].children[j].itemStyle.normal.color = '#e5cf0d';
+                     empleoSectorData[i].itemStyle.normal.color = '#e5cf0d';
                      break;
                 case 'Entre Ríos':
-                     empleoData[i].children[j].itemStyle.normal.color = '#b2d563';
+                     empleoSectorData[i].itemStyle.normal.color = '#b2d563';
                      break;
                 case 'Formosa':
-                     empleoData[i].children[j].itemStyle.normal.color = '#2ec7c9';
+                     empleoSectorData[i].itemStyle.normal.color = '#2ec7c9';
                      break;
                 case 'Jujuy':
-                     empleoData[i].children[j].itemStyle.normal.color = '#51a0d8';
+                     empleoSectorData[i].itemStyle.normal.color = '#51a0d8';
                      break;
                 case 'La Pampa':
-                     empleoData[i].children[j].itemStyle.normal.color = '#dda06f';
+                     empleoSectorData[i].itemStyle.normal.color = '#dda06f';
                      break;
                 case 'La Rioja':
-                     empleoData[i].children[j].itemStyle.normal.color = '#d87a80';
+                     empleoSectorData[i].itemStyle.normal.color = '#d87a80';
                      break;
                 case 'Mendoza':
-                     empleoData[i].children[j].itemStyle.normal.color = '#8d98b3';
+                     empleoSectorData[i].itemStyle.normal.color = '#8d98b3';
                      break;
                 case 'Misiones':
-                     empleoData[i].children[j].itemStyle.normal.color = '#ccb80c';
+                     empleoSectorData[i].itemStyle.normal.color = '#ccb80c';
                      break;
                 case 'Neuquen':
-                    empleoData[i].children[j].itemStyle.normal.color = '#97b552'
+                    empleoSectorData[i].itemStyle.normal.color = '#97b552'
                     break;
                 case 'Río Negro':
-                     empleoData[i].children[j].itemStyle.normal.color = '#29afb1';
+                     empleoSectorData[i].itemStyle.normal.color = '#29afb1';
                      break;
                 case 'Salta':
-                     empleoData[i].children[j].itemStyle.normal.color = '#83759f';
+                     empleoSectorData[i].itemStyle.normal.color = '#83759f';
                      break;
                 case 'San Juan':
-                     empleoData[i].children[j].itemStyle.normal.color = '#417fac';
+                     empleoSectorData[i].itemStyle.normal.color = '#417fac';
                      break;
                 case 'San Luis':
-                     empleoData[i].children[j].itemStyle.normal.color = '#b5845c';
+                     empleoSectorData[i].itemStyle.normal.color = '#b5845c';
                      break;
                 case 'Santa Cruz':
-                     empleoData[i].children[j].itemStyle.normal.color = '#b5676c';
+                     empleoSectorData[i].itemStyle.normal.color = '#b5676c';
                      break;
                 case 'Santa Fe':
-                     empleoData[i].children[j].itemStyle.normal.color = '#767f95';
+                     empleoSectorData[i].itemStyle.normal.color = '#767f95';
                      break;
                 case 'Santiago del Estero':
-                     empleoData[i].children[j].itemStyle.normal.color = '#ae9d0b';
+                     empleoSectorData[i].itemStyle.normal.color = '#ae9d0b';
                      break;
                 case 'Tierra del Fuego':
-                     empleoData[i].children[j].itemStyle.normal.color = '#7f9846';
+                     empleoSectorData[i].itemStyle.normal.color = '#7f9846';
                      break;
                 case 'Tucumán':
-                     empleoData[i].children[j].itemStyle.normal.color = '#208a8b';
+                     empleoSectorData[i].itemStyle.normal.color = '#208a8b';
                      break;
                 case 'Agricultura y ganaderia  caza y servicios conexos':
-                    empleoData[i].children[j].itemStyle.normal.color = '#34e3e5';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#34e3e5';
+                break;
                 case 'Silvicultura  extracción de madera y servicios conexos':
-                    empleoData[i].children[j].itemStyle.normal.color = '#b6a2de';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#b6a2de';
+                break;
                 case 'Pesca y actividades relacionadas con la pesca':
-                    empleoData[i].children[j].itemStyle.normal.color = '#5ab1ef';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#5ab1ef';
+                break;
                 case 'Extracción de carbon y de lignito   extracción de turba':
-                    empleoData[i].children[j].itemStyle.normal.color = '#ffb980';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#ffb980';
+                break;
                 case 'Extracción de petroleo crudo y gas natural':
-                    empleoData[i].children[j].itemStyle.normal.color = '#f28c93';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#f28c93';
+                break;
                 case 'Extracción de minerales metaliferos':
-                    empleoData[i].children[j].itemStyle.normal.color = '#b6c2e1';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#b6c2e1';
+                break;
                 case 'Explotación de otras minas y canteras n.c.p.':
-                    empleoData[i].children[j].itemStyle.normal.color = '#e5cf0d';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#e5cf0d';
+                break;
                 case 'Elaboración de productos alimenticios y bebidas':
-                    empleoData[i].children[j].itemStyle.normal.color = '#b2d563';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#b2d563';
+                break;
                 case 'Elaboración de productos de tabaco':
-                    empleoData[i].children[j].itemStyle.normal.color = '#2ec7c9';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#2ec7c9';
+                break;
                 case 'Fabricación de productos textiles':
-                    empleoData[i].children[j].itemStyle.normal.color = '#9888b9';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#9888b9';
+                break;
                 case 'Confección de prendas de vestir   terminación y teñido de pieles':
-                    empleoData[i].children[j].itemStyle.normal.color = '#51a0d8';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#51a0d8';
+                break;
                 case 'Curtido y terminación de cueros   fabricación calzado y de sus partes':
-                    empleoData[i].children[j].itemStyle.normal.color = '#dda06f';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#dda06f';
+                break;
                 case 'Producción de madera y fabricación de productos de madera y corcho  excepto muebles':
-                    empleoData[i].children[j].itemStyle.normal.color = '#d87a80';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#d87a80';
+                break;
                 case 'Fabricación de papel y de productos de papel':
-                    empleoData[i].children[j].itemStyle.normal.color = '#8d98b3';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#8d98b3';
+                break;
                 case 'Edición e impresión   reproducción de grabaciones':
-                    empleoData[i].children[j].itemStyle.normal.color = '#ccb80c';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#ccb80c';
+                break;
                 case 'Fabricación de coque  productos de la refinacion del petroleo y combustible nuclear':
-                    empleoData[i].children[j].itemStyle.normal.color = '#97b552';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#97b552';
+                break;
                 case 'Fabricación de sustancias y productos quimicos':
-                    empleoData[i].children[j].itemStyle.normal.color = '#29afb1';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#29afb1';
+                break;
                 case 'Fabricación de productos de caucho y plastico':
-                    empleoData[i].children[j].itemStyle.normal.color = '#83759f';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#83759f';
+                break;
                 case 'Fabricación de productos minerales no metalicos':
-                    empleoData[i].children[j].itemStyle.normal.color = '#417fac';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#417fac';
+                break;
                 case 'Fabricación de metales comunes':
-                    empleoData[i].children[j].itemStyle.normal.color = '#b5845c';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#b5845c';
+                break;
                 case 'Fabricación de productos elaborados de metal  excepto maquinaria y equipo':
-                    empleoData[i].children[j].itemStyle.normal.color = '#b5676c';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#b5676c';
+                break;
                 case 'Fabricación de maquinaria y equipo n.c.p.':
-                    empleoData[i].children[j].itemStyle.normal.color = '#767f95';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#767f95';
+                break;
                 case 'Fabricación de maquinaria de oficina  contabilidad e informatica':
-                    empleoData[i].children[j].itemStyle.normal.color = '#ae9d0b';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#ae9d0b';
+                break;
                 case 'Fabricación de maquinaria y aparatos electricos  n.c.p.':
-                    empleoData[i].children[j].itemStyle.normal.color = '#7f9846';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#7f9846';
+                break;
                 case 'Fabricación de equipos y aparatos de radio  television y comunicaciones':
-                    empleoData[i].children[j].itemStyle.normal.color = '#208a8b';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#208a8b';
+                break;
                 case 'Fabricación de instrumentos medicos  opticos y de precision   fabricación de relojes':
-                    empleoData[i].children[j].itemStyle.normal.color = '#615775';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#615775';
+                break;
                 case 'Fabricación de vehiculos automotores  remolques y semirremolques':
-                    empleoData[i].children[j].itemStyle.normal.color = '#316082';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#316082';
+                break;
                 case 'Fabricación de equipo de transporte n.c.p.':
-                    empleoData[i].children[j].itemStyle.normal.color = '#876243';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#876243';
+                break;
                 case 'Fabricación de muebles y colchones   industrias manufactureras  n.c.p.':
-                    empleoData[i].children[j].itemStyle.normal.color = '#925357';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#925357';
+                break;
                 case 'Reciclamiento':
-                    empleoData[i].children[j].itemStyle.normal.color = '#596071';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#596071';
+                break;
                 case 'Electricidad  gas  vapor y agua caliente':
-                    empleoData[i].children[j].itemStyle.normal.color = '#867909';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#867909';
+                break;
                 case 'Captacion  depuracion y distribucion de agua':
-                    empleoData[i].children[j].itemStyle.normal.color = '#627536';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#627536';
+                break;
                 case 'Construcción':
-                    empleoData[i].children[j].itemStyle.normal.color = '#34e3e5';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#34e3e5';
+                break;
                 case 'Venta y reparacion de vehiculos. venta por menor de combustible':
-                    empleoData[i].children[j].itemStyle.normal.color = '#34e3e5';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#34e3e5';
+                break;
                 case 'Comercio al por mayor':
-                    empleoData[i].children[j].itemStyle.normal.color = '#b6a2de';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#b6a2de';
+                break;
                 case 'Comercio al por menor':
-                    empleoData[i].children[j].itemStyle.normal.color = '#5ab1ef';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#5ab1ef';
+                break;
                 case 'Servicios de hoteleria y restaurantes':
-                    empleoData[i].children[j].itemStyle.normal.color = '#ffb980';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#ffb980';
+                break;
                 case 'Transporte ferroviario y automotor y por tuberias':
-                    empleoData[i].children[j].itemStyle.normal.color = '#f28c93';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#f28c93';
+                break;
                 case 'Transporte maritimo y fluvial':
-                    empleoData[i].children[j].itemStyle.normal.color = '#b6c2e1';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#b6c2e1';
+                break;
                 case 'Transporte aereo de cargas y de pasajeros':
-                    empleoData[i].children[j].itemStyle.normal.color = '#e5cf0d';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#e5cf0d';
+                break;
                 case 'Manipulación de carga  almacenamiento y deposito. Servicios de agencias de viaje':
-                    empleoData[i].children[j].itemStyle.normal.color = '#b2d563';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#b2d563';
+                break;
                 case 'Telecomunicaciones y correos':
-                    empleoData[i].children[j].itemStyle.normal.color = '#2ec7c9';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#2ec7c9';
+                break;
                 case 'Intermediacion financiera y otros servicios financieros':
-                    empleoData[i].children[j].itemStyle.normal.color = '#9888b9';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#9888b9';
+                break;
                 case 'Seguros':
-                    empleoData[i].children[j].itemStyle.normal.color = '#51a0d8';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#51a0d8';
+                break;
                 case 'Servicios auxiliares a la actividad financiera':
-                    empleoData[i].children[j].itemStyle.normal.color = '#dda06f';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#dda06f';
+                break;
                 case 'Servicios inmobiliarios':
-                    empleoData[i].children[j].itemStyle.normal.color = '#d87a80';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#d87a80';
+                break;
                 case 'Alquiler de equipo de transporte y de maquinaria':
-                    empleoData[i].children[j].itemStyle.normal.color = '#8d98b3';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#8d98b3';
+                break;
                 case 'Actividades de informatica':
-                    empleoData[i].children[j].itemStyle.normal.color = '#ccb80c';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#ccb80c';
+                break;
                 case 'Investigacion y desarrollo':
-                    empleoData[i].children[j].itemStyle.normal.color = '#97b552';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#97b552';
+                break;
                 case 'Servicios juridicos  contables y otros servicios a empresas':
-                    empleoData[i].children[j].itemStyle.normal.color = '#29afb1';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#29afb1';
+                break;
                 case 'Agencias de empleo temporario':
-                    empleoData[i].children[j].itemStyle.normal.color = '#83759f';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#83759f';
+                break;
                 case 'Enseñanza':
-                    empleoData[i].children[j].itemStyle.normal.color = '#417fac';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#417fac';
+                break;
                 case 'Servicios sociales y de salud':
-                    empleoData[i].children[j].itemStyle.normal.color = '#b5845c';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#b5845c';
+                break;
                 case 'Eliminación de desperdicios':
-                    empleoData[i].children[j].itemStyle.normal.color = '#767f95';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#767f95';
+                break;
                 case 'Servicios de organizaciones empresariales':
-                    empleoData[i].children[j].itemStyle.normal.color = '#ae9d0b';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#ae9d0b';
+                break;
                 case 'Servicios culturales  deportivos y de esparcimiento':
-                    empleoData[i].children[j].itemStyle.normal.color = '#7f9846';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#7f9846';
+                break;
                 case 'Servicios n.c.p.':
-                    empleoData[i].children[j].itemStyle.normal.color = '#208a8b';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = '#208a8b';
+                break;
                 default:
-                     empleoData[i].children[j].itemStyle.normal.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-                    break;
+                    empleoSectorData[i].itemStyle.normal.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+                     break;
             };
-        }
-    }
 
-    for (var i = 0; i < exportacionData.length; i++) {
-        for (var j = 0; j < exportacionData[i].children.length; j++) {
-            switch (exportacionData[i].children[j].name) {
+          }
+      }
+      if (exportacionSectorData) {
+        for (var i = 0; i < exportacionSectorData.length; i++) {   
+            switch (exportacionSectorData[i].name) {
                 case "Buenos Aires":
-                    exportacionData[i].children[j].itemStyle.normal.color = '#34e3e5'
+                    exportacionSectorData[i].itemStyle.normal.color = '#34e3e5'
                      break;
                 case 'CABA':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#b6a2de';
+                     exportacionSectorData[i].itemStyle.normal.color = '#b6a2de';
                      break;
                 case 'Catamarca':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#5ab1ef';
+                     exportacionSectorData[i].itemStyle.normal.color = '#5ab1ef';
                      break;
                 case 'Chaco':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#ffb980';
+                     exportacionSectorData[i].itemStyle.normal.color = '#ffb980';
                      break;
                 case 'Chubut':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#f28c93';
+                    exportacionSectorData[i].itemStyle.normal.color = '#f28c93';
                              break;
                 case 'Córdoba':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#b6c2e1';
+                     exportacionSectorData[i].itemStyle.normal.color = '#b6c2e1';
                      break;
                 case 'Corrientes':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#e5cf0d';
+                     exportacionSectorData[i].itemStyle.normal.color = '#e5cf0d';
                      break;
                 case 'Entre Ríos':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#b2d563';
+                     exportacionSectorData[i].itemStyle.normal.color = '#b2d563';
                      break;
                 case 'Formosa':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#2ec7c9';
+                     exportacionSectorData[i].itemStyle.normal.color = '#2ec7c9';
                      break;
                 case 'Jujuy':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#51a0d8';
+                     exportacionSectorData[i].itemStyle.normal.color = '#51a0d8';
                      break;
                 case 'La Pampa':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#dda06f';
+                     exportacionSectorData[i].itemStyle.normal.color = '#dda06f';
                      break;
                 case 'La Rioja':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#d87a80';
+                     exportacionSectorData[i].itemStyle.normal.color = '#d87a80';
                      break;
                 case 'Mendoza':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#8d98b3';
+                     exportacionSectorData[i].itemStyle.normal.color = '#8d98b3';
                      break;
                 case 'Misiones':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#ccb80c';
+                     exportacionSectorData[i].itemStyle.normal.color = '#ccb80c';
                      break;
                 case 'Neuquen':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#97b552'
+                    exportacionSectorData[i].itemStyle.normal.color = '#97b552'
                     break;
                 case 'Río Negro':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#29afb1';
+                     exportacionSectorData[i].itemStyle.normal.color = '#29afb1';
                      break;
                 case 'Salta':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#83759f';
+                     exportacionSectorData[i].itemStyle.normal.color = '#83759f';
                      break;
                 case 'San Juan':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#417fac';
+                     exportacionSectorData[i].itemStyle.normal.color = '#417fac';
                      break;
                 case 'San Luis':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#b5845c';
+                     exportacionSectorData[i].itemStyle.normal.color = '#b5845c';
                      break;
                 case 'Santa Cruz':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#b5676c';
+                     exportacionSectorData[i].itemStyle.normal.color = '#b5676c';
                      break;
                 case 'Santa Fe':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#767f95';
+                     exportacionSectorData[i].itemStyle.normal.color = '#767f95';
                      break;
                 case 'Santiago del Estero':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#ae9d0b';
+                     exportacionSectorData[i].itemStyle.normal.color = '#ae9d0b';
                      break;
                 case 'Tierra del Fuego':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#7f9846';
+                     exportacionSectorData[i].itemStyle.normal.color = '#7f9846';
                      break;
                 case 'Tucumán':
-                     exportacionData[i].children[j].itemStyle.normal.color = '#208a8b';
+                     exportacionSectorData[i].itemStyle.normal.color = '#208a8b';
                      break;
                 case 'Agricultura y ganaderia  caza y servicios conexos':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#34e3e5';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#34e3e5';
+                break;
                 case 'Silvicultura  extracción de madera y servicios conexos':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#b6a2de';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#b6a2de';
+                break;
                 case 'Pesca y actividades relacionadas con la pesca':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#5ab1ef';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#5ab1ef';
+                break;
                 case 'Extracción de carbon y de lignito   extracción de turba':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#ffb980';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#ffb980';
+                break;
                 case 'Extracción de petroleo crudo y gas natural':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#f28c93';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#f28c93';
+                break;
                 case 'Extracción de minerales metaliferos':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#b6c2e1';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#b6c2e1';
+                break;
                 case 'Explotación de otras minas y canteras n.c.p.':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#e5cf0d';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#e5cf0d';
+                break;
                 case 'Elaboración de productos alimenticios y bebidas':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#b2d563';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#b2d563';
+                break;
                 case 'Elaboración de productos de tabaco':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#2ec7c9';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#2ec7c9';
+                break;
                 case 'Fabricación de productos textiles':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#9888b9';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#9888b9';
+                break;
                 case 'Confección de prendas de vestir   terminación y teñido de pieles':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#51a0d8';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#51a0d8';
+                break;
                 case 'Curtido y terminación de cueros   fabricación calzado y de sus partes':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#dda06f';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#dda06f';
+                break;
                 case 'Producción de madera y fabricación de productos de madera y corcho  excepto muebles':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#d87a80';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#d87a80';
+                break;
                 case 'Fabricación de papel y de productos de papel':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#8d98b3';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#8d98b3';
+                break;
                 case 'Edición e impresión   reproducción de grabaciones':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#ccb80c';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#ccb80c';
+                break;
                 case 'Fabricación de coque  productos de la refinacion del petroleo y combustible nuclear':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#97b552';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#97b552';
+                break;
                 case 'Fabricación de sustancias y productos quimicos':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#29afb1';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#29afb1';
+                break;
                 case 'Fabricación de productos de caucho y plastico':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#83759f';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#83759f';
+                break;
                 case 'Fabricación de productos minerales no metalicos':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#417fac';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#417fac';
+                break;
                 case 'Fabricación de metales comunes':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#b5845c';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#b5845c';
+                break;
                 case 'Fabricación de productos elaborados de metal  excepto maquinaria y equipo':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#b5676c';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#b5676c';
+                break;
                 case 'Fabricación de maquinaria y equipo n.c.p.':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#767f95';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#767f95';
+                break;
                 case 'Fabricación de maquinaria de oficina  contabilidad e informatica':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#ae9d0b';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#ae9d0b';
+                break;
                 case 'Fabricación de maquinaria y aparatos electricos  n.c.p.':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#7f9846';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#7f9846';
+                break;
                 case 'Fabricación de equipos y aparatos de radio  television y comunicaciones':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#208a8b';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#208a8b';
+                break;
                 case 'Fabricación de instrumentos medicos  opticos y de precision   fabricación de relojes':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#615775';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#615775';
+                break;
                 case 'Fabricación de vehiculos automotores  remolques y semirremolques':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#316082';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#316082';
+                break;
                 case 'Fabricación de equipo de transporte n.c.p.':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#876243';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#876243';
+                break;
                 case 'Fabricación de muebles y colchones   industrias manufactureras  n.c.p.':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#925357';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#925357';
+                break;
                 case 'Reciclamiento':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#596071';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#596071';
+                break;
                 case 'Electricidad  gas  vapor y agua caliente':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#867909';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#867909';
+                break;
                 case 'Captacion  depuracion y distribucion de agua':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#627536';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#627536';
+                break;
                 case 'Construcción':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#34e3e5';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#34e3e5';
+                break;
                 case 'Venta y reparacion de vehiculos. venta por menor de combustible':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#34e3e5';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#34e3e5';
+                break;
                 case 'Comercio al por mayor':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#b6a2de';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#b6a2de';
+                break;
                 case 'Comercio al por menor':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#5ab1ef';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#5ab1ef';
+                break;
                 case 'Servicios de hoteleria y restaurantes':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#ffb980';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#ffb980';
+                break;
                 case 'Transporte ferroviario y automotor y por tuberias':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#f28c93';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#f28c93';
+                break;
                 case 'Transporte maritimo y fluvial':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#b6c2e1';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#b6c2e1';
+                break;
                 case 'Transporte aereo de cargas y de pasajeros':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#e5cf0d';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#e5cf0d';
+                break;
                 case 'Manipulación de carga  almacenamiento y deposito. Servicios de agencias de viaje':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#b2d563';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#b2d563';
+                break;
                 case 'Telecomunicaciones y correos':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#2ec7c9';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#2ec7c9';
+                break;
                 case 'Intermediacion financiera y otros servicios financieros':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#9888b9';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#9888b9';
+                break;
                 case 'Seguros':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#51a0d8';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#51a0d8';
+                break;
                 case 'Servicios auxiliares a la actividad financiera':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#dda06f';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#dda06f';
+                break;
                 case 'Servicios inmobiliarios':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#d87a80';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#d87a80';
+                break;
                 case 'Alquiler de equipo de transporte y de maquinaria':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#8d98b3';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#8d98b3';
+                break;
                 case 'Actividades de informatica':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#ccb80c';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#ccb80c';
+                break;
                 case 'Investigacion y desarrollo':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#97b552';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#97b552';
+                break;
                 case 'Servicios juridicos  contables y otros servicios a empresas':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#29afb1';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#29afb1';
+                break;
                 case 'Agencias de empleo temporario':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#83759f';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#83759f';
+                break;
                 case 'Enseñanza':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#417fac';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#417fac';
+                break;
                 case 'Servicios sociales y de salud':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#b5845c';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#b5845c';
+                break;
                 case 'Eliminación de desperdicios':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#767f95';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#767f95';
+                break;
                 case 'Servicios de organizaciones empresariales':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#ae9d0b';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#ae9d0b';
+                break;
                 case 'Servicios culturales  deportivos y de esparcimiento':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#7f9846';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#7f9846';
+                break;
                 case 'Servicios n.c.p.':
-                    exportacionData[i].children[j].itemStyle.normal.color = '#208a8b';
-                    break;
+                    exportacionSectorData[i].itemStyle.normal.color = '#208a8b';
+                break;
                 default:
-                     exportacionData[i].children[j].itemStyle.normal.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-                    break;
+                     exportacionSectorData[i].itemStyle.normal.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+                 break;
             };
+
+          }
+      }
+      
+      if (empleoData) {
+        for (var i = 0; i < empleoData.length; i++) {
+            for (var j = 0; j < empleoData[i].children.length; j++) {
+                switch (empleoData[i].children[j].name) {
+                    case "Buenos Aires":
+                        empleoData[i].children[j].itemStyle.normal.color = '#34e3e5'
+                         break;
+                    case 'CABA':
+                         empleoData[i].children[j].itemStyle.normal.color = '#b6a2de';
+                         break;
+                    case 'Catamarca':
+                         empleoData[i].children[j].itemStyle.normal.color = '#5ab1ef';
+                         break;
+                    case 'Chaco':
+                         empleoData[i].children[j].itemStyle.normal.color = '#ffb980';
+                         break;
+                    case 'Chubut':
+                        empleoData[i].children[j].itemStyle.normal.color = '#f28c93';
+                                 break;
+                    case 'Córdoba':
+                         empleoData[i].children[j].itemStyle.normal.color = '#b6c2e1';
+                         break;
+                    case 'Corrientes':
+                         empleoData[i].children[j].itemStyle.normal.color = '#e5cf0d';
+                         break;
+                    case 'Entre Ríos':
+                         empleoData[i].children[j].itemStyle.normal.color = '#b2d563';
+                         break;
+                    case 'Formosa':
+                         empleoData[i].children[j].itemStyle.normal.color = '#2ec7c9';
+                         break;
+                    case 'Jujuy':
+                         empleoData[i].children[j].itemStyle.normal.color = '#51a0d8';
+                         break;
+                    case 'La Pampa':
+                         empleoData[i].children[j].itemStyle.normal.color = '#dda06f';
+                         break;
+                    case 'La Rioja':
+                         empleoData[i].children[j].itemStyle.normal.color = '#d87a80';
+                         break;
+                    case 'Mendoza':
+                         empleoData[i].children[j].itemStyle.normal.color = '#8d98b3';
+                         break;
+                    case 'Misiones':
+                         empleoData[i].children[j].itemStyle.normal.color = '#ccb80c';
+                         break;
+                    case 'Neuquen':
+                        empleoData[i].children[j].itemStyle.normal.color = '#97b552'
+                        break;
+                    case 'Río Negro':
+                         empleoData[i].children[j].itemStyle.normal.color = '#29afb1';
+                         break;
+                    case 'Salta':
+                         empleoData[i].children[j].itemStyle.normal.color = '#83759f';
+                         break;
+                    case 'San Juan':
+                         empleoData[i].children[j].itemStyle.normal.color = '#417fac';
+                         break;
+                    case 'San Luis':
+                         empleoData[i].children[j].itemStyle.normal.color = '#b5845c';
+                         break;
+                    case 'Santa Cruz':
+                         empleoData[i].children[j].itemStyle.normal.color = '#b5676c';
+                         break;
+                    case 'Santa Fe':
+                         empleoData[i].children[j].itemStyle.normal.color = '#767f95';
+                         break;
+                    case 'Santiago del Estero':
+                         empleoData[i].children[j].itemStyle.normal.color = '#ae9d0b';
+                         break;
+                    case 'Tierra del Fuego':
+                         empleoData[i].children[j].itemStyle.normal.color = '#7f9846';
+                         break;
+                    case 'Tucumán':
+                         empleoData[i].children[j].itemStyle.normal.color = '#208a8b';
+                         break;
+                    case 'Agricultura y ganaderia  caza y servicios conexos':
+                        empleoData[i].children[j].itemStyle.normal.color = '#34e3e5';
+                        break;
+                    case 'Silvicultura  extracción de madera y servicios conexos':
+                        empleoData[i].children[j].itemStyle.normal.color = '#b6a2de';
+                        break;
+                    case 'Pesca y actividades relacionadas con la pesca':
+                        empleoData[i].children[j].itemStyle.normal.color = '#5ab1ef';
+                        break;
+                    case 'Extracción de carbon y de lignito   extracción de turba':
+                        empleoData[i].children[j].itemStyle.normal.color = '#ffb980';
+                        break;
+                    case 'Extracción de petroleo crudo y gas natural':
+                        empleoData[i].children[j].itemStyle.normal.color = '#f28c93';
+                        break;
+                    case 'Extracción de minerales metaliferos':
+                        empleoData[i].children[j].itemStyle.normal.color = '#b6c2e1';
+                        break;
+                    case 'Explotación de otras minas y canteras n.c.p.':
+                        empleoData[i].children[j].itemStyle.normal.color = '#e5cf0d';
+                        break;
+                    case 'Elaboración de productos alimenticios y bebidas':
+                        empleoData[i].children[j].itemStyle.normal.color = '#b2d563';
+                        break;
+                    case 'Elaboración de productos de tabaco':
+                        empleoData[i].children[j].itemStyle.normal.color = '#2ec7c9';
+                        break;
+                    case 'Fabricación de productos textiles':
+                        empleoData[i].children[j].itemStyle.normal.color = '#9888b9';
+                        break;
+                    case 'Confección de prendas de vestir   terminación y teñido de pieles':
+                        empleoData[i].children[j].itemStyle.normal.color = '#51a0d8';
+                        break;
+                    case 'Curtido y terminación de cueros   fabricación calzado y de sus partes':
+                        empleoData[i].children[j].itemStyle.normal.color = '#dda06f';
+                        break;
+                    case 'Producción de madera y fabricación de productos de madera y corcho  excepto muebles':
+                        empleoData[i].children[j].itemStyle.normal.color = '#d87a80';
+                        break;
+                    case 'Fabricación de papel y de productos de papel':
+                        empleoData[i].children[j].itemStyle.normal.color = '#8d98b3';
+                        break;
+                    case 'Edición e impresión   reproducción de grabaciones':
+                        empleoData[i].children[j].itemStyle.normal.color = '#ccb80c';
+                        break;
+                    case 'Fabricación de coque  productos de la refinacion del petroleo y combustible nuclear':
+                        empleoData[i].children[j].itemStyle.normal.color = '#97b552';
+                        break;
+                    case 'Fabricación de sustancias y productos quimicos':
+                        empleoData[i].children[j].itemStyle.normal.color = '#29afb1';
+                        break;
+                    case 'Fabricación de productos de caucho y plastico':
+                        empleoData[i].children[j].itemStyle.normal.color = '#83759f';
+                        break;
+                    case 'Fabricación de productos minerales no metalicos':
+                        empleoData[i].children[j].itemStyle.normal.color = '#417fac';
+                        break;
+                    case 'Fabricación de metales comunes':
+                        empleoData[i].children[j].itemStyle.normal.color = '#b5845c';
+                        break;
+                    case 'Fabricación de productos elaborados de metal  excepto maquinaria y equipo':
+                        empleoData[i].children[j].itemStyle.normal.color = '#b5676c';
+                        break;
+                    case 'Fabricación de maquinaria y equipo n.c.p.':
+                        empleoData[i].children[j].itemStyle.normal.color = '#767f95';
+                        break;
+                    case 'Fabricación de maquinaria de oficina  contabilidad e informatica':
+                        empleoData[i].children[j].itemStyle.normal.color = '#ae9d0b';
+                        break;
+                    case 'Fabricación de maquinaria y aparatos electricos  n.c.p.':
+                        empleoData[i].children[j].itemStyle.normal.color = '#7f9846';
+                        break;
+                    case 'Fabricación de equipos y aparatos de radio  television y comunicaciones':
+                        empleoData[i].children[j].itemStyle.normal.color = '#208a8b';
+                        break;
+                    case 'Fabricación de instrumentos medicos  opticos y de precision   fabricación de relojes':
+                        empleoData[i].children[j].itemStyle.normal.color = '#615775';
+                        break;
+                    case 'Fabricación de vehiculos automotores  remolques y semirremolques':
+                        empleoData[i].children[j].itemStyle.normal.color = '#316082';
+                        break;
+                    case 'Fabricación de equipo de transporte n.c.p.':
+                        empleoData[i].children[j].itemStyle.normal.color = '#876243';
+                        break;
+                    case 'Fabricación de muebles y colchones   industrias manufactureras  n.c.p.':
+                        empleoData[i].children[j].itemStyle.normal.color = '#925357';
+                        break;
+                    case 'Reciclamiento':
+                        empleoData[i].children[j].itemStyle.normal.color = '#596071';
+                        break;
+                    case 'Electricidad  gas  vapor y agua caliente':
+                        empleoData[i].children[j].itemStyle.normal.color = '#867909';
+                        break;
+                    case 'Captacion  depuracion y distribucion de agua':
+                        empleoData[i].children[j].itemStyle.normal.color = '#627536';
+                        break;
+                    case 'Construcción':
+                        empleoData[i].children[j].itemStyle.normal.color = '#34e3e5';
+                        break;
+                    case 'Venta y reparacion de vehiculos. venta por menor de combustible':
+                        empleoData[i].children[j].itemStyle.normal.color = '#34e3e5';
+                        break;
+                    case 'Comercio al por mayor':
+                        empleoData[i].children[j].itemStyle.normal.color = '#b6a2de';
+                        break;
+                    case 'Comercio al por menor':
+                        empleoData[i].children[j].itemStyle.normal.color = '#5ab1ef';
+                        break;
+                    case 'Servicios de hoteleria y restaurantes':
+                        empleoData[i].children[j].itemStyle.normal.color = '#ffb980';
+                        break;
+                    case 'Transporte ferroviario y automotor y por tuberias':
+                        empleoData[i].children[j].itemStyle.normal.color = '#f28c93';
+                        break;
+                    case 'Transporte maritimo y fluvial':
+                        empleoData[i].children[j].itemStyle.normal.color = '#b6c2e1';
+                        break;
+                    case 'Transporte aereo de cargas y de pasajeros':
+                        empleoData[i].children[j].itemStyle.normal.color = '#e5cf0d';
+                        break;
+                    case 'Manipulación de carga  almacenamiento y deposito. Servicios de agencias de viaje':
+                        empleoData[i].children[j].itemStyle.normal.color = '#b2d563';
+                        break;
+                    case 'Telecomunicaciones y correos':
+                        empleoData[i].children[j].itemStyle.normal.color = '#2ec7c9';
+                        break;
+                    case 'Intermediacion financiera y otros servicios financieros':
+                        empleoData[i].children[j].itemStyle.normal.color = '#9888b9';
+                        break;
+                    case 'Seguros':
+                        empleoData[i].children[j].itemStyle.normal.color = '#51a0d8';
+                        break;
+                    case 'Servicios auxiliares a la actividad financiera':
+                        empleoData[i].children[j].itemStyle.normal.color = '#dda06f';
+                        break;
+                    case 'Servicios inmobiliarios':
+                        empleoData[i].children[j].itemStyle.normal.color = '#d87a80';
+                        break;
+                    case 'Alquiler de equipo de transporte y de maquinaria':
+                        empleoData[i].children[j].itemStyle.normal.color = '#8d98b3';
+                        break;
+                    case 'Actividades de informatica':
+                        empleoData[i].children[j].itemStyle.normal.color = '#ccb80c';
+                        break;
+                    case 'Investigacion y desarrollo':
+                        empleoData[i].children[j].itemStyle.normal.color = '#97b552';
+                        break;
+                    case 'Servicios juridicos  contables y otros servicios a empresas':
+                        empleoData[i].children[j].itemStyle.normal.color = '#29afb1';
+                        break;
+                    case 'Agencias de empleo temporario':
+                        empleoData[i].children[j].itemStyle.normal.color = '#83759f';
+                        break;
+                    case 'Enseñanza':
+                        empleoData[i].children[j].itemStyle.normal.color = '#417fac';
+                        break;
+                    case 'Servicios sociales y de salud':
+                        empleoData[i].children[j].itemStyle.normal.color = '#b5845c';
+                        break;
+                    case 'Eliminación de desperdicios':
+                        empleoData[i].children[j].itemStyle.normal.color = '#767f95';
+                        break;
+                    case 'Servicios de organizaciones empresariales':
+                        empleoData[i].children[j].itemStyle.normal.color = '#ae9d0b';
+                        break;
+                    case 'Servicios culturales  deportivos y de esparcimiento':
+                        empleoData[i].children[j].itemStyle.normal.color = '#7f9846';
+                        break;
+                    case 'Servicios n.c.p.':
+                        empleoData[i].children[j].itemStyle.normal.color = '#208a8b';
+                        break;
+                    default:
+                         empleoData[i].children[j].itemStyle.normal.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+                        break;
+                };
+            }
         }
-    }
+      }
+    
+      if (exportacionData) {
+        for (var i = 0; i < exportacionData.length; i++) {
+            for (var j = 0; j < exportacionData[i].children.length; j++) {
+                switch (exportacionData[i].children[j].name) {
+                    case "Buenos Aires":
+                        exportacionData[i].children[j].itemStyle.normal.color = '#34e3e5'
+                         break;
+                    case 'CABA':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#b6a2de';
+                         break;
+                    case 'Catamarca':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#5ab1ef';
+                         break;
+                    case 'Chaco':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#ffb980';
+                         break;
+                    case 'Chubut':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#f28c93';
+                                 break;
+                    case 'Córdoba':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#b6c2e1';
+                         break;
+                    case 'Corrientes':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#e5cf0d';
+                         break;
+                    case 'Entre Ríos':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#b2d563';
+                         break;
+                    case 'Formosa':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#2ec7c9';
+                         break;
+                    case 'Jujuy':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#51a0d8';
+                         break;
+                    case 'La Pampa':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#dda06f';
+                         break;
+                    case 'La Rioja':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#d87a80';
+                         break;
+                    case 'Mendoza':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#8d98b3';
+                         break;
+                    case 'Misiones':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#ccb80c';
+                         break;
+                    case 'Neuquen':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#97b552'
+                        break;
+                    case 'Río Negro':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#29afb1';
+                         break;
+                    case 'Salta':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#83759f';
+                         break;
+                    case 'San Juan':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#417fac';
+                         break;
+                    case 'San Luis':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#b5845c';
+                         break;
+                    case 'Santa Cruz':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#b5676c';
+                         break;
+                    case 'Santa Fe':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#767f95';
+                         break;
+                    case 'Santiago del Estero':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#ae9d0b';
+                         break;
+                    case 'Tierra del Fuego':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#7f9846';
+                         break;
+                    case 'Tucumán':
+                         exportacionData[i].children[j].itemStyle.normal.color = '#208a8b';
+                         break;
+                    case 'Agricultura y ganaderia  caza y servicios conexos':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#34e3e5';
+                        break;
+                    case 'Silvicultura  extracción de madera y servicios conexos':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#b6a2de';
+                        break;
+                    case 'Pesca y actividades relacionadas con la pesca':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#5ab1ef';
+                        break;
+                    case 'Extracción de carbon y de lignito   extracción de turba':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#ffb980';
+                        break;
+                    case 'Extracción de petroleo crudo y gas natural':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#f28c93';
+                        break;
+                    case 'Extracción de minerales metaliferos':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#b6c2e1';
+                        break;
+                    case 'Explotación de otras minas y canteras n.c.p.':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#e5cf0d';
+                        break;
+                    case 'Elaboración de productos alimenticios y bebidas':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#b2d563';
+                        break;
+                    case 'Elaboración de productos de tabaco':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#2ec7c9';
+                        break;
+                    case 'Fabricación de productos textiles':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#9888b9';
+                        break;
+                    case 'Confección de prendas de vestir   terminación y teñido de pieles':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#51a0d8';
+                        break;
+                    case 'Curtido y terminación de cueros   fabricación calzado y de sus partes':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#dda06f';
+                        break;
+                    case 'Producción de madera y fabricación de productos de madera y corcho  excepto muebles':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#d87a80';
+                        break;
+                    case 'Fabricación de papel y de productos de papel':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#8d98b3';
+                        break;
+                    case 'Edición e impresión   reproducción de grabaciones':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#ccb80c';
+                        break;
+                    case 'Fabricación de coque  productos de la refinacion del petroleo y combustible nuclear':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#97b552';
+                        break;
+                    case 'Fabricación de sustancias y productos quimicos':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#29afb1';
+                        break;
+                    case 'Fabricación de productos de caucho y plastico':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#83759f';
+                        break;
+                    case 'Fabricación de productos minerales no metalicos':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#417fac';
+                        break;
+                    case 'Fabricación de metales comunes':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#b5845c';
+                        break;
+                    case 'Fabricación de productos elaborados de metal  excepto maquinaria y equipo':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#b5676c';
+                        break;
+                    case 'Fabricación de maquinaria y equipo n.c.p.':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#767f95';
+                        break;
+                    case 'Fabricación de maquinaria de oficina  contabilidad e informatica':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#ae9d0b';
+                        break;
+                    case 'Fabricación de maquinaria y aparatos electricos  n.c.p.':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#7f9846';
+                        break;
+                    case 'Fabricación de equipos y aparatos de radio  television y comunicaciones':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#208a8b';
+                        break;
+                    case 'Fabricación de instrumentos medicos  opticos y de precision   fabricación de relojes':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#615775';
+                        break;
+                    case 'Fabricación de vehiculos automotores  remolques y semirremolques':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#316082';
+                        break;
+                    case 'Fabricación de equipo de transporte n.c.p.':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#876243';
+                        break;
+                    case 'Fabricación de muebles y colchones   industrias manufactureras  n.c.p.':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#925357';
+                        break;
+                    case 'Reciclamiento':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#596071';
+                        break;
+                    case 'Electricidad  gas  vapor y agua caliente':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#867909';
+                        break;
+                    case 'Captacion  depuracion y distribucion de agua':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#627536';
+                        break;
+                    case 'Construcción':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#34e3e5';
+                        break;
+                    case 'Venta y reparacion de vehiculos. venta por menor de combustible':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#34e3e5';
+                        break;
+                    case 'Comercio al por mayor':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#b6a2de';
+                        break;
+                    case 'Comercio al por menor':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#5ab1ef';
+                        break;
+                    case 'Servicios de hoteleria y restaurantes':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#ffb980';
+                        break;
+                    case 'Transporte ferroviario y automotor y por tuberias':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#f28c93';
+                        break;
+                    case 'Transporte maritimo y fluvial':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#b6c2e1';
+                        break;
+                    case 'Transporte aereo de cargas y de pasajeros':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#e5cf0d';
+                        break;
+                    case 'Manipulación de carga  almacenamiento y deposito. Servicios de agencias de viaje':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#b2d563';
+                        break;
+                    case 'Telecomunicaciones y correos':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#2ec7c9';
+                        break;
+                    case 'Intermediacion financiera y otros servicios financieros':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#9888b9';
+                        break;
+                    case 'Seguros':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#51a0d8';
+                        break;
+                    case 'Servicios auxiliares a la actividad financiera':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#dda06f';
+                        break;
+                    case 'Servicios inmobiliarios':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#d87a80';
+                        break;
+                    case 'Alquiler de equipo de transporte y de maquinaria':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#8d98b3';
+                        break;
+                    case 'Actividades de informatica':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#ccb80c';
+                        break;
+                    case 'Investigacion y desarrollo':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#97b552';
+                        break;
+                    case 'Servicios juridicos  contables y otros servicios a empresas':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#29afb1';
+                        break;
+                    case 'Agencias de empleo temporario':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#83759f';
+                        break;
+                    case 'Enseñanza':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#417fac';
+                        break;
+                    case 'Servicios sociales y de salud':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#b5845c';
+                        break;
+                    case 'Eliminación de desperdicios':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#767f95';
+                        break;
+                    case 'Servicios de organizaciones empresariales':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#ae9d0b';
+                        break;
+                    case 'Servicios culturales  deportivos y de esparcimiento':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#7f9846';
+                        break;
+                    case 'Servicios n.c.p.':
+                        exportacionData[i].children[j].itemStyle.normal.color = '#208a8b';
+                        break;
+                    default:
+                         exportacionData[i].children[j].itemStyle.normal.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+                        break;
+                };
+            }
+        }
+      }
+    
 
         $scope.line1.options = {
             title : {

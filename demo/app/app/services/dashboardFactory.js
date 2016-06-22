@@ -35,6 +35,7 @@ angular.module('app.services')
         return $http.post('app/api/dashboard/obtenerNombreProv.php',data);
     };
     dashboard.setProvData = function(data){
+        $cacheFactory('provData', options)
         provData = data
     };
     dashboard.getDashData = function(){

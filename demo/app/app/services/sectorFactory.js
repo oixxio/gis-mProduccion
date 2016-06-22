@@ -19,7 +19,7 @@ angular.module('app.services')
          return filter
     }
     sector.getSector = function(){
-    	return $http.post('app/api/dashboard/obtenerNombreSect.php',sectorId);
+    	return $http.post('app/api/dashboard/obtenerNombreSect.php',localStorage.getItem('sectorId'));
     };
     sector.getSectorData = function(){
         return $http.get('app/api/dashboard/obtenerDatosSect.php');
