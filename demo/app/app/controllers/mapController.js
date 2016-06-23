@@ -33,6 +33,8 @@
 				provData = [],
 				scatterEmpleo = [],
 				scatterExport = [];
+			var countExport = 0
+			var countEmpleo = 0
 			dashboardFactory.getSectorData().success(function(response){
 				sector = response;
 				dashboardFactory.getRubroData().success(function(response){
@@ -75,21 +77,30 @@
 							
 							//Objeto para graficar el scatter
 							if (response[i].nombreSector != 'Total Provincia') {
-								scatterDataEmpleo.data = [[response[i].dinamica_empleo, response[i].var_empleo_2007_2014]];
-								scatterDataEmpleo.name = response[i].nombreSector;
-								scatterDataEmpleo.type = 'scatter';
-								scatterDataEmpleo.symbolSize = response[i].part_empleo_prov;
-			                    scatterEmpleo[i] = scatterDataEmpleo;
-			                    scatterDataEmpleo = {};
-
-			                    scatterDataExport.data = [[response[i].dinamica_part_exportaciones_pvciales, response[i].dinamica_exportaciones_pvciales]];
-								scatterDataExport.name = response[i].nombreSector;
-								scatterDataExport.type = 'scatter';
-								scatterDataExport.symbolSize = response[i].part_exportaciones_pvciales;
-			                    scatterExport[i] = scatterDataExport;
-			                    scatterDataExport = {};
+								if(	response[i].dinamica_empleo != 0 && response[i].var_empleo_2007_2014 != 0){
+										scatterDataEmpleo.data = [[response[i].dinamica_empleo, response[i].var_empleo_2007_2014]];
+										scatterDataEmpleo.name = response[i].nombreSector;
+										scatterDataEmpleo.type = 'scatter';
+										scatterDataEmpleo.symbolSize = response[i].part_empleo_prov;
+					                    scatterEmpleo[countEmpleo] = scatterDataEmpleo;
+					                    scatterDataEmpleo = {};
+					                    countEmpleo++
+					            }
 							}
-							
+
+							if (response[i].nombreSector != 'Total Provincia') {
+								if(	response[i].dinamica_part_exportaciones_pvciales != 0 &&
+									response[i].dinamica_exportaciones_pvciales != 0 && 
+									response[i].part_exportaciones_pvciales != 0){		
+					                    scatterDataExport.data = [[response[i].dinamica_part_exportaciones_pvciales, response[i].dinamica_exportaciones_pvciales]];
+										scatterDataExport.name = response[i].nombreSector;
+										scatterDataExport.type = 'scatter';
+										scatterDataExport.symbolSize = response[i].part_exportaciones_pvciales;
+					                    scatterExport[countExport] = scatterDataExport;
+					                    scatterDataExport = {};
+					                    countExport++;
+					            }
+							}
 							
 		                    /*--------------------------------*/
 		                    /*Veo si hay un elemento igual en el array de empleo*/
@@ -145,6 +156,7 @@
 						scatterExport.shift()
 						dashboardFactory.setScatterExport(scatterExport);
 						/*[End Factory para pasar datos al dash]*/
+						//console.log(angular.toJson(scatterExport))
 						localStorage.setItem('provData',JSON.stringify(response))
 						localStorage.setItem('empleoData',JSON.stringify(empleo))
 						localStorage.setItem('empleoScatter',JSON.stringify(scatterEmpleo))

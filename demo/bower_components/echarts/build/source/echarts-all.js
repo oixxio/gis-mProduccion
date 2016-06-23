@@ -23302,11 +23302,12 @@ define('zrender/zrender', [
             var serieName;
             var iconShape;
             var iconType;
+
             var chartColor = 'rgb(255,0,0)';
             //alert(JSON.stringify(series))
             for (var i = 0, l = series.length; i < l; i++) {
                 serie = series[i];
-                serieName = serie.name.replace(/[^a-zA-Z ]/g, "");
+                serieName = serie.name.replace(/[^a-zA-Z. ]/g, "");
                 //alert(JSON.stringify(serieName))
                 switch (serieName) {
                     case "Buenos Aires":
@@ -23382,16 +23383,16 @@ define('zrender/zrender', [
                     case 'Tucumn':
                          chartColor = '#208a8b';
                          break;
-                    case 'Agricultura y ganaderia  caza y servicios conexos':
+                    case 'Agricultura y ganaderia caza y servicios conexos':
                         chartColor = '#34e3e5';
                     break;
-                    case 'Silvicultura  extracción de madera y servicios conexos':
+                    case 'Silvicultura extraccin de madera y servicios conexos':
                         chartColor = '#b6a2de';
                     break;
                     case 'Pesca y actividades relacionadas con la pesca':
                         chartColor = '#5ab1ef';
                     break;
-                    case 'Extraccin de carbon y de lignito   extraccin de turba':
+                    case 'Extraccin de carbon y de lignito extraccin de turba':
                         chartColor = '#ffb980';
                     break;
                     case 'Extraccin de petroleo crudo y gas natural':
@@ -23412,19 +23413,19 @@ define('zrender/zrender', [
                     case 'Fabricacin de productos textiles':
                         chartColor = '#9888b9';
                     break;
-                    case 'Confeccin de prendas de vestir   terminacin y teido de pieles':
+                    case 'Confeccin de prendas de vestir terminacin y teido de pieles':
                         chartColor = '#51a0d8';
                     break;
-                    case 'Curtido y terminacin de cueros   fabricacin calzado y de sus partes':
+                    case 'Curtido y terminacin de cueros fabricacin calzado y de sus partes':
                         chartColor = '#dda06f';
                     break;
-                    case 'Produccin de madera y fabricacin de productos de madera y corcho  excepto muebles':
+                    case 'Produccin de madera y fabricacin de productos de madera y corcho excepto muebles':
                         chartColor = '#d87a80';
                     break;
                     case 'Fabricacin de papel y de productos de papel':
                         chartColor = '#8d98b3';
                     break;
-                    case 'Edicin e impresin   reproduccin de grabaciones':
+                    case 'Edicin e impresin reproduccin de grabaciones':
                         chartColor = '#ccb80c';
                     break;
                     case 'Fabricacin de coque  productos de la refinacin del petroleo y combustible nuclear':
@@ -23442,40 +23443,40 @@ define('zrender/zrender', [
                     case 'Fabricacin de metales comunes':
                         chartColor = '#b5845c';
                     break;
-                    case 'Fabricacin de productos elaborados de metal  excepto maquinaria y equipo':
+                    case 'Fabricacin de productos elaborados de metal excepto maquinaria y equipo':
                         chartColor = '#b5676c';
                     break;
                     case 'Fabricacin de maquinaria y equipo n.c.p.':
                         chartColor = '#767f95';
                     break;
-                    case 'Fabricacin de maquinaria de oficina  contabilidad e informatica':
+                    case 'Fabricacin de maquinaria de oficina contabilidad e informatica':
                         chartColor = '#ae9d0b';
                     break;
-                    case 'Fabricacin de maquinaria y aparatos electricos  n.c.p.':
+                    case 'Fabricacin de maquinaria y aparatos electricos n.c.p.':
                         chartColor = '#7f9846';
                     break;
-                    case 'Fabricacin de equipos y aparatos de radio  television y comunicaciones':
+                    case 'Fabricacin de equipos y aparatos de radio television y comunicaciones':
                         chartColor = '#208a8b';
                     break;
-                    case 'Fabricacin de instrumentos medicos  opticos y de precision   fabricacin de relojes':
+                    case 'Fabricacin de instrumentos medicos opticos y de precision fabricacin de relojes':
                         chartColor = '#615775';
                     break;
-                    case 'Fabricacin de vehiculos automotores  remolques y semirremolques':
+                    case 'Fabricacin de vehiculos automotores remolques y semirremolques':
                         chartColor = '#316082';
                     break;
                     case 'Fabricacin de equipo de transporte n.c.p.':
                         chartColor = '#876243';
                     break;
-                    case 'Fabricacin de muebles y colchones   industrias manufactureras  n.c.p.':
+                    case 'Fabricacin de muebles y colchones industrias manufactureras  n.c.p.':
                         chartColor = '#925357';
                     break;
                     case 'Reciclamiento':
                         chartColor = '#596071';
                     break;
-                    case 'Electricidad  gas  vapor y agua caliente':
+                    case 'Electricidad gas vapor y agua caliente':
                         chartColor = '#867909';
                     break;
-                    case 'Captacin  depuracion y distribucion de agua':
+                    case 'Captacin depuracion y distribucion de agua':
                         chartColor = '#627536';
                     break;
                     case 'Construccin':
@@ -23547,7 +23548,7 @@ define('zrender/zrender', [
                     case 'Servicios de organizaciones empresariales':
                         chartColor = '#ae9d0b';
                     break;
-                    case 'Servicios culturales  deportivos y de esparcimiento':
+                    case 'Servicios culturales deportivos y de esparcimiento':
                         chartColor = '#7f9846';
                     break;
                     case 'Servicios n.c.p.':

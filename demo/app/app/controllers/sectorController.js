@@ -96,6 +96,8 @@
 				provData = [],
 				scatterEmpleo = [],
 				scatterExport = [];
+			var countExport= 0;
+			var countEmpleo = 0
 			localStorage.setItem('sectorId',data)
 			//sectorFactory.setSectorId(data);
 			sectorFactory.getAllProv().success(function(response){
@@ -137,7 +139,7 @@
 						response[i].remuneracion_view = parseInt(response[i].remuneracion).toLocaleString();
 						response[i].dif_salario_sector = parseFloat(parseFloat(response[i].dif_salario_sector*100).toFixed(2));
 						response[i].dif_salario_sector_view = response[i].dif_salario_sector.toLocaleString();
-						//Objeto para graficar el scatterEmpleo
+						/*Objeto para graficar el scatterEmpleo
 						if (response[i].nombreProvincia != 'Total Sectorial') {
 							scatterEmpleoData.data = [[response[i].dinamica_empleo, response[i].var_empleo_2007_2014]];
 							scatterEmpleoData.name = response[i].nombreProvincia;
@@ -152,8 +154,31 @@
 							scatterExportData.symbolSize = response[i].part_exp_prov_nacion;
 		                    scatterExport[i] = scatterExportData;
 		                    scatterExportData = {};
-						}
-						
+						}*/
+						if (response[i].nombreProvincia != 'Total Sectorial') {
+								if(	response[i].dinamica_empleo != 0 && response[i].var_empleo_2007_2014 != 0){
+										scatterEmpleoData.data = [[response[i].dinamica_empleo, response[i].var_empleo_2007_2014]];
+										scatterEmpleoData.name = response[i].nombreProvincia;
+										scatterEmpleoData.type = 'scatter';
+										scatterEmpleoData.symbolSize = response[i].part_empleo_prov;
+					                    scatterEmpleo[countEmpleo] = scatterEmpleoData;
+					                    scatterEmpleoData = {};
+					                    countEmpleo++
+					            }
+							}
+
+							if (response[i].nombreProvincia != 'Total Sectorial') {
+								if(	response[i].dinamica_part_exportaciones_pvciales != 0 &&
+									response[i].dinamica_exportaciones_pvciales != 0 ){		
+					                    scatterExportData.data = [[response[i].dinamica_part_exportaciones_pvciales, response[i].dinamica_exportaciones_pvciales]];
+										scatterExportData.name = response[i].nombreProvincia;
+										scatterExportData.type = 'scatter';
+										scatterExportData.symbolSize = response[i].part_exportaciones_pvciales;
+					                    scatterExport[countExport] = scatterExportData;
+					                    scatterExportData = {};
+					                    countExport++;
+					            }
+							}
 						
 	                    
 	                    /*--------------------------------*/
