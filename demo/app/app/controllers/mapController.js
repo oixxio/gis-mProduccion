@@ -140,10 +140,17 @@
 		                                       
 						}
 						if (empleo.length === 0) {
-							empleo = [{name: 'sin valores',value: 1}];
+							empleo = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}},children: [{name: 'sin valores',value: 1,itemStyle:{normal:{color:''}}}]}];
 						}
 						if (exportacion.length === 0) {
-							exportacion = [{name: 'sin valores',value: 1}];
+							exportacion = empleo = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}},children: [{name: 'sin valores',value: 1,itemStyle:{normal:{color:''}}}]}];
+						}
+						if (scatterEmpleo.length === 0) {
+							scatterEmpleo = [{name: 'sin valores',type:"scatter",data: [[1,1]],symbolSize: 20}];
+						}
+						if (scatterExport.length === 0) {
+
+							scatterExport = [{name: 'sin valores',type:"scatter",data: [[1,1]],symbolSize: 20}];
 						}
 						//$window.alert(JSON.stringify(empleo));
 						//dashboardFactory.setEmpleoLegend(empleoLegend);
@@ -162,6 +169,7 @@
 						localStorage.setItem('empleoScatter',JSON.stringify(scatterEmpleo))
 						localStorage.setItem('exportData',JSON.stringify(exportacion))
 						localStorage.setItem('exportScatter',JSON.stringify(scatterExport))
+						//alert(angular.toJson(exportacion))
 						$location.path('page/dashboard');
 					});
 				});

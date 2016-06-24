@@ -238,7 +238,6 @@
 			sector = response;
 		});
 		dashboardFactory.getDatosGenerales(localStorage.getItem('provName')).success(function(response){
-			//$window.alert(JSON.stringify(response));
 			response[0].poblacion=parseInt(response[0].poblacion).toLocaleString();
 			response[0].prop_pobl_total_nac=parseFloat(parseFloat(response[0].prop_pobl_total_nac*100).toFixed(2)).toLocaleString();
 			response[0].part_pbg_pbi=parseFloat(parseFloat(response[0].part_pbg_pbi*100).toFixed(2)).toLocaleString();
