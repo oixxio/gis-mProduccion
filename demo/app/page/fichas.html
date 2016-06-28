@@ -1,3 +1,5 @@
+<!-- README! Como completar los 3 PASOS para habilitar ficha de provincias-->
+
 <div id="contenedor-gral" ng-controller="mainController" ng-init="setTitulo()">
         <div  ng-model="idProv"
             style="position: absolute;
@@ -12,6 +14,9 @@
             <h1 style="font-size: 56px;height:50px;">{{idProv | uppercase}}</h1>
             <span style="border-bottom: white solid 1px;padding-left: 406px;"> </span> 
         </div>
+
+<!-- PASO 1 Cambiar ng-click por href conlink al PDF-->
+<!-- PASO 2 Descomentar span con img-->
          <div id="contenedor-primario" style="left:42%">    
             <div id="contenedor-mapa">
                 <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Jujuy'"
@@ -110,10 +115,10 @@
 <!--                     <span class="map-img"></span> -->
                     </div>
                 </a>
-                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Mendoza'" 
+                <a href="fichas/Mendoza.pdf" ng-mouseover="idProv ='Mendoza'" 
                     id="div-btn17">
                     <div id="botonMendoza" class="boton button12"  title="Mendoza" >
-<!--                     <span class="map-img"></span> -->
+                    <span class="map-img"></span>
                     </div>
                 </a>
                 <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Buenos Aires'" 
@@ -231,6 +236,8 @@ body,h1,h2,h3,h4,h5,h6,p,b,span {
     background-color: #0973B9 !important;    
 }    
 
+
+/*PASO 3 - Comentar estilos de provincias disponibles*/
 #botonJujuy {opacity:0.5;}
 #botonFormosa {opacity:0.5;}
 #botonEntrerios {opacity:0.5;}
@@ -247,7 +254,7 @@ body,h1,h2,h3,h4,h5,h6,p,b,span {
 #botonCordoba {opacity:0.5;}
 #botonStafe {opacity:0.5;}
 #botonSanluis {opacity:0.5;}
-#botonMendoza {opacity:0.5;}
+/*#botonMendoza {opacity:0.5;}*/
 #botonBsas {opacity:0.5;}
 #botonCaba {opacity:0.5;}
 #botonLapampa {opacity:0.5;}
