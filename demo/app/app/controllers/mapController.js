@@ -81,7 +81,7 @@
 										scatterDataEmpleo.data = [[response[i].dinamica_empleo, response[i].var_empleo_2007_2014]];
 										scatterDataEmpleo.name = response[i].nombreSector;
 										scatterDataEmpleo.type = 'scatter';
-										scatterDataEmpleo.symbolSize = response[i].part_empleo_prov;
+										scatterDataEmpleo.symbolSize = $scope.scaleRadius(response[i].part_empleo_prov);
 					                    scatterEmpleo[countEmpleo] = scatterDataEmpleo;
 					                    scatterDataEmpleo = {};
 					                    countEmpleo++
@@ -95,7 +95,7 @@
 					                    scatterDataExport.data = [[response[i].dinamica_part_exportaciones_pvciales, response[i].dinamica_exportaciones_pvciales]];
 										scatterDataExport.name = response[i].nombreSector;
 										scatterDataExport.type = 'scatter';
-										scatterDataExport.symbolSize = response[i].part_exportaciones_pvciales;
+										scatterDataExport.symbolSize = $scope.scaleRadius(response[i].part_exportaciones_pvciales);
 					                    scatterExport[countExport] = scatterDataExport;
 					                    scatterDataExport = {};
 					                    countExport++;

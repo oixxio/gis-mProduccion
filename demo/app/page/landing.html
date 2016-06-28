@@ -4,12 +4,12 @@
 	<div ng-click="to('landing')" style="width: 100%; background-color: white; padding: 15px;"> 	
 		<img class="logo-img" src="http://www.produccion.gob.ar/wp-content/themes/minprod/img/Logo-ministerio.png" style="height:50px; margin-left: 20px">
 	</div>
-	<div class="vertical-align" style=" background-color:#F1F2F2;">
+	<div class="vertical-align main-slide">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3" style="margin-top:80px;text-align: center;">
 					<img id="logo" src="images/assets/logo_malo.png">
-					<p style="margin-top: 30px; margin-bottom: 90px; text-align: center; font-size: 19px;">
+					<p style="margin-top: 30px; margin-bottom: 90px; text-align: center; font-size: 19px;color:#333;">
 					Herramienta para la detección de oportunidades de transformación productiva a nivel sectorial y territorial</p>
 				</div>
 				<div class="col-md-4 col-md-offset-2" ng-click="to('main')" style="bottom: 0;">
@@ -122,16 +122,17 @@
 h1,h2,h3,h4,h5,h6,p,b {
 	font-family: "Gotham";
 }
+
 span{
 	font-family: "Roboto-Light"
 }
+
 .tooltip{
 	font-size: 20px;
 }
 
-
 .boton {
-	background-color: #58595B ;
+	background-color: rgba(70, 99, 136, 0.71);
 	-webkit-border-radius: 5px 5px 0 0;
 	border-radius: 20px 20px 0 0;
 	transition: all 0.3s ease 0s;
@@ -143,6 +144,18 @@ span{
 .boton:hover {
   background: #0973B9;
   color: white;
+}
+
+.main-slide {
+	background-color: none;
+	background-image: url(images/assets/Slides_GPS-01.png);
+	background-repeat: no-repeat;
+	background-attachment: initial;
+	background-position: initial;
+	 -webkit-background-size:cover;
+	 -moz-background-size:cover;
+	 -o-background-size:cover;
+	 background-size:cover;
 }
 
 /*
