@@ -1,12 +1,9 @@
-<i class="fa fa-arrow-left fa-2x pantalla-completa-empleo" aria-hidden="true" 
+<i class="fa fa-arrow-left fa-2x go-back" aria-hidden="true" 
 			ng-click='goBack()'></i>
-<div ng-controller="EChartsCtrl" style="margin-top: 60px;">			    
-    <div data-echarts data-options="bar1.options" style="height: 650px;"></div>				    
+<p id="ejeX-big">Var% Particip. Export. 2007-2014</p>
+<p id="ejeX2-big">(diferencia de log. nat.)</p>
+<p id="ejeY-big">Var% Export Prov 2007-2014</p>
+<p id="ejeY2-big">(diferencia de log. nat.)</p>
+<div ng-controller="EChartsCtrl" class="full-screen-chart-wrapper">			    
+    <div data-echarts data-options="bar1.options" style="height: 580px;"></div>				    
 </div>
-<style>
-	.pantalla-completa-empleo{
-		z-index: 1000;
-		position: absolute;
-		left: 20%;
-	}
-</style>

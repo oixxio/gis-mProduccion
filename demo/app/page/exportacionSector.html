@@ -1,7 +1,6 @@
 <div class="row panel-chart">
 	<div class="col-md-6">
         <span>Participación provincial en las exportaciones sectoriales</span>
-            
         <i class="fa fa-arrows-alt fa-2x btn-full-screen" aria-hidden="true" 
             ng-click="goTo('page/exportSectGrande')"></i>                       
         <div data-echarts data-options="line3.options" style="height: 360px;"></div> 				    
@@ -10,7 +9,9 @@
         <i class="fa fa-arrows-alt fa-2x btn-full-screen" 
             ng-click="goTo('page/scatterExpSectGrande')"></i>
         <p id="ejeX">Var% Particip. Export. 2007-2014</p>
+        <p id="ejeX2">(diferencia de log. nat.)</p>
         <p id="ejeY">Var% Export Prov 2007-2014</p>
+        <p id="ejeY2">(diferencia de log. nat.)</p>
         <div data-echarts data-options="bar1.options" style="height: 360px;"></div>				
 	</div>
 </div>
@@ -45,16 +46,5 @@
     font-size: 12px;
     color: rgba(128, 128, 128, 0.52);
     text-decoration: none;
-}
-#ejeX {
-    position: absolute;
-    bottom: 1%;
-    left: 38%;
-}
-#ejeY {
-    transform: rotate(270deg);
-    position: absolute;
-    top: 43%;
-    left: -13%;
 }
 </style>

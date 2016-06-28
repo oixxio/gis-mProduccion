@@ -1,12 +1,5 @@
-<i class="fa fa-arrow-left fa-2x pantalla-completa-empleo" aria-hidden="true" 
-			ng-click='goBack()'></i>
-<div ng-controller="EChartsCtrl" style="margin-top: 60px;">			    
-    <div data-echarts data-options="funnel1.options" style="height: 650px;"></div>				    
+<i class="fa fa-arrow-left fa-2x go-back" aria-hidden="true" 
+			ng-click='goBack()'></i>	
+<div ng-controller="EChartsCtrl" class="full-screen-chart-wrapper">			    
+    <div data-echarts data-options="funnel1.options" style="height: 580px;"></div>				    
 </div>
-<style>
-	.pantalla-completa-empleo{
-		z-index: 1000;
-		position: absolute;
-		left: 10%;
-	}
-</style>
