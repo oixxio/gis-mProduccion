@@ -15,7 +15,7 @@
             <span style="border-bottom: white solid 1px;padding-left: 406px;"> </span> 
         </div>
 
-<!-- PASO 1 Cambiar ng-click por href conlink al PDF-->
+<!-- PASO 1 Cambiar ng-click por href conlink al PDF     href="fichas/(Provincia).pdf"   -->
 <!-- PASO 2 Descomentar span con img-->
          <div id="contenedor-primario" style="left:42%top:55.6%;">    
             <div id="contenedor-mapa">
@@ -55,10 +55,10 @@
 <!--                     <span class="map-img"></span> -->
                     </div>
                 </a>
-                <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Salta'" 
+                <a href="fichas/Salta.pdf" ng-mouseover="idProv ='Salta'" 
                      id="div-btn7">
                     <div id="botonSalta" class="boton button16"  title="Salta" >
-<!--                     <span class="map-img"></span> -->
+                    <span class="map-img"></span>
                     </div>
                 </a>
                 <a ng-click="goTo('nodisponible')" ng-mouseover="idProv ='Santiago del Estero'" 
@@ -145,7 +145,7 @@
 <!--                     <span class="map-img"></span> -->
                     </div>
                 </a>
-                <a href="fichas/informe_ficha_neuque__n.pdf" ng-mouseover="idProv ='Neuquén'" 
+                <a href="fichas/Neuquen.pdf" ng-mouseover="idProv ='Neuquén'" 
                     id="div-btn22">
                     <div id="botonNeuquen" class="boton button14"  title="Neuquén" >
                      <span class="map-img"></span>
@@ -244,7 +244,7 @@ body,h1,h2,h3,h4,h5,h6,p,b,span {
 #botonMisiones {opacity:0.5;}
 #botonCorrientes {opacity:0.5;}
 #botonChaco {opacity:0.5;}
-#botonSalta {opacity:0.5;}
+/*#botonSalta {opacity:0.5;}*/
 #botonStgo {opacity:0.5;}
 #botonTierra {opacity:0.5;}
 #botonCatamarca {opacity:0.5;}
