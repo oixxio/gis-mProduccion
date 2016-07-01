@@ -44,10 +44,12 @@
 							for (var j = 0; j < sector.length; j++) {
 								if (sector[j].id === response[i].sector_id) {
 									response[i].nombreSector = sector[j].nombre;
+									response[i].abvSector = sector[j].abv;
 									response[i].rubro_sector_id = sector[j].rubro_sector_id;  
 								}
 								for (var k = 0; k < rubro.length; k++) {
 									if (response[i].rubro_sector_id === rubro[k].id) {
+										response[i].abvRubro = rubro[k].abv;
 										response[i].nombreRubro = rubro[k].descripcion;
 										nombreRubro[k] =  rubro[k].descripcion; 
 									}						
@@ -105,35 +107,35 @@
 		                    /*--------------------------------*/
 		                    /*Veo si hay un elemento igual en el array de empleo*/
 		                    if (response[i].part_empleo_prov != 0 && response[i].nombreSector != 'Total Provincia'){
-			                	if(verificaRubro(empleo,response[i].nombreRubro) === -1){
-			                    	empleoData.name = response[i].nombreRubro;
+			                	if(verificaRubro(empleo,response[i].abvRubro) === -1){
+			                    	empleoData.name = response[i].abvRubro;
 			                    	empleoData.value = response[i].part_empleo_prov;
-			                    	empleoData.itemStyle = {normal:{color:''}};
-			                    	empleoData.children = [{name: response[i].nombreSector,value: response[i].part_empleo_prov,itemStyle:{normal: {color:''}}}];
+			                    	empleoData.itemStyle = {normal:{ label: {show: true,formatter: "{b}"},color:''}};
+			                    	empleoData.children = [{name: response[i].abvSector,value: response[i].part_empleo_prov,itemStyle:{normal:{ label: {show: true,formatter: "{b}: {c}%"},color:''}}}];
 			                    	empleo.push(empleoData);
 			                    	empleoData = {};
 			                    }else{
-			                    	empleo[verificaRubro(empleo,response[i].nombreRubro)].value = 
-			                    	parseFloat((empleo[verificaRubro(empleo,response[i].nombreRubro)].value + 
+			                    	empleo[verificaRubro(empleo,response[i].abvRubro)].value = 
+			                    	parseFloat((empleo[verificaRubro(empleo,response[i].abvRubro)].value + 
 			                    		                    		response[i].part_empleo_prov).toFixed(2));
-			                    	empleo[verificaRubro(empleo,response[i].nombreRubro)].children.
-			                    	push({name: response[i].nombreSector,value: response[i].part_empleo_prov,itemStyle:{normal: {color:''}}});
+			                    	empleo[verificaRubro(empleo,response[i].abvRubro)].children.
+			                    	push({name: response[i].abvSector,value: response[i].part_empleo_prov,itemStyle:{normal:{ label: {show: true,formatter: "{b}: {c}%"},color:''}}});
 			                    }
 			                }
 			                /*Armo grafica de exportacion*/
 			                if (response[i].part_exportaciones_pvciales != 0 && response[i].nombreSector != 'Total Provincia'){
-			                	if(verificaRubroExp(exportacion,response[i].nombreRubro) === -1){
-			                    	exportacionData.name = response[i].nombreRubro;
+			                	if(verificaRubroExp(exportacion,response[i].abvRubro) === -1){
+			                    	exportacionData.name = response[i].abvRubro;
 			                    	exportacionData.value = response[i].part_exportaciones_pvciales;
-			                    	exportacionData.itemStyle = {normal:{color:''}};
-			                    	exportacionData.children = [{name: response[i].nombreSector,value: (response[i].part_exportaciones_pvciales),itemStyle:{normal: {color:''}}}];
+			                    	exportacionData.itemStyle = {normal:{ label: {show: true,formatter: "{b}"},color:''}};
+			                    	exportacionData.children = [{name: response[i].abvSector,value: (response[i].part_exportaciones_pvciales),itemStyle:{normal:{ label: {show: true,formatter: "{b}: {c}%"},color:''}}}];
 			                    	exportacion.push(exportacionData);
 			                    	exportacionData = {};
 			                     }else{
-			                    	exportacion[verificaRubroExp(exportacion,response[i].nombreRubro)].value = 
-			                    	parseFloat((exportacion[verificaRubroExp(exportacion,response[i].nombreRubro)].value + response[i].part_exportaciones_pvciales).toFixed(2));
-			                    	exportacion[verificaRubroExp(exportacion,response[i].nombreRubro)].children.
-			                    	push({name: response[i].nombreSector,value: parseFloat(response[i].part_exportaciones_pvciales),itemStyle:{normal: {color:''}}});
+			                    	exportacion[verificaRubroExp(exportacion,response[i].abvRubro)].value = 
+			                    	parseFloat((exportacion[verificaRubroExp(exportacion,response[i].abvRubro)].value + response[i].part_exportaciones_pvciales).toFixed(2));
+			                    	exportacion[verificaRubroExp(exportacion,response[i].abvRubro)].children.
+			                    	push({name: response[i].abvSector,value: parseFloat(response[i].part_exportaciones_pvciales),itemStyle:{normal:{ label: {show: true,formatter: "{b}: {c}%"},color:''}}});
 			                    }
 			                }
 
@@ -143,7 +145,7 @@
 							empleo = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}},children: [{name: 'sin valores',value: 1,itemStyle:{normal:{color:''}}}]}];
 						}
 						if (exportacion.length === 0) {
-							exportacion = empleo = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}},children: [{name: 'sin valores',value: 1,itemStyle:{normal:{color:''}}}]}];
+							exportacion = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}},children: [{name: 'sin valores',value: 1,itemStyle:{normal:{color:''}}}]}];
 						}
 						if (scatterEmpleo.length === 0) {
 							scatterEmpleo = [{name: 'sin valores',type:"scatter",data: [[1,1]],symbolSize: 20}];

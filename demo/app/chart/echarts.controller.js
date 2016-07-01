@@ -125,178 +125,6 @@
                 case 'Tucumn':
                      empleoSectorData[i].itemStyle.normal.color = '#208a8b';
                      break;
-                case 'Agricultura y ganaderia caza y servicios conexos':
-                    empleoSectorData[i].itemStyle.normal.color = '#34e3e5';
-                break;
-                case 'Silvicultura extraccin de madera y servicios conexos':
-                    empleoSectorData[i].itemStyle.normal.color = '#b6a2de';
-                break;
-                case 'Pesca y actividades relacionadas con la pesca':
-                    empleoSectorData[i].itemStyle.normal.color = '#5ab1ef';
-                break;
-                case 'Extraccin de carbon y de lignito extraccin de turba':
-                    empleoSectorData[i].itemStyle.normal.color = '#ffb980';
-                break;
-                case 'Extraccin de petroleo crudo y gas natural':
-                    empleoSectorData[i].itemStyle.normal.color = '#f28c93';
-                break;
-                case 'Extraccin de minerales metaliferos':
-                    empleoSectorData[i].itemStyle.normal.color = '#b6c2e1';
-                break;
-                case 'Explotacin de otras minas y canteras n.c.p.':
-                    empleoSectorData[i].itemStyle.normal.color = '#e5cf0d';
-                break;
-                case 'Elaboracin de productos alimenticios y bebidas':
-                    empleoSectorData[i].itemStyle.normal.color = '#b2d563';
-                break;
-                case 'Elaboracin de productos de tabaco':
-                    empleoSectorData[i].itemStyle.normal.color = '#2ec7c9';
-                break;
-                case 'Fabricacin de productos textiles':
-                    empleoSectorData[i].itemStyle.normal.color = '#9888b9';
-                break;
-                case 'Confeccin de prendas de vestir terminacin y tejido de pieles':
-                    empleoSectorData[i].itemStyle.normal.color = '#51a0d8';
-                break;
-                case 'Curtido y terminacin de cueros fabricacin calzado y de sus partes':
-                    empleoSectorData[i].itemStyle.normal.color = '#dda06f';
-                break;
-                case 'Produccin de madera y fabricacin de productos de madera y corcho excepto muebles':
-                    empleoSectorData[i].itemStyle.normal.color = '#d87a80';
-                break;
-                case 'Fabricacin de papel y de productos de papel':
-                    empleoSectorData[i].itemStyle.normal.color = '#8d98b3';
-                break;
-                case 'Edicin e impresin reproduccin de grabaciones':
-                    empleoSectorData[i].itemStyle.normal.color = '#ccb80c';
-                break;
-                case 'Fabricacin de coque  productos de la refinacin del petroleo y combustible nuclear':
-                    empleoSectorData[i].itemStyle.normal.color = '#97b552';
-                break;
-                case 'Fabricacin de sustancias y productos quimicos':
-                    empleoSectorData[i].itemStyle.normal.color = '#29afb1';
-                break;
-                case 'Fabricacin de productos de caucho y plastico':
-                    empleoSectorData[i].itemStyle.normal.color = '#83759f';
-                break;
-                case 'Fabricacin de productos minerales no metalicos':
-                    empleoSectorData[i].itemStyle.normal.color = '#417fac';
-                break;
-                case 'Fabricacin de metales comunes':
-                    empleoSectorData[i].itemStyle.normal.color = '#b5845c';
-                break;
-                case 'Fabricacin de productos elaborados de metal excepto maquinaria y equipo':
-                    empleoSectorData[i].itemStyle.normal.color = '#b5676c';
-                break;
-                case 'Fabricacin de maquinaria y equipo n.c.p.':
-                    empleoSectorData[i].itemStyle.normal.color = '#767f95';
-                break;
-                case 'Fabricacin de maquinaria de oficina contabilidad e informatica':
-                    empleoSectorData[i].itemStyle.normal.color = '#ae9d0b';
-                break;
-                case 'Fabricacin de maquinaria y aparatos electricos n.c.p.':
-                    empleoSectorData[i].itemStyle.normal.color = '#7f9846';
-                break;
-                case 'Fabricacin de equipos y aparatos de radio television y comunicaciones':
-                    
-                    empleoSectorData[i].itemStyle.normal.color = '#208a8b';
-                break;
-                case 'Fabricacin de instrumentos medicos opticos y de precision fabricacin de relojes':
-                    empleoSectorData[i].itemStyle.normal.color = '#615775';
-                break;
-                case 'Fabricacin de vehiculos automotores remolques y semirremolques':
-                    empleoSectorData[i].itemStyle.normal.color = '#316082';
-                break;
-                case 'Fabricacin de equipo de transporte n.c.p.':
-                    empleoSectorData[i].itemStyle.normal.color = '#876243';
-                break;
-                case 'Fabricacin de muebles y colchones industrias manufactureras  n.c.p.':
-                    empleoSectorData[i].itemStyle.normal.color = '#925357';
-                break;
-                case 'Reciclamiento':
-                    empleoSectorData[i].itemStyle.normal.color = '#596071';
-                break;
-                case 'Electricidad gas vapor y agua caliente':
-                    empleoSectorData[i].itemStyle.normal.color = '#867909';
-                break;
-                case 'Captacin depuracion y distribucion de agua':
-                    empleoSectorData[i].itemStyle.normal.color = '#627536';
-                break;
-                case 'Construccin':
-                    empleoSectorData[i].itemStyle.normal.color = '#34e3e5';
-                break;
-                case 'Venta y reparacion de vehiculos. venta por menor de combustible':
-                    empleoSectorData[i].itemStyle.normal.color = '#34e3e5';
-                break;
-                case 'Comercio al por mayor':
-                    empleoSectorData[i].itemStyle.normal.color = '#b6a2de';
-                break;
-                case 'Comercio al por menor':
-                    empleoSectorData[i].itemStyle.normal.color = '#5ab1ef';
-                break;
-                case 'Servicios de hoteleria y restaurantes':
-                    empleoSectorData[i].itemStyle.normal.color = '#ffb980';
-                break;
-                case 'Transporte ferroviario y automotor y por tuberias':
-                    empleoSectorData[i].itemStyle.normal.color = '#f28c93';
-                break;
-                case 'Transporte maritimo y fluvial':
-                    empleoSectorData[i].itemStyle.normal.color = '#b6c2e1';
-                break;
-                case 'Transporte aereo de cargas y de pasajeros':
-                    empleoSectorData[i].itemStyle.normal.color = '#e5cf0d';
-                break;
-                case 'Manipulacin de carga  almacenamiento y deposito. Servicios de agencias de viaje':
-                    empleoSectorData[i].itemStyle.normal.color = '#b2d563';
-                break;
-                case 'Telecomunicaciones y correos':
-                    empleoSectorData[i].itemStyle.normal.color = '#2ec7c9';
-                break;
-                case 'Intermediacin financiera y otros servicios financieros':
-                    empleoSectorData[i].itemStyle.normal.color = '#9888b9';
-                break;
-                case 'Seguros':
-                    empleoSectorData[i].itemStyle.normal.color = '#51a0d8';
-                break;
-                case 'Servicios auxiliares a la actividad financiera':
-                    empleoSectorData[i].itemStyle.normal.color = '#dda06f';
-                break;
-                case 'Servicios inmobiliarios':
-                    empleoSectorData[i].itemStyle.normal.color = '#d87a80';
-                break;
-                case 'Alquiler de equipo de transporte y de maquinaria':
-                    empleoSectorData[i].itemStyle.normal.color = '#8d98b3';
-                break;
-                case 'Actividades de informatica':
-                    empleoSectorData[i].itemStyle.normal.color = '#ccb80c';
-                break;
-                case 'Investigacion y desarrollo':
-                    empleoSectorData[i].itemStyle.normal.color = '#97b552';
-                break;
-                case 'Servicios juridicos  contables y otros servicios a empresas':
-                    empleoSectorData[i].itemStyle.normal.color = '#29afb1';
-                break;
-                case 'Agencias de empleo temporario':
-                    empleoSectorData[i].itemStyle.normal.color = '#83759f';
-                break;
-                case 'Enseanza':
-                    empleoSectorData[i].itemStyle.normal.color = '#417fac';
-                break;
-                case 'Servicios sociales y de salud':
-                    empleoSectorData[i].itemStyle.normal.color = '#b5845c';
-                break;
-                case 'Eliminacin de desperdicios':
-                    empleoSectorData[i].itemStyle.normal.color = '#767f95';
-                break;
-                case 'Servicios de organizaciones empresariales':
-                    empleoSectorData[i].itemStyle.normal.color = '#ae9d0b';
-                break;
-                case 'Servicios culturales deportivos y de esparcimiento':
-                    empleoSectorData[i].itemStyle.normal.color = '#7f9846';
-                break;
-                case 'Servicios n.c.p.':
-                    empleoSectorData[i].itemStyle.normal.color = '#208a8b';
-                break;
                 default:
                     empleoSectorData[i].itemStyle.normal.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
                      break;
@@ -380,178 +208,6 @@
                 case 'Tucumn':
                      exportacionSectorData[i].itemStyle.normal.color = '#208a8b';
                      break;
-                case 'Agricultura y ganaderia caza y servicios conexos':
-                    exportacionSectorData[i].itemStyle.normal.color = '#34e3e5';
-                break;
-                case 'Silvicultura extraccin de madera y servicios conexos':
-                    exportacionSectorData[i].itemStyle.normal.color = '#b6a2de';
-                break;
-                case 'Pesca y actividades relacionadas con la pesca':
-                    exportacionSectorData[i].itemStyle.normal.color = '#5ab1ef';
-                break;
-                case 'Extraccin de carbon y de lignito extraccin de turba':
-                    exportacionSectorData[i].itemStyle.normal.color = '#ffb980';
-                break;
-                case 'Extraccin de petroleo crudo y gas natural':
-                    exportacionSectorData[i].itemStyle.normal.color = '#f28c93';
-                break;
-                case 'Extraccin de minerales metaliferos':
-                    exportacionSectorData[i].itemStyle.normal.color = '#b6c2e1';
-                break;
-                case 'Explotacin de otras minas y canteras n.c.p.':
-                    exportacionSectorData[i].itemStyle.normal.color = '#e5cf0d';
-                break;
-                case 'Elaboracin de productos alimenticios y bebidas':
-                    exportacionSectorData[i].itemStyle.normal.color = '#b2d563';
-                break;
-                case 'Elaboracin de productos de tabaco':
-                    exportacionSectorData[i].itemStyle.normal.color = '#2ec7c9';
-                break;
-                case 'Fabricacin de productos textiles':
-                    exportacionSectorData[i].itemStyle.normal.color = '#9888b9';
-                break;
-                case 'Confeccin de prendas de vestir terminacin y tejido de pieles':
-                    exportacionSectorData[i].itemStyle.normal.color = '#51a0d8';
-                break;
-                case 'Curtido y terminacin de cueros fabricacin calzado y de sus partes':
-                    exportacionSectorData[i].itemStyle.normal.color = '#dda06f';
-                break;
-                case 'Produccin de madera y fabricacin de productos de madera y corcho excepto muebles':
-                    exportacionSectorData[i].itemStyle.normal.color = '#d87a80';
-                break;
-                case 'Fabricacin de papel y de productos de papel':
-                    exportacionSectorData[i].itemStyle.normal.color = '#8d98b3';
-                break;
-                case 'Edicin e impresin reproduccin de grabaciones':
-                    exportacionSectorData[i].itemStyle.normal.color = '#ccb80c';
-                break;
-                case 'Fabricacin de coque  productos de la refinacin del petroleo y combustible nuclear':
-                    exportacionSectorData[i].itemStyle.normal.color = '#97b552';
-                break;
-                case 'Fabricacin de sustancias y productos quimicos':
-                    exportacionSectorData[i].itemStyle.normal.color = '#29afb1';
-                break;
-                case 'Fabricacin de productos de caucho y plastico':
-                    exportacionSectorData[i].itemStyle.normal.color = '#83759f';
-                break;
-                case 'Fabricacin de productos minerales no metalicos':
-                    exportacionSectorData[i].itemStyle.normal.color = '#417fac';
-                break;
-                case 'Fabricacin de metales comunes':
-                    exportacionSectorData[i].itemStyle.normal.color = '#b5845c';
-                break;
-                case 'Fabricacin de productos elaborados de metal excepto maquinaria y equipo':
-                    exportacionSectorData[i].itemStyle.normal.color = '#b5676c';
-                break;
-                case 'Fabricacin de maquinaria y equipo n.c.p.':
-                    exportacionSectorData[i].itemStyle.normal.color = '#767f95';
-                break;
-                case 'Fabricacin de maquinaria de oficina contabilidad e informatica':
-                    exportacionSectorData[i].itemStyle.normal.color = '#ae9d0b';
-                break;
-                case 'Fabricacin de maquinaria y aparatos electricos n.c.p.':
-                    exportacionSectorData[i].itemStyle.normal.color = '#7f9846';
-                break;
-                case 'Fabricacin de equipos y aparatos de radio television y comunicaciones':
-                    
-                    exportacionSectorData[i].itemStyle.normal.color = '#208a8b';
-                break;
-                case 'Fabricacin de instrumentos medicos opticos y de precision fabricacin de relojes':
-                    exportacionSectorData[i].itemStyle.normal.color = '#615775';
-                break;
-                case 'Fabricacin de vehiculos automotores remolques y semirremolques':
-                    exportacionSectorData[i].itemStyle.normal.color = '#316082';
-                break;
-                case 'Fabricacin de equipo de transporte n.c.p.':
-                    exportacionSectorData[i].itemStyle.normal.color = '#876243';
-                break;
-                case 'Fabricacin de muebles y colchones industrias manufactureras  n.c.p.':
-                    exportacionSectorData[i].itemStyle.normal.color = '#925357';
-                break;
-                case 'Reciclamiento':
-                    exportacionSectorData[i].itemStyle.normal.color = '#596071';
-                break;
-                case 'Electricidad gas vapor y agua caliente':
-                    exportacionSectorData[i].itemStyle.normal.color = '#867909';
-                break;
-                case 'Captacin depuracion y distribucion de agua':
-                    exportacionSectorData[i].itemStyle.normal.color = '#627536';
-                break;
-                case 'Construccin':
-                    exportacionSectorData[i].itemStyle.normal.color = '#34e3e5';
-                break;
-                case 'Venta y reparacion de vehiculos. venta por menor de combustible':
-                    exportacionSectorData[i].itemStyle.normal.color = '#34e3e5';
-                break;
-                case 'Comercio al por mayor':
-                    exportacionSectorData[i].itemStyle.normal.color = '#b6a2de';
-                break;
-                case 'Comercio al por menor':
-                    exportacionSectorData[i].itemStyle.normal.color = '#5ab1ef';
-                break;
-                case 'Servicios de hoteleria y restaurantes':
-                    exportacionSectorData[i].itemStyle.normal.color = '#ffb980';
-                break;
-                case 'Transporte ferroviario y automotor y por tuberias':
-                    exportacionSectorData[i].itemStyle.normal.color = '#f28c93';
-                break;
-                case 'Transporte maritimo y fluvial':
-                    exportacionSectorData[i].itemStyle.normal.color = '#b6c2e1';
-                break;
-                case 'Transporte aereo de cargas y de pasajeros':
-                    exportacionSectorData[i].itemStyle.normal.color = '#e5cf0d';
-                break;
-                case 'Manipulacin de carga  almacenamiento y deposito. Servicios de agencias de viaje':
-                    exportacionSectorData[i].itemStyle.normal.color = '#b2d563';
-                break;
-                case 'Telecomunicaciones y correos':
-                    exportacionSectorData[i].itemStyle.normal.color = '#2ec7c9';
-                break;
-                case 'Intermediacin financiera y otros servicios financieros':
-                    exportacionSectorData[i].itemStyle.normal.color = '#9888b9';
-                break;
-                case 'Seguros':
-                    exportacionSectorData[i].itemStyle.normal.color = '#51a0d8';
-                break;
-                case 'Servicios auxiliares a la actividad financiera':
-                    exportacionSectorData[i].itemStyle.normal.color = '#dda06f';
-                break;
-                case 'Servicios inmobiliarios':
-                    exportacionSectorData[i].itemStyle.normal.color = '#d87a80';
-                break;
-                case 'Alquiler de equipo de transporte y de maquinaria':
-                    exportacionSectorData[i].itemStyle.normal.color = '#8d98b3';
-                break;
-                case 'Actividades de informatica':
-                    exportacionSectorData[i].itemStyle.normal.color = '#ccb80c';
-                break;
-                case 'Investigacion y desarrollo':
-                    exportacionSectorData[i].itemStyle.normal.color = '#97b552';
-                break;
-                case 'Servicios juridicos  contables y otros servicios a empresas':
-                    exportacionSectorData[i].itemStyle.normal.color = '#29afb1';
-                break;
-                case 'Agencias de empleo temporario':
-                    exportacionSectorData[i].itemStyle.normal.color = '#83759f';
-                break;
-                case 'Enseanza':
-                    exportacionSectorData[i].itemStyle.normal.color = '#417fac';
-                break;
-                case 'Servicios sociales y de salud':
-                    exportacionSectorData[i].itemStyle.normal.color = '#b5845c';
-                break;
-                case 'Eliminacin de desperdicios':
-                    exportacionSectorData[i].itemStyle.normal.color = '#767f95';
-                break;
-                case 'Servicios de organizaciones empresariales':
-                    exportacionSectorData[i].itemStyle.normal.color = '#ae9d0b';
-                break;
-                case 'Servicios culturales deportivos y de esparcimiento':
-                    exportacionSectorData[i].itemStyle.normal.color = '#7f9846';
-                break;
-                case 'Servicios n.c.p.':
-                    exportacionSectorData[i].itemStyle.normal.color = '#208a8b';
-                break;
                 default:
                     exportacionSectorData[i].itemStyle.normal.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
                      break;
@@ -637,107 +293,107 @@
                     case 'Tucumn':
                          empleoData[i].children[j].itemStyle.normal.color = '#208a8b';
                          break;
-                    case 'Agricultura y ganaderia caza y servicios conexos':
+                    case 'Agricultura y ganaderia':
                         empleoData[i].children[j].itemStyle.normal.color = '#34e3e5';
                     break;
-                    case 'Silvicultura extraccin de madera y servicios conexos':
+                    case 'Silvicultura, extraccin de madera':
                         empleoData[i].children[j].itemStyle.normal.color = '#b6a2de';
                     break;
-                    case 'Pesca y actividades relacionadas con la pesca':
+                    case 'Pesca':
                         empleoData[i].children[j].itemStyle.normal.color = '#5ab1ef';
                     break;
-                    case 'Extraccin de carbon y de lignito extraccin de turba':
+                    case 'Carbn y lignito':
                         empleoData[i].children[j].itemStyle.normal.color = '#ffb980';
                     break;
-                    case 'Extraccin de petroleo crudo y gas natural':
+                    case 'Petrleo crudo y gas':
                         empleoData[i].children[j].itemStyle.normal.color = '#f28c93';
                     break;
-                    case 'Extraccin de minerales metaliferos':
+                    case 'Minerales metaliferos':
                         empleoData[i].children[j].itemStyle.normal.color = '#b6c2e1';
                     break;
-                    case 'Explotacin de otras minas y canteras n.c.p.':
+                    case 'Explotacin de otras minas y canteras':
                         empleoData[i].children[j].itemStyle.normal.color = '#e5cf0d';
                     break;
-                    case 'Elaboracin de productos alimenticios y bebidas':
+                    case 'Alimentos':
                         empleoData[i].children[j].itemStyle.normal.color = '#b2d563';
                     break;
-                    case 'Elaboracin de productos de tabaco':
+                    case 'Tabaco':
                         empleoData[i].children[j].itemStyle.normal.color = '#2ec7c9';
                     break;
-                    case 'Fabricacin de productos textiles':
+                    case 'Textiles':
                         empleoData[i].children[j].itemStyle.normal.color = '#9888b9';
                     break;
-                    case 'Confeccin de prendas de vestir terminacin y tejido de pieles':
+                    case 'Confeccin':
                         empleoData[i].children[j].itemStyle.normal.color = '#51a0d8';
                     break;
-                    case 'Curtido y terminacin de cueros fabricacin calzado y de sus partes':
+                    case 'Calzado y cuero':
                         empleoData[i].children[j].itemStyle.normal.color = '#dda06f';
                     break;
-                    case 'Produccin de madera y fabricacin de productos de madera y corcho excepto muebles':
+                    case 'Madera':
                         empleoData[i].children[j].itemStyle.normal.color = '#d87a80';
                     break;
-                    case 'Fabricacin de papel y de productos de papel':
+                    case 'Papel':
                         empleoData[i].children[j].itemStyle.normal.color = '#8d98b3';
                     break;
-                    case 'Edicin e impresin reproduccin de grabaciones':
+                    case 'Edicin e impresin':
                         empleoData[i].children[j].itemStyle.normal.color = '#ccb80c';
                     break;
-                    case 'Fabricacin de coque  productos de la refinacin del petroleo y combustible nuclear':
+                    case 'Productos de petrleo':
                         empleoData[i].children[j].itemStyle.normal.color = '#97b552';
                     break;
-                    case 'Fabricacin de sustancias y productos quimicos':
+                    case 'Quimicos':
                         empleoData[i].children[j].itemStyle.normal.color = '#29afb1';
                     break;
-                    case 'Fabricacin de productos de caucho y plastico':
+                    case 'Caucho y plstico':
                         empleoData[i].children[j].itemStyle.normal.color = '#83759f';
                     break;
-                    case 'Fabricacin de productos minerales no metalicos':
+                    case 'Otros minerales no metlicos':
                         empleoData[i].children[j].itemStyle.normal.color = '#417fac';
                     break;
-                    case 'Fabricacin de metales comunes':
+                    case 'Metales comunes':
                         empleoData[i].children[j].itemStyle.normal.color = '#b5845c';
                     break;
-                    case 'Fabricacin de productos elaborados de metal excepto maquinaria y equipo':
+                    case 'Otros productos de metal':
                         empleoData[i].children[j].itemStyle.normal.color = '#b5676c';
                     break;
-                    case 'Fabricacin de maquinaria y equipo n.c.p.':
+                    case 'Maquinaria y equipo':
                         empleoData[i].children[j].itemStyle.normal.color = '#767f95';
                     break;
-                    case 'Fabricacin de maquinaria de oficina contabilidad e informatica':
+                    case 'Maquinaria de oficina':
                         empleoData[i].children[j].itemStyle.normal.color = '#ae9d0b';
                     break;
-                    case 'Fabricacin de maquinaria y aparatos electricos n.c.p.':
+                    case 'Aparatos elctricos':
                         empleoData[i].children[j].itemStyle.normal.color = '#7f9846';
                     break;
-                    case 'Fabricacin de equipos y aparatos de radio television y comunicaciones':
+                    case 'Radio y televisin':
                         
                         empleoData[i].children[j].itemStyle.normal.color = '#208a8b';
                     break;
-                    case 'Fabricacin de instrumentos medicos opticos y de precision fabricacin de relojes':
+                    case 'Instrumentos mdicos':
                         empleoData[i].children[j].itemStyle.normal.color = '#615775';
                     break;
-                    case 'Fabricacin de vehiculos automotores remolques y semirremolques':
+                    case 'Automotores':
                         empleoData[i].children[j].itemStyle.normal.color = '#316082';
                     break;
-                    case 'Fabricacin de equipo de transporte n.c.p.':
+                    case 'Otros equipos de transporte':
                         empleoData[i].children[j].itemStyle.normal.color = '#876243';
                     break;
-                    case 'Fabricacin de muebles y colchones industrias manufactureras  n.c.p.':
+                    case 'Muebles':
                         empleoData[i].children[j].itemStyle.normal.color = '#925357';
                     break;
                     case 'Reciclamiento':
                         empleoData[i].children[j].itemStyle.normal.color = '#596071';
                     break;
-                    case 'Electricidad gas vapor y agua caliente':
+                    case 'Electricidad gas y agua':
                         empleoData[i].children[j].itemStyle.normal.color = '#867909';
                     break;
-                    case 'Captacin depuracion y distribucion de agua':
+                    case 'Distribucion de agua':
                         empleoData[i].children[j].itemStyle.normal.color = '#627536';
                     break;
                     case 'Construccin':
                         empleoData[i].children[j].itemStyle.normal.color = '#34e3e5';
                     break;
-                    case 'Venta y reparacion de vehiculos. venta por menor de combustible':
+                    case 'Vta. y reparación de vehículos':
                         empleoData[i].children[j].itemStyle.normal.color = '#34e3e5';
                     break;
                     case 'Comercio al por mayor':
@@ -746,49 +402,49 @@
                     case 'Comercio al por menor':
                         empleoData[i].children[j].itemStyle.normal.color = '#5ab1ef';
                     break;
-                    case 'Servicios de hoteleria y restaurantes':
+                    case 'Hoteleria y restaurantes':
                         empleoData[i].children[j].itemStyle.normal.color = '#ffb980';
                     break;
-                    case 'Transporte ferroviario y automotor y por tuberias':
+                    case 'Transporte ferroviario y automotor':
                         empleoData[i].children[j].itemStyle.normal.color = '#f28c93';
                     break;
                     case 'Transporte maritimo y fluvial':
                         empleoData[i].children[j].itemStyle.normal.color = '#b6c2e1';
                     break;
-                    case 'Transporte aereo de cargas y de pasajeros':
+                    case 'Transporte aereo':
                         empleoData[i].children[j].itemStyle.normal.color = '#e5cf0d';
                     break;
-                    case 'Manipulacin de carga  almacenamiento y deposito. Servicios de agencias de viaje':
+                    case 'Manipulacin de carga':
                         empleoData[i].children[j].itemStyle.normal.color = '#b2d563';
                     break;
                     case 'Telecomunicaciones y correos':
                         empleoData[i].children[j].itemStyle.normal.color = '#2ec7c9';
                     break;
-                    case 'Intermediacin financiera y otros servicios financieros':
+                    case 'Intermediacin financiera':
                         empleoData[i].children[j].itemStyle.normal.color = '#9888b9';
                     break;
                     case 'Seguros':
                         empleoData[i].children[j].itemStyle.normal.color = '#51a0d8';
                     break;
-                    case 'Servicios auxiliares a la actividad financiera':
+                    case 'Ss. auxiliares a la act. financiera':
                         empleoData[i].children[j].itemStyle.normal.color = '#dda06f';
                     break;
-                    case 'Servicios inmobiliarios':
+                    case 'Inmobiliarios':
                         empleoData[i].children[j].itemStyle.normal.color = '#d87a80';
                     break;
-                    case 'Alquiler de equipo de transporte y de maquinaria':
+                    case 'Alquiler de transporte y de maquinaria':
                         empleoData[i].children[j].itemStyle.normal.color = '#8d98b3';
                     break;
-                    case 'Actividades de informatica':
+                    case 'Informatica':
                         empleoData[i].children[j].itemStyle.normal.color = '#ccb80c';
                     break;
-                    case 'Investigacion y desarrollo':
+                    case 'I + D':
                         empleoData[i].children[j].itemStyle.normal.color = '#97b552';
                     break;
-                    case 'Servicios juridicos  contables y otros servicios a empresas':
+                    case 'Ss. jurídicos y contables':
                         empleoData[i].children[j].itemStyle.normal.color = '#29afb1';
                     break;
-                    case 'Agencias de empleo temporario':
+                    case 'Agencias de empleo':
                         empleoData[i].children[j].itemStyle.normal.color = '#83759f';
                     break;
                     case 'Enseanza':
@@ -800,13 +456,13 @@
                     case 'Eliminacin de desperdicios':
                         empleoData[i].children[j].itemStyle.normal.color = '#767f95';
                     break;
-                    case 'Servicios de organizaciones empresariales':
+                    case 'Ss. de organizaciones empresariales':
                         empleoData[i].children[j].itemStyle.normal.color = '#ae9d0b';
                     break;
-                    case 'Servicios culturales deportivos y de esparcimiento':
+                    case 'Ss culturales, deportivos':
                         empleoData[i].children[j].itemStyle.normal.color = '#7f9846';
                     break;
-                    case 'Servicios n.c.p.':
+                    case 'Ss. n.c.p.':
                         empleoData[i].children[j].itemStyle.normal.color = '#208a8b';
                     break;
                     default:
@@ -894,107 +550,107 @@
                     case 'Tucumn':
                          exportacionData[i].children[j].itemStyle.normal.color = '#208a8b';
                          break;
-                    case 'Agricultura y ganaderia caza y servicios conexos':
+                    case 'Agricultura y ganaderia':
                         exportacionData[i].children[j].itemStyle.normal.color = '#34e3e5';
                     break;
-                    case 'Silvicultura extraccin de madera y servicios conexos':
+                    case 'Silvicultura, extraccin de madera':
                         exportacionData[i].children[j].itemStyle.normal.color = '#b6a2de';
                     break;
-                    case 'Pesca y actividades relacionadas con la pesca':
+                    case 'Pesca':
                         exportacionData[i].children[j].itemStyle.normal.color = '#5ab1ef';
                     break;
-                    case 'Extraccin de carbon y de lignito extraccin de turba':
+                    case 'Carbn y lignito':
                         exportacionData[i].children[j].itemStyle.normal.color = '#ffb980';
                     break;
-                    case 'Extraccin de petroleo crudo y gas natural':
+                    case 'Petrleo crudo y gas':
                         exportacionData[i].children[j].itemStyle.normal.color = '#f28c93';
                     break;
-                    case 'Extraccin de minerales metaliferos':
+                    case 'Minerales metaliferos':
                         exportacionData[i].children[j].itemStyle.normal.color = '#b6c2e1';
                     break;
-                    case 'Explotacin de otras minas y canteras n.c.p.':
+                    case 'Explotacin de otras minas y canteras':
                         exportacionData[i].children[j].itemStyle.normal.color = '#e5cf0d';
                     break;
-                    case 'Elaboracin de productos alimenticios y bebidas':
+                    case 'Alimentos':
                         exportacionData[i].children[j].itemStyle.normal.color = '#b2d563';
                     break;
-                    case 'Elaboracin de productos de tabaco':
+                    case 'Tabaco':
                         exportacionData[i].children[j].itemStyle.normal.color = '#2ec7c9';
                     break;
-                    case 'Fabricacin de productos textiles':
+                    case 'Textiles':
                         exportacionData[i].children[j].itemStyle.normal.color = '#9888b9';
                     break;
-                    case 'Confeccin de prendas de vestir terminacin y tejido de pieles':
+                    case 'Confeccin':
                         exportacionData[i].children[j].itemStyle.normal.color = '#51a0d8';
                     break;
-                    case 'Curtido y terminacin de cueros fabricacin calzado y de sus partes':
+                    case 'Calzado y cuero':
                         exportacionData[i].children[j].itemStyle.normal.color = '#dda06f';
                     break;
-                    case 'Produccin de madera y fabricacin de productos de madera y corcho excepto muebles':
+                    case 'Madera':
                         exportacionData[i].children[j].itemStyle.normal.color = '#d87a80';
                     break;
-                    case 'Fabricacin de papel y de productos de papel':
+                    case 'Papel':
                         exportacionData[i].children[j].itemStyle.normal.color = '#8d98b3';
                     break;
-                    case 'Edicin e impresin reproduccin de grabaciones':
+                    case 'Edicin e impresin':
                         exportacionData[i].children[j].itemStyle.normal.color = '#ccb80c';
                     break;
-                    case 'Fabricacin de coque  productos de la refinacin del petroleo y combustible nuclear':
+                    case 'Productos de petrleo':
                         exportacionData[i].children[j].itemStyle.normal.color = '#97b552';
                     break;
-                    case 'Fabricacin de sustancias y productos quimicos':
+                    case 'Quimicos':
                         exportacionData[i].children[j].itemStyle.normal.color = '#29afb1';
                     break;
-                    case 'Fabricacin de productos de caucho y plastico':
+                    case 'Caucho y plstico':
                         exportacionData[i].children[j].itemStyle.normal.color = '#83759f';
                     break;
-                    case 'Fabricacin de productos minerales no metalicos':
+                    case 'Otros minerales no metlicos':
                         exportacionData[i].children[j].itemStyle.normal.color = '#417fac';
                     break;
-                    case 'Fabricacin de metales comunes':
+                    case 'Metales comunes':
                         exportacionData[i].children[j].itemStyle.normal.color = '#b5845c';
                     break;
-                    case 'Fabricacin de productos elaborados de metal excepto maquinaria y equipo':
+                    case 'Otros productos de metal':
                         exportacionData[i].children[j].itemStyle.normal.color = '#b5676c';
                     break;
-                    case 'Fabricacin de maquinaria y equipo n.c.p.':
+                    case 'Maquinaria y equipo':
                         exportacionData[i].children[j].itemStyle.normal.color = '#767f95';
                     break;
-                    case 'Fabricacin de maquinaria de oficina contabilidad e informatica':
+                    case 'Maquinaria de oficina':
                         exportacionData[i].children[j].itemStyle.normal.color = '#ae9d0b';
                     break;
-                    case 'Fabricacin de maquinaria y aparatos electricos n.c.p.':
+                    case 'Aparatos elctricos':
                         exportacionData[i].children[j].itemStyle.normal.color = '#7f9846';
                     break;
-                    case 'Fabricacin de equipos y aparatos de radio television y comunicaciones':
+                    case 'Radio y televisin':
                         
                         exportacionData[i].children[j].itemStyle.normal.color = '#208a8b';
                     break;
-                    case 'Fabricacin de instrumentos medicos opticos y de precision fabricacin de relojes':
+                    case 'Instrumentos mdicos':
                         exportacionData[i].children[j].itemStyle.normal.color = '#615775';
                     break;
-                    case 'Fabricacin de vehiculos automotores remolques y semirremolques':
+                    case 'Automotores':
                         exportacionData[i].children[j].itemStyle.normal.color = '#316082';
                     break;
-                    case 'Fabricacin de equipo de transporte n.c.p.':
+                    case 'Otros equipos de transporte':
                         exportacionData[i].children[j].itemStyle.normal.color = '#876243';
                     break;
-                    case 'Fabricacin de muebles y colchones industrias manufactureras  n.c.p.':
+                    case 'Muebles':
                         exportacionData[i].children[j].itemStyle.normal.color = '#925357';
                     break;
                     case 'Reciclamiento':
                         exportacionData[i].children[j].itemStyle.normal.color = '#596071';
                     break;
-                    case 'Electricidad gas vapor y agua caliente':
+                    case 'Electricidad gas y agua':
                         exportacionData[i].children[j].itemStyle.normal.color = '#867909';
                     break;
-                    case 'Captacin depuracion y distribucion de agua':
+                    case 'Distribucion de agua':
                         exportacionData[i].children[j].itemStyle.normal.color = '#627536';
                     break;
                     case 'Construccin':
                         exportacionData[i].children[j].itemStyle.normal.color = '#34e3e5';
                     break;
-                    case 'Venta y reparacion de vehiculos. venta por menor de combustible':
+                    case 'Vta. y reparación de vehículos':
                         exportacionData[i].children[j].itemStyle.normal.color = '#34e3e5';
                     break;
                     case 'Comercio al por mayor':
@@ -1003,49 +659,49 @@
                     case 'Comercio al por menor':
                         exportacionData[i].children[j].itemStyle.normal.color = '#5ab1ef';
                     break;
-                    case 'Servicios de hoteleria y restaurantes':
+                    case 'Hoteleria y restaurantes':
                         exportacionData[i].children[j].itemStyle.normal.color = '#ffb980';
                     break;
-                    case 'Transporte ferroviario y automotor y por tuberias':
+                    case 'Transporte ferroviario y automotor':
                         exportacionData[i].children[j].itemStyle.normal.color = '#f28c93';
                     break;
                     case 'Transporte maritimo y fluvial':
                         exportacionData[i].children[j].itemStyle.normal.color = '#b6c2e1';
                     break;
-                    case 'Transporte aereo de cargas y de pasajeros':
+                    case 'Transporte aereo':
                         exportacionData[i].children[j].itemStyle.normal.color = '#e5cf0d';
                     break;
-                    case 'Manipulacin de carga  almacenamiento y deposito. Servicios de agencias de viaje':
+                    case 'Manipulacin de carga':
                         exportacionData[i].children[j].itemStyle.normal.color = '#b2d563';
                     break;
                     case 'Telecomunicaciones y correos':
                         exportacionData[i].children[j].itemStyle.normal.color = '#2ec7c9';
                     break;
-                    case 'Intermediacin financiera y otros servicios financieros':
+                    case 'Intermediacin financiera':
                         exportacionData[i].children[j].itemStyle.normal.color = '#9888b9';
                     break;
                     case 'Seguros':
                         exportacionData[i].children[j].itemStyle.normal.color = '#51a0d8';
                     break;
-                    case 'Servicios auxiliares a la actividad financiera':
+                    case 'Ss. auxiliares a la act. financiera':
                         exportacionData[i].children[j].itemStyle.normal.color = '#dda06f';
                     break;
-                    case 'Servicios inmobiliarios':
+                    case 'Inmobiliarios':
                         exportacionData[i].children[j].itemStyle.normal.color = '#d87a80';
                     break;
-                    case 'Alquiler de equipo de transporte y de maquinaria':
+                    case 'Alquiler de transporte y de maquinaria':
                         exportacionData[i].children[j].itemStyle.normal.color = '#8d98b3';
                     break;
-                    case 'Actividades de informatica':
+                    case 'Informatica':
                         exportacionData[i].children[j].itemStyle.normal.color = '#ccb80c';
                     break;
-                    case 'Investigacion y desarrollo':
+                    case 'I + D':
                         exportacionData[i].children[j].itemStyle.normal.color = '#97b552';
                     break;
-                    case 'Servicios juridicos  contables y otros servicios a empresas':
+                    case 'Ss. jurídicos y contables':
                         exportacionData[i].children[j].itemStyle.normal.color = '#29afb1';
                     break;
-                    case 'Agencias de empleo temporario':
+                    case 'Agencias de empleo':
                         exportacionData[i].children[j].itemStyle.normal.color = '#83759f';
                     break;
                     case 'Enseanza':
@@ -1057,13 +713,13 @@
                     case 'Eliminacin de desperdicios':
                         exportacionData[i].children[j].itemStyle.normal.color = '#767f95';
                     break;
-                    case 'Servicios de organizaciones empresariales':
+                    case 'Ss. de organizaciones empresariales':
                         exportacionData[i].children[j].itemStyle.normal.color = '#ae9d0b';
                     break;
-                    case 'Servicios culturales deportivos y de esparcimiento':
+                    case 'Ss culturales, deportivos':
                         exportacionData[i].children[j].itemStyle.normal.color = '#7f9846';
                     break;
-                    case 'Servicios n.c.p.':
+                    case 'Ss. n.c.p.':
                         exportacionData[i].children[j].itemStyle.normal.color = '#208a8b';
                     break;
                     default:
@@ -1152,7 +808,6 @@
                     type:'treemap',
                     itemStyle: {
                         normal: {
-                            
                             label: {
                                 show: false,
                                 position:'outer',
@@ -1189,7 +844,7 @@
             calculable : false,
             series : [
                 {   
-                    name: 'Treemap Empleo',
+                    name: 'Treemap Exportación',
                     type:'treemap',
                     itemStyle: {
                         normal: {
@@ -1198,11 +853,11 @@
                                 position:'outer',
                                 formatter: "{b}"
                             },
-                            borderWidth: 1
+                            borderWidth: 0.5
                         },
                         emphasis: {
                             label: {
-                                show: true
+                                show: false
                             }
                         }
                     },
@@ -1617,7 +1272,7 @@
                     itemStyle : {
                         normal : {
                             label : {
-                                show : false
+                                show : true
                             },
                             labelLine : {
                                 show : false

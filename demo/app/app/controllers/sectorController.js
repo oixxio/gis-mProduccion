@@ -107,7 +107,8 @@
 					for (var i = 0; i < response.length; i++) {
 						for (var j = 0; j < provincia.length; j++) {
 							if (provincia[j].id === response[i].provincia_id) {
-								response[i].nombreProvincia = provincia[j].nombre; 
+								response[i].nombreProvincia = provincia[j].nombre;
+								response[i].abvProv = provincia[j].abv; 
 							}							
 						}
 						response[i].part_empleo_prov_nacion = parseFloat(parseFloat(response[i].part_empleo_prov_nacion*100).toFixed(2));
@@ -167,7 +168,7 @@
 					            }
 							}
 
-							if (response[i].nombreProvincia != 'Total Sectorial') {
+							if (response[i].nombreProvincia != 'Total Sectorial' && response[i].part_exp_prov_nacion > 0) {
 								if(	response[i].dinamica_part_exportaciones_pvciales != 0 &&
 									response[i].dinamica_exportaciones_pvciales != 0 ){		
 					                    scatterExportData.data = [[response[i].dinamica_part_exportaciones_pvciales, response[i].dinamica_exportaciones_pvciales]];
@@ -184,31 +185,32 @@
 	                    /*--------------------------------*/
 	                    /*Veo si hay un elemento igual en el array de empleo*/
 	                    
-	                    if (response[i].part_empleo_prov_nacion != 0 && 
-	                    	response[i].nombreProvincia != 'Total Sectorial'){
+	                    if (response[i].nombreProvincia != 'Total Sectorial' && response[i].part_empleo_prov_nacion > 0){
 		                	empleoData.name = response[i].nombreProvincia;
-	                    	empleoData.value = (parseFloat(response[i].part_empleo_prov_nacion));
-	                    	empleoData.itemStyle = {normal:{color:''}};
+	                    	empleoData.value = response[i].part_empleo_prov_nacion;
+	                    	empleoData.itemStyle = {normal:{ label: {show: true,formatter: "{b}: {c}%"},color:''}};
 	                    	empleo.push(empleoData);
 	                    	//$window.alert(JSON.stringify(empleoData))
 	                    	empleoData = {};
 							
 		                }
 		                /*Armo grafica de exportacion*/
-		                if (response[i].part_exp_prov_nacion != 0 && response[i].nombreProvincia != 'Total Sectorial'){
+		                if (response[i].nombreProvincia != 'Total Sectorial' && response[i].part_exp_prov_nacion > 0){
 		                	exportacionData.name = response[i].nombreProvincia;
 	                    	exportacionData.value = response[i].part_exp_prov_nacion;
-	                    	exportacionData.itemStyle = {normal:{color:''}};
+	                    	exportacionData.itemStyle = {normal:{ label: {show: true,formatter: "{b}: {c}%"},color:''}};
 	                    	exportacion.push(exportacionData);
 	                    	exportacionData = {};
 		                }
 	                                       
 					}
+			
 					if (empleo.length === 0) {
 						empleo = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}},children: [{name: 'sin valores',value: 1,itemStyle:{normal:{color:''}}}]}];
 					}
 					if (exportacion.length === 0) {
-						exportacion = empleo = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}},children: [{name: 'sin valores',value: 1,itemStyle:{normal:{color:''}}}]}];
+
+						exportacion = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}},children: [{name: 'sin valores',value: 1,itemStyle:{normal:{color:''}}}]}];
 					}
 					if (scatterEmpleo.length === 0) {
 						scatterEmpleo = [{name: 'sin valores',type:"scatter",data: [[1,1]],symbolSize: 20}];

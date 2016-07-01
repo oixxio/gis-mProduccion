@@ -48396,6 +48396,10 @@ define('zrender/zrender', [
         },
         getLabel: function (itemStyle, rect, name, value) {
             var normalTextStyle = itemStyle.normal.label.textStyle;
+            normalTextStyle.fontFamily = 'Gotham'
+            normalTextStyle.fontStyle = 'bold'
+            normalTextStyle.color = '#FFFFFF'
+
             var queryTarget = [
                 itemStyle.emphasis.label.textStyle,
                 normalTextStyle
@@ -48414,20 +48418,31 @@ define('zrender/zrender', [
             var emphasisTextFont = this.getFont(emphasisTextStyle);
             var emphasisTextWidth = toolArea.getTextWidth(text, emphasisTextFont);
             var emphasisTextHeight = toolArea.getTextHeight(text, emphasisTextFont);
+            text = text.replace(':', '\n')
             if (!itemStyle.normal.label.show) {
                 text = '';
-            } else if (itemStyle.normal.label.x + textWidth > rect.width || itemStyle.normal.label.y + textHeight > rect.height) {
-                text = '';
+            } else if (itemStyle.normal.label.y + textHeight > rect.height || itemStyle.normal.label.x + textWidth > rect.width) {
+                for (var i=0 ; i<10;i++) {
+                    if (itemStyle.normal.label.y + textHeight > rect.height || itemStyle.normal.label.x + textWidth > rect.width) {
+                       normalTextStyle.fontSize = --normalTextStyle.fontSize;
+                       textFont = this.getFont(normalTextStyle);
+                       textWidth = toolArea.getTextWidth(text, textFont);
+                       textHeight = toolArea.getTextHeight(text, textFont);
+                   }
+                }   
+                if (itemStyle.normal.label.y + textHeight > rect.height || itemStyle.normal.label.x + textWidth > rect.width) {
+                    text = ''
+                }           
             }
             if (!itemStyle.emphasis.label.show) {
                 emphasisText = '';
-            } else if (emphasisTextStyle.x + emphasisTextWidth > rect.width || emphasisTextStyle.y + emphasisTextHeight > rect.height) {
+            } else if (emphasisTextStyle.x + emphasisTextWidth > rect.width) {
                 emphasisText = '';
             }
             var textShape = {
                 style: {
-                    textX: rect.x + itemStyle.normal.label.x,
-                    textY: rect.y + itemStyle.normal.label.y,
+                    textX: rect.x + itemStyle.normal.label.x+5,
+                    textY: rect.y + itemStyle.normal.label.y+5,
                     text: text,
                     textPosition: 'specific',
                     textColor: normalTextStyle.color,

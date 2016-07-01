@@ -118,7 +118,7 @@ define('echarts/chart/treemap', [
                     i++;
                 }
             }
-            var currentShapeLen = shapeList.length;
+            var currentShapeLen = 10;
             var series = this.series[seriesIndex];
             var itemStyle = series.itemStyle;
             var treemapWidth = this.parsePercent(series.size[0], this.zr.getWidth()) || 400;
