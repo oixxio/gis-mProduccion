@@ -48418,22 +48418,28 @@ define('zrender/zrender', [
             var emphasisTextFont = this.getFont(emphasisTextStyle);
             var emphasisTextWidth = toolArea.getTextWidth(text, emphasisTextFont);
             var emphasisTextHeight = toolArea.getTextHeight(text, emphasisTextFont);
-            text = text.replace(':', '\n')
+            //[Start mod custom]
+            var offset = 0
             if (!itemStyle.normal.label.show) {
                 text = '';
             } else if (itemStyle.normal.label.y + textHeight > rect.height || itemStyle.normal.label.x + textWidth > rect.width) {
-                for (var i=0 ; i<10;i++) {
+                for (var i=0 ; i<8;i++) {
                     if (itemStyle.normal.label.y + textHeight > rect.height || itemStyle.normal.label.x + textWidth > rect.width) {
                        normalTextStyle.fontSize = --normalTextStyle.fontSize;
                        textFont = this.getFont(normalTextStyle);
                        textWidth = toolArea.getTextWidth(text, textFont);
                        textHeight = toolArea.getTextHeight(text, textFont);
-                   }
+                    }
+                    if (itemStyle.normal.label.y + textHeight > rect.height || itemStyle.normal.label.x + textWidth > rect.width) {
+                        text = text.replace(' ', '\n')
+                        offset += 3.5;
+                    }
                 }   
                 if (itemStyle.normal.label.y + textHeight > rect.height || itemStyle.normal.label.x + textWidth > rect.width) {
                     text = ''
                 }           
             }
+            //[End mod custom]
             if (!itemStyle.emphasis.label.show) {
                 emphasisText = '';
             } else if (emphasisTextStyle.x + emphasisTextWidth > rect.width) {
@@ -48441,8 +48447,8 @@ define('zrender/zrender', [
             }
             var textShape = {
                 style: {
-                    textX: rect.x + itemStyle.normal.label.x+5,
-                    textY: rect.y + itemStyle.normal.label.y+5,
+                    textX: rect.x + itemStyle.normal.label.x,
+                    textY: rect.y + itemStyle.normal.label.y+offset,
                     text: text,
                     textPosition: 'specific',
                     textColor: normalTextStyle.color,

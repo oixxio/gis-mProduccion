@@ -110,7 +110,7 @@
 			                	if(verificaRubro(empleo,response[i].abvRubro) === -1){
 			                    	empleoData.name = response[i].abvRubro;
 			                    	empleoData.value = response[i].part_empleo_prov;
-			                    	empleoData.itemStyle = {normal:{ label: {show: true,formatter: "{b}"},color:''}};
+			                    	empleoData.itemStyle = {normal:{ label: {show: true,formatter: "{b} "},color:''}};
 			                    	empleoData.children = [{name: response[i].abvSector,value: response[i].part_empleo_prov,itemStyle:{normal:{ label: {show: true,formatter: "{b}: {c}%"},color:''}}}];
 			                    	empleo.push(empleoData);
 			                    	empleoData = {};
@@ -127,7 +127,7 @@
 			                	if(verificaRubroExp(exportacion,response[i].abvRubro) === -1){
 			                    	exportacionData.name = response[i].abvRubro;
 			                    	exportacionData.value = response[i].part_exportaciones_pvciales;
-			                    	exportacionData.itemStyle = {normal:{ label: {show: true,formatter: "{b}"},color:''}};
+			                    	exportacionData.itemStyle = {normal:{ label: {show: true,formatter: "{b} "},color:''}};
 			                    	exportacionData.children = [{name: response[i].abvSector,value: (response[i].part_exportaciones_pvciales),itemStyle:{normal:{ label: {show: true,formatter: "{b}: {c}%"},color:''}}}];
 			                    	exportacion.push(exportacionData);
 			                    	exportacionData = {};

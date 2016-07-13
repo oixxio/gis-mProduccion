@@ -12,7 +12,6 @@
         'ui.tree',
         'ngTagsInput',
         'textAngular',
-        'angular-loading-bar',
         'duScroll',
 
         // Custom modules

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 01, 2016 at 07:00 PM
+-- Generation Time: Jul 04, 2016 at 09:05 PM
 -- Server version: 5.5.50
 -- PHP Version: 5.6.10
 
@@ -1560,7 +1560,7 @@ INSERT INTO `datos_generales` (`provincia_id`, `poblacion`, `prop_pobl_total_nac
 (19, 482796, 0.0110757, 2007, 6875, 23248, 0.251444, 0.00761721, 520, 0.00944864, ' Chile, Paraguay y Uruguay ', ' Maíz, soja y productos de higiene '),
 (20, 329499, 0.00755899, 2005, 8275, 31698, 0.463551, 0.0145133, 803, 0.0366137, ' Suiza, Estados Unidos, España', ' Oro, langostinos congelados y plata '),
 (21, 3425656, 0.0785875, 2013, 250269, 123685, 0.133322, 0.0882595, 12359, 0.22243, ' Brasil, India y Estados Unidos ', ' Aceite de soja, soja y maiz '),
-(22, 938109, 0.021521, 2007, 6855, 49936, 0.257796, 0.00759543, 268, 0.00885162, ' Chile, Vietman y Paises Bajos ', ' Maiz, soja y alimentos preparados para animales '),
+(22, 938109, 0.021521, 2007, 6855, 49936, 0.257796, 0.00759543, 268, 0.00885162, ' Chile, Vietman y Birmania', ' Maiz, soja y alimentos preparados para animales '),
 (23, 156509, 0.00359045, 2007, 5289, 17563, 0.328657, 0.00586077, 460, 0.00285058, ' Uruguay, Brasil y China ', ' Merluza, moluscos y tubos de plástico'),
 (24, 1613476, 0.0370145, 2013, 49400, 77422, 0.190258, 0.0174213, 747, 0.0152718, ' Estados Unidos, Brasil y Paises Bajos ', ' Aceite escenciales de limón, jugo de limón y limones  ');
 
@@ -1793,13 +1793,13 @@ INSERT INTO `rubro_sector` (`id`, `codigo`, `descripcion`, `abv`) VALUES
 (6, 'F', 'Construcción', 'Construcción'),
 (7, 'G', 'Comercio al por mayor y al por menor , reparación de vehículos automotores', 'Comercio'),
 (8, 'H', 'Servicios de hoteleria y restaurantes', 'Hoteleria y restaurantes'),
-(9, 'I', 'Servicios de transporte, almacenamiento y comunicaciones\n', 'Transporte, almacenamiento y comunicaciones'),
+(9, 'I', 'Servicios de transporte, almacenamiento y comunicaciones\n', 'Transporte, alm. y comunicaciones'),
 (10, 'J', 'Intermediación financiera y otros servicios fiancieros\n', 'Intermediación financiera'),
 (11, 'K', 'Servicios inmobiliarios, empresariales y de alquiler\n', 'Ss. Inmobiliarios y empresariales'),
-(12, 'L', 'Administracion publica, defensa y seguridad social obligatoria', 'Adm. publica, defensa y seguridad social obligatoria'),
+(12, 'L', 'Administracion publica, defensa y seguridad social obligatoria', 'Adm. publ., defensa y seg. social obl.'),
 (13, 'M', 'Enseñanza', 'Enseñanza'),
 (14, 'N', 'Servicios sociales y de salud\n', 'Ss. sociales y de salud'),
-(15, 'O', 'Servicios comunitarios, sociales y personales n.c.p', 'Ss. comunitarios, sociales y personales n.c.p');
+(15, 'O', 'Servicios comunitarios, sociales y personales n.c.p', 'Ss. comun, sociales y pers. n.c.p');
 
 -- --------------------------------------------------------
 
