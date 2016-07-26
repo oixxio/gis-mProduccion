@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Get Geo Tree</title>
+</head>
+<body ng-controller="testCtrl">
+
+
+
+	<label>LISTA</label>
+	<ul>
+		<li ng-repeat="node in nodes">{{node.nodeID}} - {{node.nodeName}} - {{node.parentID}}</li>
+	</ul>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script>
+	var app = angular.module("app",[]);
+
+	app.controller('testCtrl',['$http','$location','$window','$scope',
+		function($http,$location,$window,$scope){
+			var nodes = [];
+			$http.get('getGeoTree.php').then(function(response){
+				nodes = response.data;
+			});
+			var map = {}, node, roots = [];
+			for (var i = 0; i < nodes.length; i += 1) {
+			    node = nodes[i];
+			    node.children = [];
+			    map[node.nodeID] = i; // use map to look-up the parents
+			    if (node.parentID !== "0") {
+			        nodes[map[node.parentID]].children.push(node);
+			    } else {
+			        roots.push(node);
+			    }
+			}
+			alert(JSON.stringify(roots));
+
+	}])
+</script>
+
+
+
+</html>
