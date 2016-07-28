@@ -45,7 +45,7 @@
                                         >Particip. en Export. Prov. 2014</th>
                                         <th id="col7-1b" ng-click="changeSort('part_exp_prov_nacion')"
                                         >Particip. en Export. Nac. 2014</th>
-                                        <th id="col8b" ng-click="changeSort('dinamica_exportaciones_pvciales')"
+                                        <th id="col8b" ng-click="changeSort('dinamica_exp_tabla')"
                                         >Var. % Export. Prov. 2007-2014</th>
                                         <th id="col10b" ng-click="changeSort('dif_salario_sector')"
                                         >Dif. % Salario Prov. Nación</th>
@@ -57,13 +57,13 @@
                                         <td id="col3b">{{data.empleo_sector_view}}</td>
                                         <td id="col4b">{{data.part_empleo_prov_view}}%</td>
                                         <td id="col4-1b">{{data.part_empleo_prov_nacion_view}}%</td>
-                                        <td id="col5b" ng-style="setColor(data.dinamica_empleo)">{{data.var_empleo_2007_2014_view}}%</td>
+                                        <td id="col5b" ng-style="setColor(data.var_empleo_tabla)">{{data.var_empleo_tabla_view}}%</td>
                                         <td id="col6b">{{data.exportaciones_view}}</td>
                                         <td id="col7b">{{data.part_exportaciones_pvciales_view}}%</td>
                                         <td id="col7-1b">{{data.part_exp_prov_nacion_view}}%</td>
                                         <td id="col8b" 
-                                            ng-style="setColor(data.dinamica_exportaciones_pvciales)">
-                                            {{data.dinamica_exportaciones_pvciales_view}}%</td>
+                                            ng-style="setColor(data.dinamica_exp_tabla)">
+                                            {{data.dinamica_exp_tabla_view}}%</td>
                                         <td id="col10b" 
                                             ng-style="setColor(data.dif_salario_sector)">{{data.dif_salario_sector_view}}%</td> 
                                     </tr>

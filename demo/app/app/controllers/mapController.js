@@ -39,7 +39,11 @@
 				sector = response;
 				dashboardFactory.getRubroData().success(function(response){
 					rubro = response;
-					dashboardFactory.getProvData(data).success(function(response){				
+					dashboardFactory.getProvData(data).success(function(response){	
+					//variables agregadas para calcular los datos de tabla no logaritmicos
+					var empleo_2007 = 0;	
+					var exp_2007 = 0;	
+					//--------------------------------------------------------------------	
 						for (var i = 0; i < response.length; i++) {
 							for (var j = 0; j < sector.length; j++) {
 								if (sector[j].id === response[i].sector_id) {
@@ -76,7 +80,31 @@
 							response[i].remuneracion_view = parseInt(response[i].remuneracion).toLocaleString();
 							response[i].dif_salario_sector = parseFloat(parseFloat(response[i].dif_salario_sector*100).toFixed(2));
 							response[i].dif_salario_sector_view = response[i].dif_salario_sector.toLocaleString();
+
+							//[START fix datos var%empleo en tabla]
+							if (response[i].empleo_sector != 0) {
+								empleo_2007 = response[i].empleo_sector/(Math.exp(response[i].var_empleo_2007_2014/100))
+								response[i].var_empleo_tabla = ((response[i].empleo_sector-empleo_2007)*100)/empleo_2007
+								response[i].var_empleo_tabla = parseFloat(parseFloat(response[i].var_empleo_tabla).toFixed(2));
+								response[i].var_empleo_tabla_view = response[i].var_empleo_tabla.toLocaleString();
+							}else {
+								response[i].var_empleo_tabla = 0
+								response[i].var_empleo_tabla_view = response[i].var_empleo_tabla.toLocaleString();
+							}							
+							//[END fix datos var%empleo en tabla] 
+
+							//[START fix datos var part exp en tabla]
+							if (response[i].exportaciones != 0) {
+								exp_2007 = response[i].exportaciones/(Math.exp(response[i].dinamica_exportaciones_pvciales/100))
+								response[i].dinamica_exp_tabla = ((response[i].exportaciones-exp_2007)*100)/exp_2007
+								response[i].dinamica_exp_tabla = parseFloat(parseFloat(response[i].dinamica_exp_tabla).toFixed(2));
+								response[i].dinamica_exp_tabla_view = response[i].dinamica_exp_tabla.toLocaleString();
+							}else {
+								response[i].dinamica_exp_tabla = 0
+								response[i].dinamica_exp_tabla_view = response[i].dinamica_exp_tabla.toLocaleString()
+							}
 							
+							//[END fix datos var part exp en tabla]
 							//Objeto para graficar el scatter
 							if (response[i].nombreSector != 'Total Provincia') {
 								if(	response[i].dinamica_empleo != 0 && response[i].var_empleo_2007_2014 != 0){
