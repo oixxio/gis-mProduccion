@@ -1,0 +1,38 @@
+cod-1-dig,cod-2-dig,CIIU
+A,1,"Agricultura, ganadería, caza y actividades de servicios conexas"
+A,2,"Silvicultura, extracción de madera y actividades de servicios conexas"
+B,5,"Pesca, explotación de criaderos de peces y granjas piscícolas; actividades de servicios relacionadas"
+C,10,"Extracción de carbón y lignito, extracción de turba"
+C,11,"Extracción de petróleo crudo y gas natural, actividades de servicios relacionadas con la extracción"
+C,12,Extracción de minerales de uranio y torio
+C,13,Extracción de minerales metalíferos
+C,14,Explotación de otras minas y canteras
+D,15,Elaboración de productos alimenticios y bebidas
+D,16,Elaboración de productos de tabaco
+D,17,Fabricación de productos textiles
+D,18,"Fabricación de prendas de vestir, adobo y teñido de pieles"
+D,19,"Curtido y adobo de cueros; fabricación de maletas, bolsos de mano, artículos de talabartería y guarn"
+D,20,"Producción de madera y fabricación de productos de madera y corcho, excepto muebles; fabricación de"
+D,21,Fabricación de papel y de productos de papel
+D,22,Actividades de edición e impresión y de reproducción de grabaciones
+D,23,"Fabricación de coque, productos de la refinación del petróleo y combustible nuclear"
+D,24,Fabricación de sustancias y productos químicos
+D,25,Fabricación de productos de caucho y plástico
+D,26,Fabricación de otros productos minerales no metálicos
+D,27,Fabricación de metales comunes
+D,28,"Fabricación de productos elaborados de metal, excepto maquinaria y equipo"
+D,29,Fabricación de maquinaria y equipo ncp
+D,30,"Fabricación de maquinaria de oficina, contabilidad e informática"
+D,31,Fabricación de maquinaria y aparatos eléctricos ncp
+D,32,"Fabricación de equipo y aparatos de radio, televisión y comunicaciones"
+D,33,"Fabricación de instrumentos médicos, ópticos y de precisión y fabricación de relojes"
+D,34,"Fabricación de vehículos automotores, remolques y semirremolques"
+D,35,Fabricación de otros tipos de equipo de transporte
+D,36,"Fabricación de muebles,  industrias manufactureras ncp"
+E,40,"Suministro de electricidad, gas, vapor y agua caliente"
+K,72,Informática y actividades conexas
+K,74,Otras actividades empresariales
+O,92,Actividades de esparcimiento y actividades culturales y deportivas
+O,93,Otras actividades de servicios
+S/C,S/C,SIN CLASIFICAR
+IND,IND,Indeterminado

@@ -1,0 +1,146 @@
+depth,Parent-id,id,name,code
+4,11,111,Cultivo de cereales y otros cultivos ncp,111
+4,11,112,"Cultivo de hortalizas y legumbres, especialidades hortícolas y productos de vivero",112
+4,11,113,"Cultivo de frutas, nueces, plantas cuyas hojas o frutas se utilizan para preparar bebidas, y especia",113
+4,12,121,"Cría de ganado vacuno y de ovejas, cabras, caballos, asnos, mulas y burdéganos; cría de ganado leche",121
+4,12,122,"Cría de otros animales, elaboración de productos animales ncp",122
+4,20,200,"Silvicultura, extracción de madera y actividades de servicios conexas",200
+4,50,500,"Pesca, explotación de criaderos de peces y granjas piscícolas; actividades de servicios relacionadas",500
+4,101,1010,Extracción y aglomeración de carbón de piedra,1010
+4,102,1020,Extracción y aglomeración de lignito,1020
+4,103,1030,Extracción y aglomeración de turba,1030
+4,111,1110,Extracción de petróleo crudo y gas natural,1110
+4,120,1200,Extracción de minerales de uranio y torio,1200
+4,131,1310,Extracción de minerales de hierro,1310
+4,132,1320,"Extracción de minerales metalíferos no ferrosos, excepto los minerales de uranio y torio",1320
+4,141,1410,"Extracción de piedra, arena y arcilla",1410
+4,142,1421,Extracción de minerales para la fabricación de abonos y productos químicos,1421
+4,142,1422,Extracción de sal,1422
+4,142,1429,Explotación de otras minas y canteras ncp,1429
+4,151,1511,"Producción, procesamiento y conservación de carne y productos cárnicos",1511
+4,151,1512,Elaboración y conservación de pescado y productos de pescado,1512
+4,151,1513,"Elaboración y conservación de frutas, legumbres y hortalizas",1513
+4,151,1514,Elaboración de aceites y grasas de origen vegetal y animal,1514
+4,152,1520,Elaboración de productos lácteos,1520
+4,153,1531,Elaboración de productos de molinería,1531
+4,153,1532,Elaboración de almidones y productos derivados del almidón,1532
+4,153,1533,Elaboración de alimentos preparados para animales,1533
+4,154,1541,Elaboración de productos de panadería,1541
+4,154,1542,Elaboración de azúcar,1542
+4,154,1543,Elaboración de cacao y chocolate y de productos de confitería,1543
+4,154,1544,"Elaboración de macarrones, fideos, alcuzcuz y productos farináceos similares",1544
+4,154,1549,Elaboración de otros productos alimenticios ncp,1549
+4,155,1551,"Destilación, rectificación y mezcla de bebidas alcohólicas; producción de alcohol etílico a partir d",1551
+4,155,1552,Elaboración de vinos,1552
+4,155,1553,Elaboración de bebidas malteadas y de malta,1553
+4,155,1554,"Elaboración de bebidas no alcohólicas, producción de aguas minerales",1554
+4,160,1600,Elaboración de productos de tabaco,1600
+4,171,1711,"Preparación e hilatura de fibras textiles, tejedura de productos textiles",1711
+4,172,1721,"Fabricación de artículos confeccionados de materiales textiles, excepto prendas de vestir",1721
+4,172,1722,Fabricación de tapices y alfombras,1722
+4,172,1723,"Fabricación de cuerdas, cordeles, bramantes y redes",1723
+4,172,1729,Fabricación de otros productos textiles ncp,1729
+4,173,1730,Fabricación de tejidos y artículos de punto y ganchillo,1730
+4,181,1810,"Fabricación de prendas de vestir, excepto prendas de piel",1810
+4,182,1820,"Adobo y teñido de pieles, fabricación de artículos de piel",1820
+4,191,1911,Curtido y adobo de cueros,1911
+4,191,1912,"Fabricación de maletas, bolsos de mano y artículos similares, y de artículos de talabartería y guarn",1912
+4,192,1920,Fabricación de calzado,1920
+4,201,2010,Aserrado y acepilladura de madera,2010
+4,202,2021,"Fabricación de hojas de madera para enchapado; fabricación de tableros contrachapados, tableros lami",2021
+4,202,2022,Fabricación de partes y piezas de carpintería para edificios y construcciones,2022
+4,202,2023,Fabricación de recipientes de madera,2023
+4,202,2029,"Fabricación de otros productos de madera; fabricación de artículos de corcho, paja y materiales tren",2029
+4,210,2101,"Fabricación de pasta de madera, papel y cartón",2101
+4,210,2102,Fabricación de papel y cartón ondulado y de envases de papel y cartón,2102
+4,210,2109,Fabricación de otros artículos de papel y cartón,2109
+4,221,2211,"Edición de libros, folletos, partituras y otras publicaciones",2211
+4,221,2212,"Edición de periódicos, revistas y publicaciones periódicas",2212
+4,221,2213,Edición de grabaciones,2213
+4,221,2219,Otras actividades de edición,2219
+4,222,2221,Actividades de impresión,2221
+4,222,2222,Actividades de servicios relacionadas con la impresión,2222
+4,231,2310,Fabricación de productos de hornos de coque,2310
+4,232,2320,Fabricación de productos de la refinación del petróleo,2320
+4,233,2330,Elaboración de combustible nuclear,2330
+4,241,2411,"Fabricación de sustancias químicas básicas, excepto abonos y compuestos de nitrógeno",2411
+4,241,2412,Fabricación de abonos y compuestos de nitrógeno,2412
+4,241,2413,Fabricación de plásticos en formas primarias y de caucho sintítico,2413
+4,242,2421,Fabricación de plaguicidas y otros productos químicos de uso agropecuario,2421
+4,242,2422,"Fabricación de pinturas, barnices y productos de revestimiento similares, tintas de imprenta y masil",2422
+4,242,2423,"Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos",2423
+4,242,2424,"Fabricación de jabones y detergentes, preparados para limpiar y pulir, perfumes y preparados de toca",2424
+4,242,2429,Fabricación de otros productos químicos ncp,2429
+4,243,2430,Fabricación de fibras manufacturadas,2430
+4,251,2511,"Fabricación de cubiertas y cámaras de caucho, recauchado y renovación de cubiertas de caucho",2511
+4,251,2519,Fabricación de otros productos de caucho,2519
+4,252,2520,Fabricación de productos de plástico,2520
+4,261,2610,Fabricación de vidrio y productos de vidrio,2610
+4,269,2691,Fabricación de productos de cerámica no refractaria para uso no estructural,2691
+4,269,2692,Fabricación de productos de cerámica refractaria,2692
+4,269,2693,Fabricación de productos de arcilla y cerámica no refractarias para uso estructural,2693
+4,269,2694,"Fabricación de cemento, cal y yeso",2694
+4,269,2695,"Fabricación de artículos de hormigón, cemento y yeso",2695
+4,269,2696,"Corte, tallado y acabado de la piedra",2696
+4,269,2699,Fabricación de otros productos minerales no metálicos ncp,2699
+4,271,2710,Industrias básicas de hierro y acero,2710
+4,272,2720,Fabricación de productos primarios de metales preciosos y metales no ferrosos,2720
+4,281,2811,Fabricación de productos metálicos para uso estructural,2811
+4,281,2812,"Fabricación de tanques, depósitos y recipientes de metal",2812
+4,281,2813,"Fabricación de generadores de vapor, excepto calderas de agua caliente para calefacción central",2813
+4,289,2893,"Fabricación de artículos de cuchillería, herramientas de mano y artículos de ferretería",2893
+4,289,2899,Fabricación de otros productos elaborados de metal ncp,2899
+4,291,2911,"Fabricación de motores y turbinas, excepto motores para aeronaves, vehículos automotores y motocicle",2911
+4,291,2912,"Fabricación de bombas, compresores, grifos y válvulas",2912
+4,291,2913,"Fabricación de cojinetes, engranajes, trenes de engranajes y piezas de transmisión",2913
+4,291,2914,"Fabricación de hornos, hogares y quemadores",2914
+4,291,2915,Fabricación de equipo de elevación y manipulación,2915
+4,291,2919,Fabricación de otros tipos de maquinaria de uso general,2919
+4,292,2921,Fabricación de maquinaria agropecuaria y forestal,2921
+4,292,2922,Fabricación de máquinas herramienta,2922
+4,292,2923,Fabricación de maquinaria metalúrgica,2923
+4,292,2924,Fabricación de maquinaria para la explotación de minas y canteras y para obras de construcción,2924
+4,292,2925,"Fabricación de maquinaria para la elaboración de alimentos, bebidas y tabaco",2925
+4,292,2926,"Fabricación de maquinaria para la elaboración de productos textiles, prendas de vestir y cueros",2926
+4,292,2927,Fabricación de armas y municiones,2927
+4,292,2929,Fabricación de otros tipos de maquinaria de uso especial,2929
+4,293,2930,Fabricación de aparatos de uso doméstico ncp,2930
+4,300,3000,"Fabricación de maquinaria de oficina, contabilidad e informática",3000
+4,311,3110,"Fabricación de motores, generadores y transformadores eléctricos",3110
+4,312,3120,Fabricación de aparatos de distribución y control de la energía eléctrica,3120
+4,313,3130,Fabricación de hilos y cables aislados,3130
+4,314,3140,Fabricación de acumuladores y de pilas y baterías primarias,3140
+4,315,3150,Fabricación de lámparas eléctricas y equipo de iluminación,3150
+4,319,3190,Fabricación de otros tipos de equipo eléctrico ncp,3190
+4,321,3210,Fabricación de tubos y válvulas electrónicos y de otros componentes electrónicos,3210
+4,322,3220,Fabricación de transmisores de radio y televisión y de aparatos para telefonía y telegrafía con hilo,3220
+4,323,3230,"Fabricación de receptores de radio y televisión, aparatos de grabación y reproducción de sonido y ví",3230
+4,331,3311,Fabricación de equipo médico y quirúrgico y de aparatos ortopédicos,3311
+4,331,3312,"Fabricación de instrumentos y aparatos para medir, verificar, ensayar, navegar y otros fines, except",3312
+4,331,3313,Fabricación de equipo de control de procesos industriales,3313
+4,332,3320,Fabricación de instrumentos de óptica y equipo fotográfico,3320
+4,333,3330,Fabricación de relojes,3330
+4,341,3410,Fabricación de vehículos automotores,3410
+4,342,3420,"Fabricación de carrocerías para vehículos automotores, fabricación de remolques y semirremolques",3420
+4,343,3430,"Fabricación de partes, piezas y accesorios para vehículos automotores y sus motores",3430
+4,351,3511,Construcción y reparación de buques,3511
+4,351,3512,Construcción y reparación de embarcaciones de recreo y deporte,3512
+4,352,3520,Fabricación de locomotoras y de material rodante para ferrocarriles y tranvías,3520
+4,353,3530,Fabricación de aeronaves y naves espaciales,3530
+4,359,3591,Fabricación de motocicletas,3591
+4,359,3592,Fabricación de bicicletas y de sillones de ruedas para inválidos,3592
+4,359,3599,Fabricación de otros tipos de equipo de transporte ncp,3599
+4,361,3610,Fabricación de muebles,3610
+4,369,3691,Fabricación de joyas y artículos conexos,3691
+4,369,3692,Fabricación de instrumentos de música,3692
+4,369,3693,Fabricación de artículos de deporte,3693
+4,369,3694,Fabricación de juegos y juguetes,3694
+4,369,3699,Otras industrias manufactureras ncp,3699
+4,401,4010,"Generación, captación y distribución de energía eléctrica",4010
+4,402,4020,"Fabricación de gas, distribución de combustibles gaseosos por tuberías",4020
+4,722,7221,Edición de programas de informática,7221
+4,742,7421,Actividades de arquitectura e ingeniería y actividades conexas de asesoramiento técnico,7421
+4,749,7494,Actividades de fotografía,7494
+4,921,9211,Producción y distribución de filmes y videocintas,9211
+4,921,9214,Actividades teatrales y musicales y otras actividades artísticas,9214
+4,930,9302,Peluquería y otros tratamientos de belleza,9302

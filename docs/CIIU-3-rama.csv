@@ -1,0 +1,80 @@
+cod-2-dig,cod-3-dig,CIIU
+1,11,Cultivos en general
+1,12,Cría de animales
+2,20,"Silvicultura, extracción de madera y actividades de servicios conexas"
+5,50,"Pesca, explotación de criaderos de peces y granjas piscícolas; actividades de servicios relacionadas"
+10,101,Extracción y aglomeración de carbón de piedra
+10,102,Extracción y aglomeración de lignito
+10,103,Extracción y aglomeración de turba
+11,111,Extracción de petróleo crudo y gas natural
+12,120,Extracción de minerales de uranio y torio
+13,131,Extracción de minerales de hierro
+13,132,"Extracción de minerales metalíferos no ferrosos, excepto los minerales de uranio y torio"
+14,141,"Extracción de piedra, arena y arcilla"
+14,142,Explotación de minas y canteras ncp
+15,151,"Producción, procesamiento y conservación de carne, pescado, frutas, legumbres, hortalizas, aceites y"
+15,152,Elaboración de productos lácteos
+15,153,"Elaboración de productos de molinería, almidones y productos derivados del almidón, y de alimentos p"
+15,154,Elaboración de otros productos alimenticios
+15,155,Elaboración de bebidas
+16,160,Elaboración de productos de tabaco
+17,171,"Hilatura, tejedura y acabado de productos textiles"
+17,172,Fabricación de otros productos textiles
+17,173,Fabricación de tejidos y artículos de punto y ganchillo
+18,181,"Fabricación de prendas de vestir, excepto prendas de piel"
+18,182,Adobo y teñido de pieles
+19,191,"Curtido y adobo de cueros; fabricación de maletas, bolsos de mano y artículos de talabartería y guar"
+19,192,Fabricación de calzado
+20,201,Aserrado y acepilladura de madera
+20,202,"Fabricación de productos de madera, corcho, paja y materiales trenzables"
+21,210,Fabricación de papel y de productos de papel
+22,221,Actividades de edición
+22,222,Actividades de impresión y actividades de servicios conexas
+23,231,Fabricación de productos de hornos de coque
+23,232,Fabricación de productos de la refinación del petróleo
+23,233,Elaboración de combustible nuclear
+24,241,Fabricación de sustancias químicas básicas
+24,242,Fabricación de otros productos químicos
+24,243,Fabricación de fibras manufacturadas
+25,251,Fabricación de productos de caucho
+25,252,Fabricación de productos de plástico
+26,261,Fabricación de vidrio y productos de vidrio
+26,269,Fabricación de productos minerales no metálicos ncp
+27,271,Industrias básicas de hierro y acero
+27,272,Fabricación de productos primarios de metales preciosos y metales no ferrosos
+28,281,"Fabricación de productos metálicos para uso estructural, tanques, depósitos y generadores de vapor"
+28,289,Fabricación de otros productos elaborados de metal
+29,291,Fabricación de maquinaria de uso general
+29,292,Fabricación de maquinaria de uso especial
+29,293,Fabricación de aparatos de uso doméstico ncp
+30,300,"Fabricación de maquinaria de oficina, contabilidad e informática"
+31,311,"Fabricación de motores, generadores y transformadores eléctricos"
+31,312,Fabricación de aparatos de distribución y control de la energía eléctrica
+31,313,Fabricación de hilos y cables aislados
+31,314,Fabricación de acumuladores y de pilas y baterías primarias
+31,315,Fabricación de lámparas eléctricas y equipo de iluminación
+31,319,Fabricación de otros tipos de equipo eléctrico ncp
+32,321,Fabricación de tubos y válvulas electrónicos y de otros componentes electrónicos
+32,322,Fabricación de transmisores de radio y televisión y de aparatos para telefonía y telegrafía con hilo
+32,323,"Fabricación de receptores de radio y televisión, aparatos de grabación y reproducción de sonido y ví"
+33,331,"Fabricación de aparatos e instrumentos médicos y de aparatos para medir, verificar, ensayar, navegar"
+33,332,Fabricación de instrumentos de óptica y equipo fotográfico
+33,333,Fabricación de relojes
+34,341,Fabricación de vehículos automotores
+34,342,Fabricación de carrocerías para vehículos automotores
+34,343,"Fabricación de partes, piezas y accesorios para vehículos automotores y sus motores"
+35,351,Construcción y reparación de buques y otras embarcaciones
+35,352,Fabricación de locomotoras y de material rodante para ferrocarriles y tranvías
+35,353,Fabricación de aeronaves y naves espaciales
+35,359,Fabricación de otros tipos de equipo de transporte ncp
+36,361,Fabricación de muebles
+36,369,Industrias manufactureras ncp
+40,401,"Generación, captación y distribución de energía eléctrica"
+40,402,Fabricación de gas
+72,722,"Edición de programas de informática, consultores en programas de informática y suministro de programas de informática"
+74,742,Actividades de arquitectura e ingeniería y otras actividades técnicas
+74,749,Actividades empresariales ncp
+92,921,"Actividades de cinematografía, radio y televisión y otras actividades de entretenimiento"
+93,930,Otras actividades de servicios
+S/C,S/C,SIN CLASIFICAR
+IND,IND,Indeterminado
