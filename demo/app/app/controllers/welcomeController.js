@@ -9,10 +9,15 @@
 					$location.path('page/main');
 				}
 			})*/
+
+		$scope.to = function(data){
+			$location.path('page/'+data);
+		}
+		$scope.goTo = function(data){
+			$location.path('page/'+data);
+		}
+					
 			$scope.cache = $cacheFactory('cache',{capacity: 100});
-			$scope.to = function(data){
-				$location.path('page/'+data);
-			}
 			$scope.goBack = function () {
 				 $window.history.back();
 			}

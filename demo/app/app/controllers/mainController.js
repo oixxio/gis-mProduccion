@@ -10,6 +10,9 @@
 					$location.path('page/main');
 				}
 		})
+
+		
+
 		/*****************************************************/
 		$scope.to = function(data){
 			$location.path('page/'+data);
@@ -28,22 +31,36 @@
 			}
 		}
 		$scope.location1 = function () {
-			if($location.path() == '/page/fichas'){
+			if($location.path() == '/page/fichas' || $location.path() == '/page/timeLapseEmpleo'){
 				return true
 			}
+			else {
+				return false
+			}				
 		}
 		$scope.location2 = function () {
-			if($location.path() == '/page/main' || $location.path() == '/page/mapa' || $location.path() == '/page/sector' || $location.path() == '/page/sector2' || $location.path() == '/page/dashboard' || $location.path() == '/page/dashSector' || $location.path() == '/page/empleoProvGrande' || $location.path() == '/page/scatterEmpProvGrande'|| $location.path() == '/page/exportProvGrande'|| $location.path() == '/page/scatterExpProvGrande'|| $location.path() == '/page/empleoSectGrande'|| $location.path() == '/page/exportSectGrande'|| $location.path() == '/page/scatterEmpSectGrande'|| $location.path() == '/page/scatterExpSectGrande'){
+			if($location.path() == '/page/main' || $location.path() == '/page/mapa' || $location.path() == '/page/sector' || $location.path() == '/page/sector2' || $location.path() == '/page/dashboard' || $location.path() == '/page/dashSector' || $location.path() == '/page/empleoProvGrande' || $location.path() == '/page/scatterEmpProvGrande'|| $location.path() == '/page/exportProvGrande'|| $location.path() == '/page/scatterExpProvGrande'|| $location.path() == '/page/empleoSectGrande'|| $location.path() == '/page/exportSectGrande'|| $location.path() == '/page/scatterEmpSectGrande'|| $location.path() == '/page/scatterExpSectGrande' || $location.path() == '/page/timeLapseEmpleo'){
 				return true
 			}
+			else {
+				return false
+			}
 		}
-		$scope.setTitulo = function () {
+
+		$scope.location3 = function () {
+			if($location.path() == '/page/timeLapseEmpleo'){
+				return true
+			}
+			else {
+				return false
+			}
+		}
+
+		$scope.setTitulo = function () {	
 			if ($location.path() == '/page/fichas') {
-				$scope.titulo = 'Fichas Provinciales'
-				$scope.$apply()
-			}else{
-				$scope.titulo = 'Mapa Productivo Federal'
-				
+				$scope.titulo = 'Fichas Provinciales';
+			}if($location.path() == '/page/main'){
+				$scope.titulo = 'Mapa Productivo Federal';
 			}
 		}
 		$scope.sendMail = function (mail) {
@@ -51,7 +68,53 @@
 				 	 $window.alert("Muchas gracias por tu opinion, tu mensaje a sido enviado")
 				 })
 
-			}
-		
+		}
 	}])
+})();
+
+
+(function(){
+	angular.module('app.controllers')
+	.controller('ModalDemoCtrl',['$rootScope','$location','$scope', '$uibModal', '$log', ModalDemoCtrl])
+
+    function ModalDemoCtrl($rootScope,$location,$scope, $uibModal, $log) {
+        $scope.items = ['item1', 'item2', 'item3'];
+
+
+        var modalInstance = {};
+
+        $scope.animationsEnabled = true;
+
+
+
+        $scope.open = function (size) {
+            $rootScope.modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: 'myModalContent.html',
+                controller: 'ModalDemoCtrl',
+                size: size,
+                resolve: {
+                    items: function () {
+                        return $scope.items;
+                    }
+                }
+            });
+
+            // $scope.modalInstance.result.then(function (selectedItem) {
+            //     $scope.selected = selectedItem;
+            // }, function () {
+            //     $log.info('Modal dismissed at: ' + new Date());
+            // });
+        };
+
+		$scope.to2= function(data){
+			$rootScope.modalInstance.dismiss('cancel');
+			$location.path('page/'+data);
+		}        
+        
+        $scope.toggleAnimation = function () {
+            $scope.animationsEnabled = !$scope.animationsEnabled;
+        };
+    }
+
 })();

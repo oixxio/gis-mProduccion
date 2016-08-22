@@ -2,14 +2,15 @@
 	angular.module('app.controllers')
 	.controller('mapController',['$location','dashboardFactory','$window','$scope','welcomeFactory',
 		function($location,dashboardFactory,$window,$scope,welcomeFactory){
-		//codigo para que si no esta logeado no pueda acceder
-		/*welcomeFactory.sessionOpen().success(function(response){
-				if(response == ''){
-					$location.path('page/login');
-				}else{
-					$location.path('page/mapa');
-				}
-		})
+
+
+		$scope.to = function(data){
+			$location.path('page/'+data);
+		}
+		$scope.goTo = function(data){
+			$location.path('page/'+data);
+		}
+
 		/*****************************************************/
 		$scope.setData = function(data){
 			img = data + '.png';
@@ -203,15 +204,8 @@
 						$location.path('page/dashboard');
 					});
 				});
-			});			
-		/*No lo saco para no tener que tocar el html*/
-			$scope.to = function(){						
-			
-			};
+			});	
 		}
-		$scope.goTo = function(path){						
-			$location.path(path)
-		};	
 	}]);
 	var verificaRubro = function(empleoArray,rubro){
 		for (var m = 0; m < empleoArray.length; m++) {

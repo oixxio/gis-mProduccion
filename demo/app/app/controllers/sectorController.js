@@ -5,6 +5,13 @@
 		var	rubro = [],
 			sector = [];
 
+		$scope.to = function(data){
+			$location.path('page/'+data);
+		}
+		$scope.goTo = function(data){
+			$location.path('page/'+data);
+		}
+
 		$scope.filterText = sectorFactory.getFilter();
 		//codigo para que si no esta logeado no pueda acceder
 		/*welcomeFactory.sessionOpen().success(function(response){
