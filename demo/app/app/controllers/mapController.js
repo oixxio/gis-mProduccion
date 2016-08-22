@@ -5,7 +5,7 @@
 
 
 		$scope.to = function(data){
-			$location.path('page/'+data);
+			//$location.path('page/'+data);
 		}
 		$scope.goTo = function(data){
 			$location.path('page/'+data);
