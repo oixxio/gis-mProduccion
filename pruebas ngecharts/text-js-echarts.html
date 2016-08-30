@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts js</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+    <script src="echarts-all.js"></script>   
+</head>
+<body>
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-12">
+                <label>TEST ECHARTS</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="chart1" style="height: 400px;"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="chart2" style="height: 350px;"></div>
+            </div>
+        </div>
+        <button onclick="change()">Cambiar!</button>
+    </div>      
+</body>
+
+<script type="text/javascript">
+    // Initialize after dom ready
+    var myChart = echarts.init(document.getElementById('chart1')); 
+    var myChart2 = echarts.init(document.getElementById('chart2')); 
+    
+    var option = {
+        tooltip: {
+            show: true
+        },
+        legend: {
+            data:['Sales']
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ["Shirts", "Sweaters", "Chiffon Shirts", "Pants", "High Heels", "Socks"]
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                "name":"Sales",
+                "type":"bar",
+                "data":[5, 20, 40, 10, 10, 20]
+            }
+        ]
+    };
+
+    var option2 = {
+        tooltip: {
+            show: true
+        },
+        legend: {
+            data:['Sales']
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ["Shirts", "Sweat22ers", "Chiffon Shirts", "Pants", "High Heels", "Socks"]
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                "name":"Sales22",
+                "type":"bar",
+                "data":[51, 202, 430, 140, 510, 220]
+            }
+        ]
+    };    
+
+    // Load data into the ECharts instance 
+    myChart.setOption(option); 
+    myChart2.setOption(option2);
+
+    function change() {
+        var option3 = {
+        tooltip: {
+            show: true
+        },
+        legend: {
+            data:['Sales']
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ["Shirts", "Sweat22ers", "Chiffon Shirts", "Pants", "High Heels", "Socks"]
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                "name":"Sales22",
+                "type":"bar",
+                "data":[Math.random()*100, Math.random()*100, Math.random()*100, Math.random()*100, Math.random()*100, Math.random()*100]
+            }
+        ]
+    };
+        myChart2.setOption(option3);
+    }
+</script>
+
+</html>

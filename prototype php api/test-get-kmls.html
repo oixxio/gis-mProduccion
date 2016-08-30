@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="testCtrl">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Get KMLs</title>
+</head>
+
+
+
+<body>
+	<input type="num" ng-model="kmlIdSelected">
+	<button ng-click="getKml(kmlIdSelected);">get KML</button>
+	<label>LISTA</label>
+	<br><br><br>
+	<ul>
+	    <li ng-repeat="node in nodes" ng-include="'Tree'"></li>
+	</ul>  
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script>
+	var app = angular.module("app",[]);
+
+	app.controller('testCtrl',['$http','$location','$window','$scope',
+		function($http,$location,$window,$scope){
+
+		$scope.getKml = function(selected){
+			data = [];
+			data.push(selected);
+			$http.post('getKmls.php',data).then(function(response){
+				console.log(response.data);
+				$scope.nodes = response.data;
+			});				
+		}
+
+	}])
+</script>
+
+<script type="text/ng-template" id="Tree">
+    {{ node.kml_id }}
+    <ul ng-if="node.children">
+        <li ng-repeat="node in node.children" ng-include="'Tree'">           
+        </li>
+    </ul>
+</script>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts js</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="echarts-all.js"></script>   
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Muestra Graficos de Complejidad</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="chart1" style="height: 600px;"></div>
+            </div>
+        </div>    
+    </div>      
+</body>
+
+<script type="text/javascript">
+    // Initialize after dom ready
+var myChart = echarts.init(document.getElementById('chart1'));
+    
+option = {
+    title : {
+        text: 'Muestra Gráfica',
+        subtext: 'Complejidad',
+        x:'right',
+        y:'bottom'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: '{a}->{b}({c})'
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            restore : {show: true},
+            magicType: {show: true, type: ['force', 'chord']},
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        x: 'left',
+        data:['Secciones','Partes']
+    },
+    series : [
+        {
+            type:'force',
+            name : "Complejidad",
+            ribbonType: false,
+            categories : [
+                {
+                    name: '人物'
+                },
+                {
+                    name: 'Secciones'
+                },
+                {
+                    name:'Partes'
+                }
+            ],
+            itemStyle: {
+                normal: {
+                    label: {
+                        show: true,
+                        textStyle: {
+                            color: '#333'
+                        }
+                    },
+                    nodeStyle : {
+                        brushType : 'both',
+                        borderColor : 'rgba(255,215,0,0.4)',
+                        borderWidth : 1
+                    },
+                    linkStyle: {
+                        type: 'curve'
+                    }
+                },
+                emphasis: {
+                    label: {
+                        show: false
+                        // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+                    },
+                    nodeStyle : {
+                        //r: 30
+                    },
+                    linkStyle : {}
+                }
+            },
+            useWorker: false,
+            minRadius : 15,
+            maxRadius : 25,
+            gravity: 1.1,
+            scaling: 1.1,
+            roam: 'move',
+            nodes:[
+                {category:0, name: 'Núcleo', value : 10, label: 'Nucleo\n（1ro）'},
+                {category:1, name: 'Seccion-1',value : 2},
+                {category:1, name: 'Seccion-2',value : 3},
+                {category:1, name: 'Seccion-3',value : 3},
+                {category:1, name: 'Seccion-4',value : 7},
+                {category:2, name: 'Parte-1',value : 5},
+                {category:2, name: 'Parte-2',value : 8},
+                {category:2, name: 'Parte-3',value : 9},
+                {category:2, name: 'Parte-4',value : 4},
+                {category:2, name: 'Parte-5',value : 4},
+                {category:2, name: 'Parte-6',value : 1},
+            ],
+            links : [
+                {source : 'Seccion-1', target : 'Núcleo', weight : 1, name: 'Enlace-1'},
+                {source : 'Seccion-2', target : 'Núcleo', weight : 2, name: 'Enlace-2'},
+                {source : 'Seccion-3', target : 'Núcleo', weight : 1, name: 'Enlace-3'},
+                {source : 'Seccion-4', target : 'Núcleo', weight : 2},
+                {source : 'Parte-1', target : 'Núcleo', weight : 3, name: 'Enlace-4'},
+                {source : 'Parte-2', target : 'Núcleo', weight : 1},
+                {source : 'Parte-3', target : 'Núcleo', weight : 6, name: 'Enlace-5'},
+                {source : 'Parte-4', target : 'Núcleo', weight : 1, name: 'Enlace-6'},
+                {source : 'Parte-5', target : 'Núcleo', weight : 1},
+                {source : 'Parte-6', target : 'Núcleo', weight : 1},
+                {source : 'Seccion-3', target : 'Seccion-2', weight : 1},
+                {source : 'Parte-2', target : 'Seccion-2', weight : 1},
+                {source : 'Parte-2', target : 'Seccion-3', weight : 1},
+                {source : 'Parte-2', target : 'Seccion-4', weight : 1},
+                {source : 'Parte-2', target : 'Parte-1', weight : 1},
+                {source : 'Parte-3', target : 'Parte-2', weight : 6},
+                {source : 'Parte-3', target : 'Seccion-3', weight : 1},
+                {source : 'Parte-5', target : 'Parte-2', weight : 1}
+            ]
+        }
+    ]
+};
+myChart.setOption(option);
+/*
+var ecConfig = require('echarts/config');
+function focus(param) {
+    var data = param.data;
+    var links = option.series[0].links;
+    var nodes = option.series[0].nodes;
+    if (
+        data.source !== undefined
+        && data.target !== undefined
+    ) { //点击的是边
+        var sourceNode = nodes.filter(function (n) {return n.name == data.source})[0];
+        var targetNode = nodes.filter(function (n) {return n.name == data.target})[0];
+        console.log("选中了边 " + sourceNode.name + ' -> ' + targetNode.name + ' (' + data.weight + ')');
+    } else { // 点击的是点
+        console.log("选中了" + data.name + '(' + data.value + ')');
+    }
+}
+myChart.on(ecConfig.EVENT.CLICK, focus)
+
+myChart.on(ecConfig.EVENT.FORCE_LAYOUT_END, function () {
+    console.log(myChart.chart.force.getPosition());
+});
+*/
+
+</script>
+
+</html>

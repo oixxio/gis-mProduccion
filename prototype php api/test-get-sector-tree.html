@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="testCtrl">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Get Sector Tree</title>
+</head>
+
+
+
+<body>
+	<label>LISTA Sector</label>
+	<br><br><br>
+	<ul>
+	    <li ng-repeat="node in nodes" ng-include="'Tree'"></li>
+	</ul>  
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script>
+	var app = angular.module("app",[]);
+
+	app.controller('testCtrl',['$http','$location','$window','$scope',
+		function($http,$location,$window,$scope){
+			$http.get('getSectorTree.php').then(function(response){
+				console.log(response.data);
+				$scope.nodes = response.data;
+			});
+
+	}])
+</script>
+
+<script type="text/ng-template" id="Tree">
+    {{ node.nodeName }}
+    <ul ng-if="node.children">
+        <li ng-repeat="node in node.children" ng-include="'Tree'">           
+        </li>
+    </ul>
+</script>
+
+</html>

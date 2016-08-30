@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="testCtrl">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Get Geo All Sector Data</title>
+</head>
+<body>	
+	<div class="container-fluid">
+		<h1>Seleccione Nodo Geografico</h1>
+		<div class="row">
+			<div class="col-md-4">
+			    <label>Region ({{nodeASelected}})</label>
+				<br>
+				<select ng-change="
+					getAllSectorData(nodeASelected);
+					nodeIdSelected=nodeASelected;
+					nodeBSelected=0;
+					nodeCSelected=0;"
+					class="btn btn-primary" ng-model="nodeASelected" style="width:100%;" required>
+			      <option ng-repeat="node in nodes | filter:{depth:1}" value="{{node.nodeID}}">{{node.nodeName}}</option>
+			    </select>
+				<br><br>
+			</div>
+			<div class="col-md-4">
+				<label>Provincia ({{nodeBSelected}})</label>
+				<br>
+				<select ng-change="
+					getAllSectorData(nodeBSelected);
+					nodeIdSelected=nodeBSelected;
+					nodeCSelected=0;"
+					class="btn btn-primary" ng-model="nodeBSelected" style="width:100%;" required>
+			      <option ng-repeat="node in nodes | filter:{depth:2, parentID:nodeASelected}" value="{{node.nodeID}}">{{node.nodeName}}</option>
+			    </select> 
+				<br><br>
+			</div>
+			<div class="col-md-4">
+				<label>Departamento ({{nodeCSelected}})</label>
+				<br>
+				<select ng-change="
+					getAllSectorData(nodeCSelected);
+					nodeIdSelected=nodeCSelected;"
+						class="btn btn-primary" ng-model="nodeCSelected" style="width:100%;" required>
+			      <option ng-repeat="node in nodes | filter:{depth:3, parentID:nodeBSelected}" value="{{node.nodeID}}">{{node.nodeName}}</option>
+			    </select>
+				<br><br>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<h1>OUTPUT ({{nodeIdSelected}})</h1>
+		<div class="row">
+			<div class="col-md-12">
+                <table class="table table-bordered table-condensed" style="font-size:xx-small;">
+                    <thead>
+                        <tr>
+							<th>id</th>
+							<th>geo_id</th>
+							<th>sector_id</th>
+							<th>time_month</th>
+							<th>time_year</th>
+							<th>poblacion</th>
+							<th>poblacion_part_x100</th>
+							<th>pbg</th>
+							<th>pbg_part_x100</th>
+							<th>empleo</th>
+							<th>empleo_part_x100</th>
+							<th>empleo_var_x100</th>
+							<th>empleo_publico</th>
+							<th>empleo_part_publico_x100</th>
+							<th>export</th>
+							<th>export_part_x100</th>
+							<th>export_var</th>
+							<th>export_productos</th>
+							<th>export_destino</th>
+							<th>salario</th>
+							<th>salario_dif_x100</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="entry in entries">
+							<td>{{entry.id}}</td>
+							<td>{{entry.geo_id}}</td>
+							<td>{{entry.sector_id}}</td>
+							<td>{{entry.time_month}}</td>
+							<td>{{entry.time_year}}</td>
+							<td>{{entry.poblacion}}</td>
+							<td>{{entry.poblacion_part_x100}}</td>
+							<td>{{entry.pbg}}</td>
+							<td>{{entry.pbg_part_x100}}</td>
+							<td>{{entry.empleo}}</td>
+							<td>{{entry.empleo_part_x100}}</td>
+							<td>{{entry.empleo_var_x100}}</td>
+							<td>{{entry.empleo_publico}}</td>
+							<td>{{entry.empleo_part_publico_x100}}</td>
+							<td>{{entry.export}}</td>
+							<td>{{entry.export_part_x100}}</td>
+							<td>{{entry.export_var}}</td>
+							<td>{{entry.export_productos}}</td>
+							<td>{{entry.export_destino}}</td>
+							<td>{{entry.salario}}</td>
+							<td>{{entry.salario_dif_x100}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script>
+	var app = angular.module("app",[]);
+
+	app.controller('testCtrl',['$http','$location','$window','$scope',
+		function($http,$location,$window,$scope){
+
+			$scope.nodeIdSelected;
+
+			$http.get('getGeoTree.php').then(function(response){
+				console.log(response.data);
+				$scope.nodes = response.data;
+			});
+
+			$scope.getAllSectorData = function(geoID){
+				$http.post('getGeoAllSectorData.php',geoID).then(function(response){
+					console.log(response.data);
+					$scope.entries = response.data;
+				});				
+			}
+
+	}])
+</script>
+
+</html>

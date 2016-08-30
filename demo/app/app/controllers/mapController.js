@@ -39,8 +39,10 @@
 				sector = response;
 				dashboardFactory.getRubroData().success(function(response){
 					rubro = response;
-					dashboardFactory.getProvData(data).success(function(response){				
+					dashboardFactory.getProvData(data).success(function(response){
+						//Recorre todas las data entries en cocnepto				
 						for (var i = 0; i < response.length; i++) {
+							//reemplaza ids por nombres
 							for (var j = 0; j < sector.length; j++) {
 								if (sector[j].id === response[i].sector_id) {
 									response[i].nombreSector = sector[j].nombre;
@@ -55,6 +57,7 @@
 									}						
 								}							
 							}
+							//adaptacion de datos, parsing a enteros, etc
 							response[i].sector_id = parseInt(response[i].sector_id);
 							response[i].empleo_sector = parseInt(response[i].empleo_sector);
 							response[i].empleo_sector_view = response[i].empleo_sector.toLocaleString();
@@ -77,7 +80,7 @@
 							response[i].dif_salario_sector = parseFloat(parseFloat(response[i].dif_salario_sector*100).toFixed(2));
 							response[i].dif_salario_sector_view = response[i].dif_salario_sector.toLocaleString();
 							
-							//Objeto para graficar el scatter
+							//Arma datos para SCATTER EMPLEO
 							if (response[i].nombreSector != 'Total Provincia') {
 								if(	response[i].dinamica_empleo != 0 && response[i].var_empleo_2007_2014 != 0){
 										scatterDataEmpleo.data = [[response[i].dinamica_empleo, response[i].var_empleo_2007_2014]];
@@ -89,7 +92,7 @@
 					                    countEmpleo++
 					            }
 							}
-
+							//Arma datos para SCATTER EXPORTACION
 							if (response[i].nombreSector != 'Total Provincia') {
 								if(	response[i].dinamica_part_exportaciones_pvciales != 0 &&
 									response[i].dinamica_exportaciones_pvciales != 0 && 
@@ -103,9 +106,7 @@
 					                    countExport++;
 					            }
 							}
-							
-		                    /*--------------------------------*/
-		                    /*Veo si hay un elemento igual en el array de empleo*/
+		                    //Arma datos para TREEMAP EMPLEO
 		                    if (response[i].part_empleo_prov != 0 && response[i].nombreSector != 'Total Provincia'){
 			                	if(verificaRubro(empleo,response[i].abvRubro) === -1){
 			                    	empleoData.name = response[i].abvRubro;
@@ -122,7 +123,7 @@
 			                    	push({name: response[i].abvSector,value: response[i].part_empleo_prov,itemStyle:{normal:{ label: {show: true,formatter: "{b}: {c}%"},color:''}}});
 			                    }
 			                }
-			                /*Armo grafica de exportacion*/
+			                //Arma datos para TREEMAP EMPLEO
 			                if (response[i].part_exportaciones_pvciales != 0 && response[i].nombreSector != 'Total Provincia'){
 			                	if(verificaRubroExp(exportacion,response[i].abvRubro) === -1){
 			                    	exportacionData.name = response[i].abvRubro;
@@ -137,10 +138,8 @@
 			                    	exportacion[verificaRubroExp(exportacion,response[i].abvRubro)].children.
 			                    	push({name: response[i].abvSector,value: parseFloat(response[i].part_exportaciones_pvciales),itemStyle:{normal:{ label: {show: true,formatter: "{b}: {c}%"},color:''}}});
 			                    }
-			                }
-
-		                                       
-						}
+			                }                  
+						} // END for
 						if (empleo.length === 0) {
 							empleo = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}},children: [{name: 'sin valores',value: 1,itemStyle:{normal:{color:''}}}]}];
 						}
@@ -166,6 +165,16 @@
 						dashboardFactory.setScatterExport(scatterExport);
 						/*[End Factory para pasar datos al dash]*/
 						//console.log(angular.toJson(scatterExport))
+
+
+						/* FIX-29/08/2016 para adaptar datos ficticios en los scatter */
+
+						// Nueva funcion de la factory para leventar datos de la tabla nueva
+						// reemplazar ids por nombres
+						// y guardarlos en localstorage
+
+						/* END FIX-29/08/2016 para adaptar datos ficticios en los scatter */
+
 						localStorage.setItem('provData',JSON.stringify(response))
 						localStorage.setItem('empleoData',JSON.stringify(empleo))
 						localStorage.setItem('empleoScatter',JSON.stringify(scatterEmpleo))

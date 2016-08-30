@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts js</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>    
+    <script src="echarts-all.js"></script>   
+</head>
+<body>
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-12">
+                <label>Muestra Graficos de Complejidad</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="chart1" style="height: 550px;"></div>
+            </div>
+        </div>    
+    </div>      
+</body>
+
+<script type="text/javascript">
+    // Initialize after dom ready
+var myChart = echarts.init(document.getElementById('chart1'));
+    
+option = {
+    title : {
+        text: 'webkit内核依赖',
+        subtext: '数据来自网络',
+        x:'right',
+        y:'bottom'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter : "{b}"
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            restore : {show: true},
+            magicType: {
+                show: true,
+                type: ['force', 'chord'],
+                option: {
+                    chord: {
+                        minRadius : 2,
+                        maxRadius : 10,
+                        ribbonType: false,
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    rotate: true
+                                },
+                                chordStyle: {
+                                    opacity: 0.2
+                                }
+                            }
+                        }
+                    },
+                    force: {
+                        minRadius : 5,
+                        maxRadius : 8,
+                        itemStyle : {
+                            normal : {
+                                label: {
+                                    show: false
+                                },
+                                linkStyle : {
+                                    opacity : 0.5
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            saveAsImage : {show: true}
+        }
+    },
+    legend : {
+        data : ['HTMLElement', 'WebGL', 'SVG', 'CSS', 'Other'],
+        orient : 'vertical',
+        x : 'left'
+    },
+    noDataEffect: 'none',
+    series :[{
+        //FIXME No data
+        type: 'force',
+    }],
+};
+$.ajax({
+    url: 'data/webkit-dep.json',
+    dataType: 'json',
+    success: function (data) {
+        option.series[0] = {
+            type: 'force',
+            name: 'webkit-dep',
+            itemStyle: {
+                normal : {
+                    linkStyle : {
+                        opacity : 0.5
+                    }
+                }
+            },
+            categories: data.categories,
+            nodes: data.nodes,
+            links: data.links,
+            minRadius: 5,
+            maxRadius: 8,
+            gravity: 1.1,
+            scaling: 1.1,
+            steps: 20,
+            large: true,
+            useWorker: true,
+            coolDown: 0.995,
+            ribbonType: false
+        };
+
+        myChart.setOption(option);
+        myChart.hideLoading();
+    }
+});
+                    
+
+</script>
+
+</html>

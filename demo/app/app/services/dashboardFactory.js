@@ -80,5 +80,10 @@ angular.module('app.services')
     dashboard.getDatosGeneralesSector = function(data){
         return $http.post('app/api/dashboard/obtenerDatosGeneralesSector.php',data);
     }
+    /* FIX-29/08/2016 para adaptar datos ficticios en los scatter */
+
+    // Nueva funcion de la factory para leventar datos de la tabla nueva
+
+    /* END FIX-29/08/2016 para adaptar datos ficticios en los scatter */
 	return dashboard;
 }]);

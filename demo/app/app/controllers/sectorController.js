@@ -209,14 +209,12 @@
 						empleo = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}},children: [{name: 'sin valores',value: 1,itemStyle:{normal:{color:''}}}]}];
 					}
 					if (exportacion.length === 0) {
-
 						exportacion = [{name: 'sin valores',value: 1,itemStyle: {normal:{color:''}},children: [{name: 'sin valores',value: 1,itemStyle:{normal:{color:''}}}]}];
 					}
 					if (scatterEmpleo.length === 0) {
 						scatterEmpleo = [{name: 'sin valores',type:"scatter",data: [[1,1]],symbolSize: 20}];
 					}
 					if (scatterExport.length === 0) {
-
 						scatterExport = [{name: 'sin valores',type:"scatter",data: [[1,1]],symbolSize: 20}];
 					}
 					/*sectorFactory.setDashSectorData(response);
@@ -226,6 +224,15 @@
 					sectorFactory.setScatterEmpleo(scatterEmpleo);
 					
 					sectorFactory.setScatterExport(scatterExport);*/
+
+					/* FIX-29/08/2016 para adaptar datos ficticios en los scatter */
+
+					// Nueva funcion de la factory para leventar datos de la tabla nueva
+					// reemplazar ids por nombres
+					// y guardarlos en localstorage
+
+					/* END FIX-29/08/2016 para adaptar datos ficticios en los scatter */
+
 					localStorage.setItem('dashSectorData',JSON.stringify(response))
 					localStorage.setItem('empleoDataSect',JSON.stringify(empleo))
 					localStorage.setItem('empleoScatterSect',JSON.stringify(scatterEmpleo))
