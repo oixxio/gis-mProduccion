@@ -269,9 +269,6 @@
 		    $scope.sort = value;
 		    $scope.reverse = false;
 		}
-		$scope.goTo = function (location) {
-			 $location.path(location);
-		}
 		$scope.active = function (element) {
 			 switch (element) {
 			 	case 1:

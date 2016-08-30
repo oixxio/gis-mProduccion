@@ -1,0 +1,111 @@
+<div ng-controller="timeLapseController" ng-init="setTitulo()" style="margin-top:70px;">
+	<div class="container">
+		<div class="row">
+			<br>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-12">
+						<div id="map" style="border: 3px solid gray;border-radius: 5px;height: 550px; margin-top: 20px;"></div>	
+					</div>
+				</div>							
+			</div>
+			<div class="col-md-6">
+				<div class="row" style="margin-top:30px;">
+					<div class="col-md-7">
+						<nav aria-label="Page navigation">
+							<ul class="pagination" style="margin: 0; margin-top: 8px;margin-bottom: 16px; margin-left: 26px;">
+								<li>
+							      <a ng-click="playYear()" href="" aria-label="Play">
+							        <span aria-hidden="true" class="glyphicon glyphicon-play"></span>
+							      </a>
+							    </li>
+							    <li>
+							      <a ng-click="pauseYear()" href="" aria-label="Pause">
+							        <span aria-hidden="true" class="glyphicon glyphicon-pause"></span>
+							      </a>
+							    </li>
+							    <li>
+							      <a ng-click="toFirstYear()" href="" aria-label="First">
+							        <span aria-hidden="true" class="glyphicon glyphicon-step-backward"></span>
+							      </a>
+							    </li>
+							    <li>
+							      <a ng-click="toPreviousYear()" href="" aria-label="Previous">
+							        <span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+							      </a>
+							    </li>
+							    <li>
+							      <a ng-click="toNextYear()" href="" aria-label="Next">
+							        <span aria-hidden="true" class="glyphicon glyphicon-forward"></span>
+							      </a>
+							    </li>						    	
+							    <li>
+							      <a ng-click="toLastYear()"href="" aria-label="Last">
+							        <span aria-hidden="true" class="glyphicon glyphicon-step-forward"></span>
+							      </a>
+							    </li>
+							</ul>
+						</nav>			
+					</div>
+					<div class="col-md-5">
+						<div class="btn btn-primary btn-block">
+							<h4 >{{currentYear}}</h4>
+						</div>
+						<!-- <div class="panel panel-primary" style="margin: 0 !important;">
+							<div class="panel-heading text-center">
+								<h4 class="panel-title">{{currentYear}}</h4>
+							</div>
+						</div> -->
+					</div>					
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<div class="panel panel-primary">
+							<div class="panel-heading text-center">
+								<h4 class="panel-title">{{currentProvName}}</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-7">
+						<div class="panel panel-default">
+							<div class="panel-heading text-center">
+								<h4 class="panel-title">{{currentSectorName}}</h4>
+							</div>
+						</div>
+					</div>					
+				</div>				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+						  <!-- Default panel contents -->
+						  <!-- <div class="panel-heading text-center">Sector con mayor participación en el empleo provincial</div> -->
+
+						  <!-- Table -->
+						  <table class="table">
+							  <tr>
+							    <th>Color</th>
+							    <th>Sector</th> 
+							    <!-- <th>Total</th> -->
+							  </tr>
+							  <tr ng-repeat="item in rankedList">
+							    <td ng-style="{'background-color':item.color}"></td>
+							    <td>{{item.name}}</td> 
+							    <!-- <td>{{item.count}}</td> -->
+							  </tr>
+						  </table>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<style>
+	
+td, th {
+	padding-top: 7px !important;
+    padding-bottom: 7px !important;	
+}
+
+</style>

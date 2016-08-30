@@ -226,9 +226,6 @@
 		    link.click();
 		    document.body.removeChild(link);
 		}
-		$scope.goTo = function (location) {
-			 $location.path(location);
-		}
 		$scope.active = function (element) {
 			 switch (element) {
 			 	case 1:

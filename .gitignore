@@ -1,2 +1,3 @@
 /gis-mProduccion-app/bower-components
 /node_modules
+/demo/app/api/connDB.php

@@ -1,5 +1,11 @@
-angular.module('app.services')
-.factory('dashboardFactory', ['$http', function($http){ 
+var app = angular.module('app.services')
+/*Configuracion de las request para que los post sean directos*/
+app.config(function ($httpProvider) {
+  $httpProvider.defaults.headers.common = {};
+  $httpProvider.defaults.headers.post = {};
+});
+/**/
+app.factory('dashboardFactory', ['$http', function($http){ 
     var dashboard ={},
         img = '',
         prov = '',
@@ -23,16 +29,16 @@ angular.module('app.services')
         return prov;
     };
     dashboard.getProvData = function(data){
-        return $http.post('app/api/dashboard/obtenerDatosProv.php',data);
+        return $http.post('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerDatosProv.php',data);
     };
     dashboard.getSectorData = function(){
-        return $http.get('app/api/dashboard/obtenerDatosSect.php');
+        return $http.get('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerDatosSect.php');
     };
     dashboard.getRubroData = function(){
-        return $http.get('app/api/dashboard/obtenerDatosRubro.php');
+        return $http.get('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerDatosRubro.php');
     };
     dashboard.getNombreProv = function(data){
-        return $http.post('app/api/dashboard/obtenerNombreProv.php',data);
+        return $http.post('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerNombreProv.php',data);
     };
     dashboard.setProvData = function(data){
         $cacheFactory('provData', options)
@@ -72,13 +78,13 @@ angular.module('app.services')
         return empleoLegend;
     }
     dashboard.getAllData = function(){
-        return $http.get('app/api/dashboard/obtenerAllData.php');
+        return $http.get('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerAllData.php');
     }
     dashboard.getDatosGenerales = function(data){
-        return $http.post('app/api/dashboard/obtenerDatosGenerales.php',data);
+        return $http.post('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerDatosGenerales.php',data);
     }
     dashboard.getDatosGeneralesSector = function(data){
-        return $http.post('app/api/dashboard/obtenerDatosGeneralesSector.php',data);
+        return $http.post('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerDatosGeneralesSector.php',data);
     }
     /* FIX-29/08/2016 para adaptar datos ficticios en los scatter */
 
