@@ -53,8 +53,9 @@ table {
 .btn-full-screen{
     z-index: 1000;
     position: absolute;
-    bottom: 25px;
-    right: 22px;
+    top: 3px;
+    right: 70px;
+    font-size: 20px;
 }
 
 .panel-chart {

@@ -19,19 +19,19 @@ angular.module('app.services')
          return filter
     }
     sector.getSector = function(){
-    	return $http.post('app/api/dashboard/obtenerNombreSect.php',localStorage.getItem('sectorId'));
+    	return $http.post('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerNombreSect.php',localStorage.getItem('sectorId'));
     };
     sector.getSectorData = function(){
-        return $http.get('app/api/dashboard/obtenerDatosSect.php');
+        return $http.get('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerDatosSect.php');
     };
     sector.getRubroData = function(){
-        return $http.get('app/api/dashboard/obtenerDatosRubro.php');
+        return $http.get('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerDatosRubro.php');
     };
     sector.getData = function(data){
-    	return $http.post('app/api/dashboard/obtenerDatosDashSector.php',data);	
+    	return $http.post('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerDatosDashSector.php',data);	
     }
     sector.getAllProv = function(){
-    	return $http.get('app/api/dashboard/obtenerAllprov.php');
+    	return $http.get('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerAllprov.php');
     }
     sector.setDashSectorData = function(data){
     	sectorData = data;
@@ -63,5 +63,10 @@ angular.module('app.services')
     sector.getScatterExport = function(){
         return scatterExport;
     }
+    /* FIX-29/08/2016 para adaptar datos ficticios en los scatter */
+    sector.getScatterSectorData = function(data){
+        return $http.post('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerDatosScatterSector.php',data);
+    }
+    /* END FIX-29/08/2016 para adaptar datos ficticios en los scatter */
     return sector;
 }]);
