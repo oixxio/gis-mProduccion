@@ -768,7 +768,7 @@
             ]
         };
         //scatter
-        $scope.scatter1.options = {
+        /*$scope.scatter1.options = {
             title : {
                 text: 'GRAFICO DE DISPERSIÓN',
                 
@@ -823,7 +823,7 @@
                 }
             ],
             series : scatterEmpleoData
-        };
+        };*/
 
         //Provincia EXPORTACION
         //treemap    
@@ -867,7 +867,7 @@
             ]
         };
         //scatter
-        $scope.line4.options ={
+        /*$scope.line4.options ={
             xAxis:{
                 show: true,
                 name: 'Part. Exp. Prov.'
@@ -925,7 +925,7 @@
                 }
             ],
             series : scatterExportData
-        }; 
+        }; */
         
         //Sector EMPLEO
         //treemap
@@ -1127,9 +1127,13 @@
 
         /* FIX-29/08/2016 para adaptar datos ficticios en los scatter */
 
+        var scatterExportSectorDataFake = JSON.parse(localStorage.getItem('exportScatterSectFake'));
+        var scatterEmpleoSectorDataFake = JSON.parse(localStorage.getItem('empleoScatterSectFake'));
+        var scatterExportProvDataFake = JSON.parse(localStorage.getItem('exportScatterProvFake'));
+        var scatterEmpleoProvDataFake = JSON.parse(localStorage.getItem('empleoScatterProvFake'));
 //////////////////////////////SCATTER SECTOR EXPORTACION
 
-        var scatterExportSectorDataFake = JSON.parse(localStorage.getItem('exportScatterSectFake'));
+        //var scatterExportSectorDataFake = JSON.parse(localStorage.getItem('exportScatterSectFake'));
         var scatterCoefEspLine = {
             name: 'Coef Esp', type:'scatter', symbolSize: 0, data: [[0,0]],
             markLine: {
@@ -1204,7 +1208,7 @@
 
 //////////////////////////////SCATTER SECTOR EMPLEO
 
-        var scatterEmpleoSectorDataFake = JSON.parse(localStorage.getItem('empleoScatterSectFake'));
+        //var scatterEmpleoSectorDataFake = JSON.parse(localStorage.getItem('empleoScatterSectFake'));
         var scatterCoefEspLineB = {
             name: 'Coef Esp', type:'scatter', symbolSize: 0, data: [[0,0]],
             markLine: {
@@ -1276,6 +1280,156 @@
             series : scatterEmpleoSectorDataFake
         };
 //////////////////////////////END SCATTER SECTOR EMPLEO
+
+//////////////////////////////SCATTER Prov EXPORTACION
+
+        //var scatterExportProvDataFake = JSON.parse(localStorage.getItem('exportScatterProvFake'));
+        var scatterCoefEspLineC = {
+            name: 'Coef Esp', type:'scatter', symbolSize: 0, data: [[0,0]],
+            markLine: {
+                symbol: ['arrow','arrow'],
+                symbolSize: [2,2],
+                tooltip: {
+                    show: true,
+                    formatter: 'Coeficiente<br>de especialización<br>{c}'
+                },
+                itemStyle: {
+                    normal: {
+                        lineStyle: { type: 'dotted', width: 2 },
+                        label: { show: true, position: 'top', formatter: '{c}' }                               
+                    },
+                    emphasis: {
+                        lineStyle: { width: 2 }
+                    }
+                },
+                data : [[
+                        {name: 'Coef Esp 1', value: 1, xAxis: 1, yAxis: 50000},
+                        {name: 'Coef Esp 1', xAxis: 1, yAxis: -50000}
+                ]]
+            }
+        }          
+        scatterExportProvDataFake.push(scatterCoefEspLineC);
+        $scope.line4.options = {
+            axisPointer:{
+                show: false
+            },            
+            tooltip : {
+                trigger: 'item',
+                showDelay : 0,
+                formatter : function (params) {
+                    if (params.value.length > 1) {
+                        return params.seriesName;
+                    }
+                    else {
+                        return params.seriesName + ' :<br/>'
+                           + params.name + ' : ' + params.value + '%';
+                    }
+                }
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    restore : {show: true, title: "recargar"},
+                    saveAsImage : {show: true, title: "guardar imagen"}
+                }
+            },
+            xAxis : [
+                {
+                    type : 'value',
+                    scale: true,
+                    min: 0,
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    scale: true,
+                    axisLabel: {
+                        formatter: '{value} %'
+                    }
+                }
+            ],
+            series : scatterExportProvDataFake
+        };
+//////////////////////////////END SCATTER Prov EXPORTACION
+
+//////////////////////////////SCATTER Prov EMPLEO
+
+        //var scatterEmpleoProvDataFake = JSON.parse(localStorage.getItem('empleoScatterProvFake'));
+        var scatterCoefEspLineD = {
+            name: 'Coef Esp', type:'scatter', symbolSize: 0, data: [[0,0]],
+            markLine: {
+                symbol: ['arrow','arrow'],
+                symbolSize: [2,2],
+                tooltip: {
+                    show: true,
+                    formatter: 'Coeficiente<br>de especialización<br>{c}'
+                },
+                itemStyle: {
+                    normal: {
+                        lineStyle: { type: 'dotted', width: 2 },
+                        label: { show: true, position: 'top', formatter: '{c}' }                               
+                    },
+                    emphasis: {
+                        lineStyle: { width: 2 }
+                    }
+                },
+                data : [[
+                        {name: 'Coef Esp 1', value: 1, xAxis: 1, yAxis: 50000},
+                        {name: 'Coef Esp 1', xAxis: 1, yAxis: -50000}
+                ]]
+            }
+        }          
+        scatterEmpleoProvDataFake.push(scatterCoefEspLineD);
+        $scope.scatter1.options = {
+            axisPointer:{
+                show: false
+            },            
+            tooltip : {
+                trigger: 'item',
+                showDelay : 0,
+                formatter : function (params) {
+                    if (params.value.length > 1) {
+                        return params.seriesName;
+                    }
+                    else {
+                        return params.seriesName + ' :<br/>'
+                           + params.name + ' : ' + params.value + '%';
+                    }
+                }
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    restore : {show: true, title: "recargar"},
+                    saveAsImage : {show: true, title: "guardar imagen"}
+                }
+            },
+            xAxis : [
+                {
+                    type : 'value',
+                    scale: true,
+                    min: 0,
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    scale: true,
+                    axisLabel: {
+                        formatter: '{value} %'
+                    }
+                }
+            ],
+            series : scatterEmpleoProvDataFake
+        };
+//////////////////////////////END SCATTER Prov EMPLEO
         /* END FIX-29/08/2016 para adaptar datos ficticios en los scatter */
 
     }    

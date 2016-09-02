@@ -11,7 +11,7 @@
     
     $i=0;
 
-	$queryS = 'SELECT * FROM concepto_scatter_fake where sector_id = '.$data; 		
+	$queryS = 'SELECT * FROM concepto_scatter_prov_fake where provincia_id = '.$data; 		
 	$results = [""];
 	$conn->query('SET CHARACTER SET utf8');	
 	$resultQuery = $conn->query($queryS);	

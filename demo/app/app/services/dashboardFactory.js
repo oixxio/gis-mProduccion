@@ -86,5 +86,10 @@ app.factory('dashboardFactory', ['$http', function($http){
     dashboard.getDatosGeneralesSector = function(data){
         return $http.post('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerDatosGeneralesSector.php',data);
     }
+    /* FIX-29/08/2016 para adaptar datos ficticios en los scatter */
+    dashboard.getScatterProvData = function(data){
+        return $http.post('http://www.oixxio.net/mProduccion/app/api/dashboard/obtenerDatosScatterProvFake.php',data);
+    }
+    /* END FIX-29/08/2016 para adaptar datos ficticios en los scatter */    
 	return dashboard;
 }]);

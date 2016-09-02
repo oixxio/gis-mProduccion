@@ -152,12 +152,13 @@
 			        };				
 		        coefesp = data[i].coefesp;
 			     //Falta modificar colores
+			    var color;
 			    coefesp<=1 && coefesp>=0 ? color = '#ffffff':""
 			    coefesp<=2 && coefesp>1 ? color = '#E0E0F8':""
 			    coefesp<=3 && coefesp>2 ? color = '#A9A9F5':""
 			    coefesp<=4 && coefesp>3 ? color = '#8181F7':""
 			    coefesp<=5 && coefesp>4 ? color = '#2E2EFE':""
-			    coefesp>5 ? color = '#0404B4':""	
+			    coefesp>5 ? color = '#0404B4':""
 				map.drawPolygon({
 				  paths: provMapa, // pre-defined polygon shape
 				  fillColor: color,

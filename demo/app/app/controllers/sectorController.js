@@ -1,7 +1,7 @@
 (function(){
 	angular.module('app.controllers')
-	.controller('sectorController',['$location','sectorFactory','dashboardFactory','$window','$scope','welcomeFactory',
-		function($location,sectorFactory,dashboardFactory,$window,$scope,welcomeFactory){
+	.controller('sectorController',['$timeout','$location','sectorFactory','dashboardFactory','$window','$scope','welcomeFactory',
+		function($timeout,$location,sectorFactory,dashboardFactory,$window,$scope,welcomeFactory){
 		var	rubro = [],
 			sector = [];
 
@@ -310,7 +310,7 @@
 					                    name: 'Total Sectorial',
 					                    type:'scatter',
 					                    symbolSize: 0,
-					                    data: [[0,0]],
+					                    data: [[0,response[i].export_var_2007_2015]],
 					                    markLine: {
 					                        symbolSize: [2,2],
 					                        tooltip: {
@@ -331,7 +331,7 @@
 			                    countExportFake++;								
 							}							
 						}
-						localStorage.setItem('exportScatterSectFake',JSON.stringify(scatterExportFake));
+						
 
 						//EMPLEO
 						var countEmpleoFake = 0;
@@ -378,11 +378,11 @@
 					                    countEmpleoFake++;
 					            }
 							} else if (response[i].nombreProvincia == 'Total Sectorial') {
-					            var scatterEmpleoDataFake = {
+					            scatterEmpleoDataFake = {
 					                    name: 'Total Sectorial',
 					                    type:'scatter',
 					                    symbolSize: 0,
-					                    data: [[0,0]],
+					                    data: [[0,response[i].empleoB_var_2007_2015]],
 					                    markLine: {
 					                        symbolSize: [2,2],
 					                        tooltip: {
@@ -403,17 +403,21 @@
 			                    countEmpleoFake++;								
 							}							
 						}
+						localStorage.setItem('exportScatterSectFake',JSON.stringify(scatterExportFake));
 						localStorage.setItem('empleoScatterSectFake',JSON.stringify(scatterEmpleoFake));
-						$location.path('/page/dashSector');
+
+						
+						$timeout(function(){$location.path('/page/dashSector');}, 1000)					
+						
 
 					});
 					/* END FIX-29/08/2016 para adaptar datos ficticios en los scatter */
-						
-						localStorage.setItem('dashSectorData',JSON.stringify(response))
-						localStorage.setItem('empleoDataSect',JSON.stringify(empleo))
-						localStorage.setItem('empleoScatterSect',JSON.stringify(scatterEmpleo))
-						localStorage.setItem('exportDataSect',JSON.stringify(exportacion))
-						localStorage.setItem('exportScatterSect',JSON.stringify(scatterExport))
+					localStorage.setItem('dashSectorData',JSON.stringify(response))
+					localStorage.setItem('empleoDataSect',JSON.stringify(empleo))
+					localStorage.setItem('empleoScatterSect',JSON.stringify(scatterEmpleo))
+					localStorage.setItem('exportDataSect',JSON.stringify(exportacion))
+					localStorage.setItem('exportScatterSect',JSON.stringify(scatterExport))
+
 						//$location.path('/page/dashSector');
 
 				});
@@ -521,7 +525,7 @@
                         case 'Ss. de organizaciones empresariales':    return '#ae9d0b'; break;
                         case 'Ss culturales, deportivos':              return '#7f9846'; break;
                         case 'Ss. n.c.p.':                             return '#208a8b'; break;
-                        default:                                       return 'rgba(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + 0.5 + ')'; break;
+                        default:                                       return '#' + (Math.floor(Math.random() * 10)) + '' + (Math.floor(Math.random() * 10)) + '' + (Math.floor(Math.random() * 10)) + '' + (Math.floor(Math.random() * 10)) + '' + (Math.floor(Math.random() * 10)) + '' + (Math.floor(Math.random() * 10)) + ''; break;
                     };            
         }		
 

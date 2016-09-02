@@ -110,6 +110,16 @@ table {
 }
 /* Dashboard Charts Ejes*/
 
+/* Dashboard charts */
+.chart-tag {
+    position: absolute;
+    font-size: xx-small;
+}
+.tag-1 { top: 64px; left: 103px;}
+.tag-2 { top: 64px; right: 103px;}
+.tag-3 { bottom: 60px; left: 103px;}
+.tag-4 { bottom: 60px; right: 103px;}
+/* Dashboard charts */
 
 /* Full-Screen Charts */
 #ejeX-big {
