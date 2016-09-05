@@ -115,10 +115,10 @@ table {
     position: absolute;
     font-size: xx-small;
 }
-.tag-1 { top: 64px; left: 103px;}
-.tag-2 { top: 64px; right: 103px;}
-.tag-3 { bottom: 60px; left: 103px;}
-.tag-4 { bottom: 60px; right: 103px;}
+.tag-1 { top: 64px; left: 46%;}
+.tag-2 { top: 176px; right: 63px; transform: rotate(90deg);}
+.tag-3 { bottom: 60px; right: 45%;}
+.tag-4 { bottom: 173px; left: 65px; transform: rotate(270deg);}
 /* Dashboard charts */
 
 /* Full-Screen Charts */
