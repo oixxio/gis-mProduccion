@@ -2,10 +2,28 @@
     'use strict';
 
     angular.module('app.chart')
-        .controller('EChartsCtrl', ['$route', '$scope', '$timeout', 'dashboardFactory','sectorFactory','$window', EChartsCtrl])
+        .controller('EChartsCtrl', ['$rootScope','$location', '$route', '$scope', '$timeout', 'dashboardFactory','sectorFactory','$window', EChartsCtrl])
 
 
-    function EChartsCtrl($route, $scope, $timeout,dashboardFactory,sectorFactory,$window) {
+    function EChartsCtrl($rootScope, $location, $route, $scope, $timeout,dashboardFactory,sectorFactory,$window) {
+
+
+    $scope.goTo = function(data){
+        $location.path(data);
+    }
+    console.log($rootScope.chartFullScreen);
+    $scope.goChartFullScreen = function (options, type, category) {
+        $rootScope.chartFullScreen = {};
+        if (type == 'treemap') {
+            $rootScope.show = false;
+        } else {
+            $rootScope.show = true;
+        }
+        $rootScope.category = category;
+        $rootScope.chartFullScreen.options = options;
+
+        $timeout(function () {$location.path('page/chartFullScreen');}, 500);
+    }    
 
     //INIT OPTIONS DATA
         //Provincia EMPLEO
@@ -730,6 +748,14 @@
         //Provincia EMPLEO
         //treemap
         $scope.treemap.options = {
+            title: {
+                show: true,
+                text: 'Participación sectorial en empleo provincial (2015)',
+                textStyle: {
+                    fontFamily: 'Gotham',
+                    fontSize: 15
+                }
+            },
             tooltip : {
                 trigger: 'item',
                 position: [0,0],
@@ -828,6 +854,14 @@
         //Provincia EXPORTACION
         //treemap    
         $scope.funnel1.options = {
+            title: {
+                show: true,
+                text: 'Participación sectorial en exportaciones provinciales (2015)',
+                textStyle: {
+                    fontFamily: 'Gotham',
+                    fontSize: 15
+                }
+            },
             tooltip : {
                 trigger: 'item',
                 position: [0,0],
@@ -930,6 +964,14 @@
         //Sector EMPLEO
         //treemap
         $scope.line2.options = {
+            title: {
+                show: true,
+                text: 'Participación provincial en empleo sectorial (2015)',
+                textStyle: {
+                    fontFamily: 'Gotham',
+                    fontSize: 15
+                }
+            },
             tooltip : {
                 trigger: 'item',
                 position: [0,0],
@@ -1029,6 +1071,14 @@
         //Sector EXPORTACION
         //treemap    
         $scope.line3.options = {
+            title: {
+                show: true,
+                text: 'Participación provincial en las exportaciones sectoriales (2015)',
+                textStyle: {
+                    fontFamily: 'Gotham',
+                    fontSize: 15
+                }
+            },
             tooltip : {
                 trigger: 'item',
                 position: [0,0],
@@ -1160,6 +1210,14 @@
         }          
         scatterExportSectorDataFake.push(scatterCoefEspLine);
         $scope.bar1.options = {
+            title: {
+                show: true,
+                text: 'Matriz de clasificación de sectores según exportaciones (2015)',
+                textStyle: {
+                    fontFamily: 'Gotham',
+                    fontSize: 15
+                }
+            },
             axisPointer:{
                 show: false
             },            
@@ -1235,6 +1293,14 @@
         }          
         scatterEmpleoSectorDataFake.push(scatterCoefEspLineB);
         $scope.line1.options = {
+            title: {
+                show: true,
+                text: 'Matriz de clasificación de sectores según empleo (2015)',
+                textStyle: {
+                    fontFamily: 'Gotham',
+                    fontSize: 15
+                }
+            },
             axisPointer:{
                 show: false
             },            
@@ -1310,6 +1376,14 @@
         }          
         scatterExportProvDataFake.push(scatterCoefEspLineC);
         $scope.line4.options = {
+            title: {
+                show: true,
+                text: 'Matriz de clasificación de provincias según exportaciones (2015)',
+                textStyle: {
+                    fontFamily: 'Gotham',
+                    fontSize: 15
+                }
+            },
             axisPointer:{
                 show: false
             },            
@@ -1385,6 +1459,14 @@
         }          
         scatterEmpleoProvDataFake.push(scatterCoefEspLineD);
         $scope.scatter1.options = {
+            title: {
+                show: true,
+                text: 'Matriz de clasificación de provincias según empleo (2015)',
+                textStyle: {
+                    fontFamily: 'Gotham',
+                    fontSize: 15
+                }
+            },
             axisPointer:{
                 show: false
             },            

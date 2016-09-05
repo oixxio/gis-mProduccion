@@ -1,8 +1,7 @@
 <div class="row panel-chart">
     <div class="col-md-6">
-        <span>Participación provincial en empleo sectorial</span>
         <i class="fa fa-arrows-alt fa-2x btn-full-screen" aria-hidden="true" 
-            ng-click="goTo('page/empleoSectGrande')"></i>                       
+            ng-click="goChartFullScreen(line2.options, 'treemap', 'empleo')')"></i>                       
         <div data-echarts data-options="line2.options" style="height: 360px;"></div>
     </div>
 	<div class="col-md-6">
@@ -10,9 +9,8 @@
         <div class="chart-tag tag-2">Alta especialización</div>
         <div class="chart-tag tag-3">Baja dinámica</div>
         <div class="chart-tag tag-4">Baja especialización</div> 
-        <span>Matriz de clasificación de sectores según empleo</span>
         <i class="fa fa-arrows-alt btn-full-screen" aria-hidden="true" 
-        ng-click="goTo('page/scatterEmpSectGrande')"></i>
+        ng-click="goChartFullScreen(line1.options, 'scatter', 'empleo')"></i>
         <p id="ejeX">Coef. de especialización Empleo</p>
         <p id="ejeY" style="left: -12.3% !important;">Grado de dinámica Empleo</p>
         <div data-echarts data-options="line1.options" style="height: 360px;"></div>					

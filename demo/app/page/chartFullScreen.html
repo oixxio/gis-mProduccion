@@ -1,0 +1,16 @@
+<i class="fa fa-arrow-left fa-2x go-back" aria-hidden="true" ng-click='goBack()'></i>
+<div ng-controller="EChartsCtrl" class="full-screen-chart-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" style="margin-top:50px;">
+		        <div ng-show="show" class="chart-tag tag-1">Alta dinámica</div>
+		        <div ng-show="show" class="chart-tag tag-2">Alta especialización</div>
+		        <div ng-show="show" class="chart-tag tag-3">Baja dinámica</div>
+		        <div ng-show="show" class="chart-tag tag-4">Baja especialización</div>      
+		        <p ng-show="show" id="ejeX">Coef. de especialización {{category}}</p>
+		        <p ng-show="show" id="ejeY" style="left: -6.3% !important;">Grado de dinámica {{category}}</p>      
+		        <div data-echarts data-options="chartFullScreen.options" style="height: 550px;z-index:1000;" ng-cloak></div>	
+			</div>		
+		</div>    
+	</div>			        
+</div>

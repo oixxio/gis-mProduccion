@@ -15,7 +15,7 @@
                 'app/tasks', 'app/calendar','page/main','page/mapa','page/sector','page/admin','page/dashSector','page/empleoProvGrande',
                 'page/scatterEmpProvGrande','page/exportProvGrande','page/scatterExpProvGrande','page/empleoSectGrande',
                 'page/scatterEmpSectGrande','page/exportSectGrande','page/scatterExpSectGrande','page/sector2','page/landing',
-                'page/fichas','page/nodisponible','page/timeLapseEmpleo'
+                'page/fichas','page/nodisponible','page/timeLapseEmpleo', 'page/chartFullScreen'
             ]
 
             setRoutes = function(route) {

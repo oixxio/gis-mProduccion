@@ -1,8 +1,7 @@
 <div class="row panel-chart" ng-controller="EChartsCtrl">
 	<div class="col-md-6">
-        <span>Participación sectorial en exportaciones provinciales (2015)</span>
         <i class="fa fa-arrows-alt fa-2x btn-full-screen" aria-hidden="true" 
-            ng-click="goTo('page/exportProvGrande')"></i>                       
+            ng-click="goChartFullScreen(funnel1.options, 'treemap', 'exportacion')"></i>                       
         <div data-echarts data-options="funnel1.options" style="height: 360px;"></div> 				    
 	</div>
 	<div class="col-md-6">
@@ -10,9 +9,8 @@
         <div class="chart-tag tag-2">Alta especialización</div>
         <div class="chart-tag tag-3">Baja dinámica</div>
         <div class="chart-tag tag-4">Baja especialización</div> 
-        <span>Matriz de clasificación de provincias según exportaciones</span>
         <i class="fa fa-arrows-alt btn-full-screen" 
-            ng-click="goTo('page/scatterExpProvGrande')"></i>
+            ng-click="goChartFullScreen(line4.options, 'scatter', 'exportacion')"></i>
         <p id="ejeX">Coef. de especialización Exportación</p>
         <p id="ejeY">Grado de dinámica Exportación</p>
         <div data-echarts data-options="line4.options" style="height: 360px;"></div>				
