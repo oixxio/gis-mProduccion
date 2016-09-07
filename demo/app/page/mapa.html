@@ -10,7 +10,14 @@
     color: #EEE;">
             <h1 style="font-size: 20px; letter-spacing: 2px;">PROVINCIA:</h1>
             <h1 style="font-size: 56px;height:50px;">{{idProv | uppercase}}</h1>
-            <span style="border-bottom: white solid 1px;padding-left: 406px;"> </span>    
+            <span style="border-bottom: white solid 1px;padding-left: 406px;"> </span>
+            <br>
+            <!-- SPINNER -->            
+            <div class="spinner" ng-show="loading">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div><!-- /SPINNER -->               
         </div>
          <div id="contenedor-primario" style="left:42%;top:55.6%;">
             <div id="contenedor-mapa">

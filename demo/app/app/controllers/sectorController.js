@@ -4,7 +4,8 @@
 		function($timeout,$location,sectorFactory,dashboardFactory,$window,$scope,welcomeFactory){
 		var	rubro = [],
 			sector = [];
-
+		console.log("sectorController.js loaded")
+		$scope.loading = false;
 		$scope.to = function(data){
 			$location.path('page/'+data);
 		}
@@ -88,6 +89,7 @@
 			//$window.alert($scope.filterText);
 		}
 		$scope.setDashData = function(data){
+			$scope.loading = true;
 			var provincia = [],
 				rubroData = [],
 				nombreRubro = [],
@@ -258,6 +260,7 @@
 					sectorFactory.setScatterExport(scatterExport);*/
 
 					/* FIX-29/08/2016 para adaptar datos ficticios en los scatter */
+					var tableData = response;
 					sectorFactory.getScatterSectorData(data).success(function(response){
 						
 						//EXPORTACION
@@ -405,18 +408,17 @@
 						}
 						localStorage.setItem('exportScatterSectFake',JSON.stringify(scatterExportFake));
 						localStorage.setItem('empleoScatterSectFake',JSON.stringify(scatterEmpleoFake));
-
-						
-						$timeout(function(){$location.path('/page/dashSector');}, 1000)					
-						
+						localStorage.setItem('dashSectorData',JSON.stringify(tableData))
+						localStorage.setItem('empleoDataSect',JSON.stringify(empleo))
+						localStorage.setItem('empleoScatterSect',JSON.stringify(scatterEmpleo))
+						localStorage.setItem('exportDataSect',JSON.stringify(exportacion))
+						localStorage.setItem('exportScatterSect',JSON.stringify(scatterExport))
+						$scope.loading = false;
+						$timeout(function(){$location.path('/page/dashSector');}, 100)		
 
 					});
 					/* END FIX-29/08/2016 para adaptar datos ficticios en los scatter */
-					localStorage.setItem('dashSectorData',JSON.stringify(response))
-					localStorage.setItem('empleoDataSect',JSON.stringify(empleo))
-					localStorage.setItem('empleoScatterSect',JSON.stringify(scatterEmpleo))
-					localStorage.setItem('exportDataSect',JSON.stringify(exportacion))
-					localStorage.setItem('exportScatterSect',JSON.stringify(scatterExport))
+
 
 						//$location.path('/page/dashSector');
 

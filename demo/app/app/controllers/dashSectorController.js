@@ -9,6 +9,7 @@
 					$location.path('page/dashSector');
 				}
 		})*/
+		console.log("dashSectorController.js loaded")
 		var sector = {};
 		sectorFactory.getSector().success(function(response){
 			$scope.sector = response[0].nombre;

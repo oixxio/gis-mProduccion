@@ -2,7 +2,7 @@
 	angular.module('app.controllers')
 	.controller('mapController',['$timeout','$location','dashboardFactory','$window','$scope','welcomeFactory',
 		function($timeout,$location,dashboardFactory,$window,$scope,welcomeFactory){
-
+			console.log("mapController.js loaded");
 
 		$scope.to = function(data){
 			//$location.path('page/'+data);
@@ -10,9 +10,10 @@
 		$scope.goTo = function(data){
 			$location.path('page/'+data);
 		}
-
+		$scope.loading = false;
 		/*****************************************************/
 		$scope.setData = function(data){
+			$scope.loading = true;
 			img = data + '.png';
 			//dashboardFactory.setImg(img);
 			$scope.cache.put('provImg',img)
@@ -194,8 +195,8 @@
 						/*[End Factory para pasar datos al dash]*/
 
 					/* FIX-29/08/2016 para adaptar datos ficticios en los scatter */
+					var tableData = response;
 					dashboardFactory.getScatterProvData(data).success(function(response){
-						console.log(response);
 						//EXPORTACION
 						var countExportFake = 0;
 						var scatterExportDataFake = {};
@@ -358,21 +359,24 @@
 						}
 						localStorage.setItem('exportScatterProvFake',JSON.stringify(scatterExportFake));
 						localStorage.setItem('empleoScatterProvFake',JSON.stringify(scatterEmpleoFake));
-
-						
-						$timeout(function(){$location.path('/page/dashboard');}, 1000)						
+						localStorage.setItem('provData',JSON.stringify(tableData))
+						localStorage.setItem('empleoData',JSON.stringify(empleo))
+						localStorage.setItem('empleoScatter',JSON.stringify(scatterEmpleo))
+						localStorage.setItem('exportData',JSON.stringify(exportacion))
+						localStorage.setItem('exportScatter',JSON.stringify(scatterExport))
+						console.log("mapController.js END")
+						$scope.loading = false;
+						$timeout(function(){$location.path('/page/dashboard');}, 100)						
 						//$location.path('/page/dashboard');
+
 
 					});
 					/* END FIX-29/08/2016 para adaptar datos ficticios en los scatter */
 
-					localStorage.setItem('provData',JSON.stringify(response))
-					localStorage.setItem('empleoData',JSON.stringify(empleo))
-					localStorage.setItem('empleoScatter',JSON.stringify(scatterEmpleo))
-					localStorage.setItem('exportData',JSON.stringify(exportacion))
-					localStorage.setItem('exportScatter',JSON.stringify(scatterExport))
+
 					//alert(angular.toJson(exportacion))
 					//$location.path('page/dashboard');
+
 					});
 				});
 			});	

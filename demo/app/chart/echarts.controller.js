@@ -1212,10 +1212,10 @@
         $scope.bar1.options = {
             title: {
                 show: true,
-                text: 'Matriz de clasificación de sectores según exportaciones (2015)',
+                text: 'Matriz de clasificación de sectores según exportaciones (2007-2015)',
                 textStyle: {
                     fontFamily: 'Gotham',
-                    fontSize: 15
+                    fontSize: 14
                 }
             },
             axisPointer:{
@@ -1295,10 +1295,10 @@
         $scope.line1.options = {
             title: {
                 show: true,
-                text: 'Matriz de clasificación de sectores según empleo (2015)',
+                text: 'Matriz de clasificación de sectores según empleo (2007-2015)',
                 textStyle: {
                     fontFamily: 'Gotham',
-                    fontSize: 15
+                    fontSize: 14
                 }
             },
             axisPointer:{
@@ -1378,10 +1378,10 @@
         $scope.line4.options = {
             title: {
                 show: true,
-                text: 'Matriz de clasificación de provincias según exportaciones (2015)',
+                text: 'Matriz de clasificación de provincias según exportaciones (2007-2015)',
                 textStyle: {
                     fontFamily: 'Gotham',
-                    fontSize: 15
+                    fontSize: 14
                 }
             },
             axisPointer:{
@@ -1461,10 +1461,10 @@
         $scope.scatter1.options = {
             title: {
                 show: true,
-                text: 'Matriz de clasificación de provincias según empleo (2015)',
+                text: 'Matriz de clasificación de provincias según empleo (2007-2015)',
                 textStyle: {
                     fontFamily: 'Gotham',
-                    fontSize: 15
+                    fontSize: 14
                 }
             },
             axisPointer:{

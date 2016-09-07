@@ -2,6 +2,7 @@
 	angular.module('app.controllers')
 	.controller('dashboardController',['$location','dashboardFactory','$window','$scope','welcomeFactory',
 	function($location,dashboardFactory,$window,$scope,welcomeFactory){
+		console.log("dashboardController.js loaded")
 		/*welcomeFactory.sessionOpen().success(function(response){
 				if(response == ''){
 					$location.path('page/signin');
