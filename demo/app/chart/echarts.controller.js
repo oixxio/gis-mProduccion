@@ -56,6 +56,15 @@
         var exportacionSectorData = JSON.parse(localStorage.getItem('exportDataSect'))
         var scatterExportSectorData = JSON.parse(localStorage.getItem('exportScatterSect'))
 
+        console.log(empleoData);
+        console.log(scatterEmpleoData);
+        console.log(exportacionData);
+        console.log(scatterExportData);
+        console.log(empleoSectorData);
+        console.log(scatterEmpleoSectorData);
+        console.log(exportacionSectorData);
+        console.log(scatterExportSectorData);
+
 
     //MAGIA PARA LOS COLORES DE LOS TREEMAPS
         var empleoLegend = dashboardFactory.getEmpleoLegend();     
@@ -1207,8 +1216,11 @@
                         {name: 'Coef Esp 1', xAxis: 1, yAxis: -5000}
                 ]]
             }
+        }
+        if (scatterExportSectorDataFake != null) {
+            scatterExportSectorDataFake.push(scatterCoefEspLine);  //Evita que a la primera carga no crashee todo
         }          
-        scatterExportSectorDataFake.push(scatterCoefEspLine);
+        
         $scope.bar1.options = {
             title: {
                 show: true,
@@ -1290,8 +1302,10 @@
                         {name: 'Coef Esp 1', xAxis: 1, yAxis: -5000}
                 ]]
             }
-        }          
-        scatterEmpleoSectorDataFake.push(scatterCoefEspLineB);
+        }    
+        if (scatterEmpleoSectorDataFake != null) {
+            scatterEmpleoSectorDataFake.push(scatterCoefEspLineB);  //Evita que a la primera carga no crashee todo
+        }   
         $scope.line1.options = {
             title: {
                 show: true,
@@ -1373,8 +1387,10 @@
                         {name: 'Coef Esp 1', xAxis: 1, yAxis: -50000}
                 ]]
             }
+        }
+        if (scatterExportProvDataFake != null) {
+            scatterExportProvDataFake.push(scatterCoefEspLineC);  //Evita que a la primera carga no crashee todo
         }          
-        scatterExportProvDataFake.push(scatterCoefEspLineC);
         $scope.line4.options = {
             title: {
                 show: true,
@@ -1456,8 +1472,10 @@
                         {name: 'Coef Esp 1', xAxis: 1, yAxis: -50000}
                 ]]
             }
-        }          
-        scatterEmpleoProvDataFake.push(scatterCoefEspLineD);
+        }        
+        if (scatterEmpleoProvDataFake != null) {
+           scatterEmpleoProvDataFake.push(scatterCoefEspLineD); //Evita que a la primera carga no crashee todo
+        }  
         $scope.scatter1.options = {
             title: {
                 show: true,
